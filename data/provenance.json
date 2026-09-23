@@ -1,0 +1,19 @@
+{
+  "source": "Best Buy Canada public catalogue search API",
+  "sourceBaseUrl": "https://www.bestbuy.ca",
+  "retrievedAt": "2026-09-23",
+  "currency": "CAD",
+  "purpose": "Reference catalogue for a Ghana demo storefront. Prices belong to the Canadian source; availability, local prices and stock are not verified for Ghana.",
+  "imageProvenance": "Original product photograph URLs supplied by Best Buy Canada; selected digital gift cards use a verified 500px rendition of the source thumbnail. Refer to source listing for image ownership.",
+  "specificationProvenance": "Product names and descriptions reproduced from source catalogue. Brand derived only from explicit known brand names in titles. No Ghana stock claims or ratings.",
+  "products": 2330,
+  "rawProducts": 3254,
+  "categories": 220,
+  "departments": 29,
+  "deduplication": "Unique source SKU plus normalized title stripping colour names and punctuation; vinyl colour-edition labels and gift-card denominations deduplicated. Source-category and title relevance checked per leaf. Refurbished, open-box, pre-owned and renewed listings omitted.",
+  "files": [
+    "products.json",
+    "collection-stats.json",
+    "raw/"
+  ]
+}
