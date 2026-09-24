@@ -1,14 +1,17 @@
 {
   "checkedAt": "2026-09-24",
   "totalProducts": 2362,
-  "productsWithMultipleImages": 194,
-  "productsWithThreeOrMoreImages": 182,
-  "reviewedProducts": 225,
-  "galleryPhotos": 1066,
-  "pendingSourceAccess": 2137,
-  "singleImageProducts": 2168,
+  "productsWithMultipleImages": 563,
+  "productsWithThreeOrMoreImages": 373,
+  "reviewedProducts": 594,
+  "galleryPhotos": 2162,
+  "pendingSourceAccess": 1725,
+  "singleImageProducts": 1798,
   "complete": false,
-  "note": "Best Buy denied further public product API access. Unchecked products retain their existing cover. Some checked exact configurations expose only one suitable image. No repeated crops, different colours, accessories, or generated product views were added.",
+  "note": "Further verified manufacturer and exact-SKU retailer galleries were added. Bulk discovery stopped after repeated source timeouts and error responses; other sources returned access errors or exact-configuration gaps. Unrequested products remain pending. Wrong variants, accessory-only pictures and repeated views were excluded; existing covers remain where more photos are unavailable.",
   "duplicatePhotosExcluded": 7,
-  "fullImageValidation": "passed"
+  "fullImageValidation": "passed",
+  "productsWithNoVerifiedImage": 1,
+  "productsAwaitingMultipleImages": 1799,
+  "excludedBulkProductGalleries": 21
 }

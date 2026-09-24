@@ -7,6 +7,6 @@ export async function GET(request:Request){
  const product=products.get(id);
  if(!product)return Response.json({error:'Product not found'},{status:404});
  const stored=(galleries as Record<string,Photo[]>)[id]||[];
- const images=stored.length?stored:[{url:product.image,caption:product.name,sourceUrl:product.sourceUrl}];
+ const images=product.imageVerificationStatus==='under_review'?[]:stored.length?stored:[{url:product.image,caption:product.name,sourceUrl:product.sourceUrl}];
  return Response.json({product:id,images,total:images.length},{headers:{'Cache-Control':'public, max-age=3600'}});
 }

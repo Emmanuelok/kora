@@ -4,12 +4,12 @@ import {ChevronLeft,ChevronRight,Expand,ZoomIn,ZoomOut,ImageOff,RotateCcw} from 
 import {Dialog,DialogContent,DialogTitle,DialogDescription} from '@/components/ui/dialog';
 
 type Photo={url:string;thumbnail?:string;caption?:string;sourceUrl?:string};
-type Props={productId:string;name:string;cover:string;compact?:boolean};
-export default function ProductGallery({productId,name,cover,compact=false}:Props){
- const [photos,setPhotos]=useState<Photo[]>([{url:cover}]);
+type Props={productId:string;name:string;cover:string;compact?:boolean;withheld?:boolean};
+export default function ProductGallery({productId,name,cover,compact=false,withheld=false}:Props){
+ const [photos,setPhotos]=useState<Photo[]>(withheld?[]:[{url:cover}]);
  const [active,setActive]=useState(0),[expanded,setExpanded]=useState(false),[zoom,setZoom]=useState(false),[loading,setLoading]=useState(true),[error,setError]=useState(false),[failed,setFailed]=useState<string[]>([]),[attempt,setAttempt]=useState(0);
  const start=useRef<{x:number;y:number}|null>(null);
- useEffect(()=>{const controller=new AbortController();setPhotos([{url:cover}]);setActive(0);setFailed([]);setLoading(true);setError(false);fetch('/api/gallery?product='+encodeURIComponent(productId),{signal:controller.signal}).then(async r=>{if(!r.ok)throw Error('Gallery unavailable');return r.json() as Promise<{images:Photo[]}>}).then(data=>{if(Array.isArray(data.images)&&data.images.length)setPhotos(data.images);setLoading(false)}).catch(e=>{if(e.name!=='AbortError'){setError(true);setLoading(false)}});return()=>controller.abort()},[productId,cover,attempt]);
+ useEffect(()=>{const controller=new AbortController();setPhotos(withheld?[]:[{url:cover}]);setActive(0);setFailed([]);setLoading(true);setError(false);if(withheld){setLoading(false);return()=>controller.abort()}fetch('/api/gallery?product='+encodeURIComponent(productId),{signal:controller.signal}).then(async r=>{if(!r.ok)throw Error('Gallery unavailable');return r.json() as Promise<{images:Photo[]}>}).then(data=>{if(Array.isArray(data.images))setPhotos(data.images);setLoading(false)}).catch(e=>{if(e.name!=='AbortError'){setError(true);setLoading(false)}});return()=>controller.abort()},[productId,cover,attempt,withheld]);
  const visible=photos.filter(p=>!failed.includes(p.url));
  const index=Math.min(active,Math.max(0,visible.length-1));
  const current=visible[index];
@@ -21,7 +21,7 @@ export default function ProductGallery({productId,name,cover,compact=false}:Prop
  const thumbnails=(fullscreen=false)=><div className="gallery-thumbnails" aria-label={fullscreen?'Enlarged image thumbnails':'Product image thumbnails'}>{visible.map((p,i)=><button type="button" key={p.url} onClick={()=>select(i)} className={i===index?'is-active':''} aria-pressed={i===index} aria-label={`Show ${fullscreen?'enlarged ':''}image ${i+1} of ${visible.length}`}><img src={p.thumbnail||p.url} alt={p.caption||`${name}, view ${i+1}`} loading="lazy" onError={e=>{if(p.thumbnail&&e.currentTarget.getAttribute('src')!==p.url)e.currentTarget.src=p.url}}/></button>)}</div>;
  return <section className={'product-gallery '+(compact?'gallery-compact':'')} aria-label={'Photo gallery for '+name}>
   <div className="gallery-stage" onTouchStart={e=>{start.current={x:e.touches[0].clientX,y:e.touches[0].clientY}}} onTouchEnd={swipeEnd} onKeyDown={keyboard}>
-   {current?<button type="button" className="gallery-image-button" aria-label={'Enlarge image '+(index+1)+' of '+name} onClick={()=>setExpanded(true)}><img key={current.url} src={current.url} alt={current.caption||`${name}, view ${index+1}`} onError={()=>imageFailure(current.url)}/></button>:<div className="gallery-unavailable"><ImageOff size={36}/><p>Photos are temporarily unavailable.</p><button type="button" onClick={()=>{setFailed([]);setAttempt(a=>a+1)}}><RotateCcw size={16}/> Retry photos</button></div>}
+   {current?<button type="button" className="gallery-image-button" aria-label={'Enlarge image '+(index+1)+' of '+name} onClick={()=>setExpanded(true)}><img key={current.url} src={current.url} alt={current.caption||`${name}, view ${index+1}`} onError={()=>imageFailure(current.url)}/></button>:<div className="gallery-unavailable"><ImageOff size={36}/><p>{withheld?'Exact product photos are under review.':'Photos are temporarily unavailable.'}</p>{!withheld&&<button type="button" onClick={()=>{setFailed([]);setAttempt(a=>a+1)}}><RotateCcw size={16}/> Retry photos</button>}</div>}
    {nav()}{current&&<button type="button" className="gallery-expand" aria-label="Open full-screen gallery" onClick={()=>setExpanded(true)}><Expand size={18}/><span>Enlarge</span></button>}
    <span className="gallery-count" role="status" aria-live="polite">{loading?'Loading gallery…':`${current?index+1:0} / ${visible.length}`}</span>
   </div>

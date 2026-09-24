@@ -9,6 +9,10 @@
   "history": [
     {
       "date": "2026-09-24",
+      "summary": "Redesigned the storefront with larger photography, switchable collection scenes and alternate product previews. Added multi-image galleries for 369 more products; 563 of 2362 now have multiple verified photographs. Remaining source and configuration gaps are recorded. One mismatched source cover is withheld pending exact-size verification."
+    },
+    {
+      "date": "2026-09-24",
       "summary": "Added galleries with multiple distinct views for 194 products, plus thumbnail navigation, swipe and zoom. Remaining photo coverage is incomplete because of source access blocks and exact-configuration gaps."
     },
     {
@@ -25,21 +29,27 @@
   "gallery": {
     "checkedAt": "2026-09-24",
     "totalProducts": 2362,
-    "productsWithMultipleImages": 194,
-    "productsWithThreeOrMoreImages": 182,
-    "reviewedProducts": 225,
-    "galleryPhotos": 1066,
-    "pendingSourceAccess": 2137,
-    "singleImageProducts": 2168,
+    "productsWithMultipleImages": 563,
+    "productsWithThreeOrMoreImages": 373,
+    "reviewedProducts": 594,
+    "galleryPhotos": 2162,
+    "pendingSourceAccess": 1725,
+    "singleImageProducts": 1798,
     "complete": false,
+    "note": "Further verified manufacturer and exact-SKU retailer galleries were added. Bulk discovery stopped after repeated source timeouts and error responses; other sources returned access errors or exact-configuration gaps. Unrequested products remain pending. Wrong variants, accessory-only pictures and repeated views were excluded; existing covers remain where more photos are unavailable.",
     "duplicatePhotosExcluded": 7,
-    "fullImageValidation": "passed"
+    "fullImageValidation": "passed",
+    "productsWithNoVerifiedImage": 1,
+    "productsAwaitingMultipleImages": 1799,
+    "excludedBulkProductGalleries": 21
   },
   "galleryChecks": {
     "schemaAndApi": "passed",
     "fullImageValidation": "passed",
-    "browserInteraction": "not_completed_preview_environment_unavailable",
+    "browserInteraction": "passed_next_image_fullscreen_zoom_close_hero_switch_and_department_menu",
+    "responsiveVisualReview": "passed_phone_and_tablet_catalogue_and_product_layouts",
     "typescript": "passed",
-    "pricingAndCart": "passed"
+    "pricingAndCart": "passed",
+    "notes": "Saved shopping API could not be exercised in the preview database; persistence and pricing regression tests passed against a fresh migrated test database. Source access failures are retained in gallery-source-review.json."
   }
 }

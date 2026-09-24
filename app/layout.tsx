@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./fonts.css";
+import "./flagship.css";
 
 export const metadata: Metadata = {
   title: "KORA Ghana | Technology for every day",
