@@ -1,4 +1,6 @@
 # Copied Sites are standalone projects and cannot inherit the monorepo policy.
+packages:
+  - '.'
 minimumReleaseAge: 10080
 minimumReleaseAgeIgnoreMissingTime: false
 trustLockfile: false
@@ -19,3 +21,5 @@ verifyDepsBeforeRun: false
 optimisticRepeatInstall: false
 overrides:
   miniflare>sharp: 0.35.4
+  # Compatible v4 security floor for GHSA-c83g-rgw3-j3cx and GHSA-73wf-gq98-2v4g.
+  'browserslist@<4.28.7': 4.28.9
