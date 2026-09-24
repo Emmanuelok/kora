@@ -11,7 +11,7 @@ for(const p of input){
  for(const k of ['id','name','brand','department','category','image','sourceUrl','description','sourcePriceCheckedAt'])assert(p[k],`Missing ${k}`);
  assert(departments[p.department],'Unknown department');assert(p.manufacturerVerified===true,'Official verification required');
  assert(new URL(p.sourceUrl).protocol==='https:','Source must be HTTPS');
- assert(p.image.startsWith('/images/products/')||new URL(p.image).protocol==='https:','Exact product image required');
+ assert(p.image.startsWith('/images/products/')||p.image.startsWith('/api/product-image?')||new URL(p.image).protocol==='https:','Exact product image required');
  assert(['coming_soon','released'].includes(p.releaseStatus),'Release status required');
  if(p.releaseStatus==='released'&&p.releaseDate)assert(p.releaseDate<=now,'Future product cannot be released');
  if(p.priceGHS!=null)assert(p.priceGHS>0&&p.priceSource&&p.priceCheckedAt&&p.retailerVariantId,'Local exact variant evidence required');

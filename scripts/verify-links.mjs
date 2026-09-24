@@ -8,7 +8,7 @@ for(const link of staticLinks){const path=link.split('?')[0];assert(pages.has(pa
 const departments=JSON.parse(fs.readFileSync('data/departments.json','utf8'));
 for(const d of Object.keys(departments))assert(products.some(p=>p.department===d),`Empty department ${d}`);
 const categories=new Set(products.map(p=>p.department+'|'+p.category));
-for(const p of products){assert(pages.has('/shop'));assert(p.id&&!p.id.includes('/'));assert(p.name&&p.image&&p.sourceUrl);if(p.image.startsWith('/'))assert(fs.existsSync('public'+p.image),`Missing image ${p.id}`);assert(new URL(p.sourceUrl).protocol==='https:');}
+for(const p of products){assert(pages.has('/shop'));assert(p.id&&!p.id.includes('/'));assert(p.name&&p.image&&p.sourceUrl);if(p.image.startsWith('/api/product-image?'))assert(JSON.parse(fs.readFileSync('data/product-image-bytes.json'))[new URL(p.image,'https://kora.example').searchParams.get('id')]);else if(p.image.startsWith('/'))assert(fs.existsSync('public'+p.image),`Missing image ${p.id}`);assert(new URL(p.sourceUrl).protocol==='https:');}
 assert(!source.includes("import Link from 'next/link'"),'Use ordinary links for reliable navigation');
 assert(source.includes('action="/shop" method="get"'),'Search must support native submission');
 assert(!source.includes('priceCAD*9.5'));

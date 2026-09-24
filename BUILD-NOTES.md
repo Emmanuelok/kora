@@ -25,3 +25,5 @@ Campaign imagery uses sourced Unsplash photographs. Laptop: Kari Shea; living ro
 - Daily KORA Catalogue Updates automation enabled. Registry includes every known catalogue brand; most recent verified scope is17 release records plus15 local variants. Remaining brand registry entries have no false checked date.
 - Browser preview unavailable after bounded attempts: cloud Page.navigate and getFrameTree timed out. Native link graph and server/API tests passed. No claim of complete browser-interaction testing.
 - Payment collection, merchant stock, actual fulfilment and customer email remain unconnected. Retailer reference prices are not KORA offers.
+
+- Published live route audit returned200 on24 paths andJavaScript on all8chunks. FiveWebPphotos hadgenericstaticMIME; serve their unchanged imagebytes through a typed imageendpoint with contenthashURLs.
