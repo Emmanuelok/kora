@@ -9,7 +9,7 @@ This repository contains the source recovered from KORA's ChatGPT Site, includin
 - 2,362 catalogue products across 29 departments and 224 categories.
 - Search, filters, product details, comparison, collections and a product finder.
 - Product galleries, with multiple photographs for 563 products.
-- Persistent guest/account baskets, saved products, profiles and requests.
+- Persistent browser-session baskets, saved products, profiles and requests.
 - Ghana retailer price references where available; other products require quotations.
 - Service, business, trade-in, return and contact enquiry forms.
 
@@ -34,7 +34,7 @@ pnpm dev
 
 Apply the schema migration only to a fresh local database. `pnpm dev` normally serves on `http://localhost:5173`. `pnpm start` previews the built Worker locally; it does not deploy. The legacy `install:ci` script requires the managed Linux Sites environment; use the direct pnpm installation command above for a normal checkout.
 
-The local D1 database ID in `vite.config.ts` is a placeholder. It is not a production database. The original framework and Sites runtime notes are preserved in [SITES-STARTER.md](docs/SITES-STARTER.md).
+`wrangler.json` identifies the independent Cloudflare Worker and D1 database. Local development still uses local D1 emulation; it does not write to the remote database. The original framework and Sites runtime notes are preserved in [SITES-STARTER.md](docs/SITES-STARTER.md).
 
 ## Checks
 
@@ -50,7 +50,7 @@ node scripts/verify-links.mjs
 pnpm build
 ```
 
-The store check exercises API logic against temporary in-memory SQLite. Gallery checks validate recorded evidence and API behavior; they do not fetch every external image. Initial GitHub publication verified the four script checks. A fresh full dependency installation, typecheck, lint and production build remain to be verified for the selected independent host.
+The store check exercises API logic against temporary in-memory SQLite, including isolation between guest sessions and rejection of forged identity headers. Gallery checks validate recorded evidence and API behavior; they do not fetch every external image. See [deployment status and checks](docs/HOSTING.md) for the latest migration validation.
 
 ## Project layout
 
@@ -64,11 +64,12 @@ The store check exercises API logic against temporary in-memory SQLite. Gallery 
 | `db/`, `drizzle/` | Database schema and migration |
 | `scripts/` | Catalogue maintenance, verification and runtime helpers |
 | `.openai/hosting.json` | Original Sites project and logical database binding |
+| `wrangler.json` | Independent Cloudflare Worker, routing and D1 configuration |
 
 ## Data and deployment notes
 
 The product catalogue is in `data/products.json`. The four D1 tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights.
 
-The original Site supplied authenticated identity headers and owner-only access. An independent deployment must establish its own verified authentication and access policy; see [the migration requirements](docs/HOSTING.md#requirements-before-independent-hosting).
+The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer sign-in, cross-device access and account recovery are not implemented. The original Site was owner-private; public Worker and preview routes remain disabled until the desired access policy is configured. See [hosting guidance](docs/HOSTING.md).
 
 `CATALOGUE-UPDATES.md` describes the existing ChatGPT research/update task. That schedule is external to GitHub and does not automatically follow this repository. Older snapshot statistics in `BUILD-NOTES.md`, `data/provenance.json` and `data/quality-summary.json` are historical; use current catalogue data for current counts.

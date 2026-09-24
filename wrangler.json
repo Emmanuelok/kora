@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kora",
+  "account_id": "e24b9546211a6f1a310bf8ac9c411114",
+  "main": "vinext/server/fetch-handler",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kora-db",
+      "database_id": "983dc2a9-1cb3-4af0-b656-b1c6db1d7aab",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}

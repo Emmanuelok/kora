@@ -1,33 +1,76 @@
-# Hosting KORA
+# Hosting KORA on Cloudflare
 
-## Recommended: Cloudflare Workers and D1
+KORA serves its frontend and API together on Cloudflare Workers, with Cloudflare D1 for shopping sessions and requests. GitHub is the source repository: https://github.com/Emmanuelok/kora. A separate Vercel frontend is unnecessary for this architecture.
 
-KORA currently builds a Cloudflare Worker through Vinext and `@cloudflare/vite-plugin`. Its store API imports `cloudflare:workers` and uses D1 SQL directly. Keeping the frontend, API and database together on Cloudflare therefore requires the least architectural change.
+## Resources and current status
 
-GitHub stores the source. Cloudflare Workers Builds can deploy from the GitHub repository after the account, build configuration and database are configured. Cloudflare can serve both the frontend and API; a separate frontend host is not required.
+- Account: `e24b9546211a6f1a310bf8ac9c411114`.
+- Worker name configured in source: `kora`.
+- D1 database created: `kora-db` (`983dc2a9-1cb3-4af0-b656-b1c6db1d7aab`), binding `DB`.
+- Initial schema applied through the D1 console on 24 September 2026. Confirmed tables: `basket`, `profiles`, `requests`, `saved`; confirmed index: `requests_owner_created`.
+- No original customer data was transferred: all four source tables were empty at retrieval.
+- GitHub is connected in the Cloudflare dashboard and `Emmanuelok/kora` is selected. The deployment form is prepared; deployment is pending approval of Cloudflare's deployment-token and access settings. No live independent website URL has been verified yet.
+- `workers_dev: false`, `preview_urls: false`, and `routes: []` prevent publishing an unprotected endpoint while access is being configured. The original Site was owner-private.
 
-References: [Vinext's native Cloudflare deployment](https://vinext.dev/docs/deploying/cloudflare), [Cloudflare Git integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/).
+The account and database IDs are resource identifiers, not credentials. Do not commit API tokens or session secrets.
 
-## Vercel option
+## Git-connected build settings
 
-Vercel is feasible, but the existing source is not a drop-in Vercel deployment. Current Vinext documentation describes a Nitro adapter for Vercel and other platforms. Adapting KORA would involve:
+In Cloudflare **Workers & Pages → Create application → Connect GitHub**, authorize only the `Emmanuelok/kora` repository when the GitHub integration allows repository selection. Select that repository and use:
 
-1. Replacing the Cloudflare-specific Vite deployment adapter with the supported Nitro/Vercel adapter and validating it against the project's pinned framework version.
-2. Replacing the direct D1 binding with a database accessible to Vercel, or moving the API to a separately authenticated Cloudflare service.
-3. Replacing Sites-specific identity with verified application sessions and configuring the desired access policy.
-4. Testing API routes, cookies, galleries, deep links, database migrations and production builds on the new runtime.
+| Setting | Value |
+| --- | --- |
+| Worker/project name | `kora` |
+| Production branch | `main` |
+| Root directory | repository root |
+| Build command | `pnpm build` |
+| Deploy command | `pnpm run deploy` |
+| Build variable `NODE_VERSION` | `24.19.0` |
+| Build variable `PNPM_VERSION` | `11.25.0` |
 
-Converting the entire frontend to standard Next.js is another option, but is not required solely to use Vercel. Splitting only the frontend onto Vercel while keeping the API elsewhere also introduces cross-origin/session configuration and a second deployment.
+Dependencies are pinned in `pnpm-lock.yaml`; install with `pnpm install --frozen-lockfile`. No application secrets are currently required. Runtime database configuration comes from `wrangler.json`, not from build variables.
 
-Reference: [Vinext deployment to other platforms](https://vinext.dev/docs/deploying/other-platforms). These docs describe current platform support, not a tested deployment of this repository's pinned beta.
+The Vite plugin reads the source Wrangler configuration and produces `dist/server/wrangler.json`. Deploy that compiled configuration, which contains the bundled Worker and asset directory. Do not deploy the source entry directly.
 
-## Requirements before independent hosting
+```sh
+pnpm install --frozen-lockfile
+pnpm build
+pnpm run deploy
+```
 
-- **Database:** Create a database in the target account, supply the real binding/configuration and apply `drizzle/0000_redundant_wolfsbane.sql`. The ID in `vite.config.ts` is only a local placeholder. The source does not grant access to the Sites-owned production database.
-- **Identity:** `app/api/store/route.ts` currently trusts `oai-authenticated-user-id` supplied by Sites. A directly accessible deployment must not treat caller-supplied identity headers as authentication. Replace that assumption with verified sessions, or explicitly strip those headers and adopt guest-only behavior. The Sites sign-in/sign-out routes are platform-provided, not implemented app routes.
-- **Access:** The original Site is owner-private. Repository visibility and hosting access are separate; configure the chosen website audience explicitly.
-- **Build:** Install pinned dependencies, run TypeScript/lint and all verification scripts, then validate a production build. The current repository has no deployment workflow or configured external hosting account.
-- **Catalogue updates:** Recreate or redirect the external ChatGPT catalogue task intentionally. Do not assume GitHub pushes migrate that schedule.
-- **Commercial operation:** Payments, stock, fulfilment and notifications remain separate unimplemented integrations. A successful website deployment alone does not enable them.
+CLI deployment additionally requires an authorized Cloudflare login/token. The dashboard Git integration can manage build credentials without storing a token in this repository.
 
-No Vercel or independent Cloudflare deployment was created by the initial GitHub publication.
+## Access and sessions
+
+Before enabling a website URL, choose its audience. For an owner-only test, configure Cloudflare Zero Trust/Access and protect both the production and preview hostnames. For a public storefront preview, explicitly enable `workers_dev` after approving public access, then rebuild and deploy. No custom domain has been selected.
+
+The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-user-email`. Cart, saved items, profile and requests belong to a random guest cookie for this browser. It is HttpOnly, SameSite=Lax, Secure on HTTPS, and expires after 30 days. Clearing cookies, changing browsers or cookie expiry loses access to the earlier session. Customer sign-in and account recovery are not implemented. Cloudflare Access can protect the entire preview but is not customer account functionality.
+
+## Database maintenance
+
+The initial SQL was executed manually on the new remote database. Do not rerun `drizzle/0000_redundant_wolfsbane.sql` on it: its tables already exist. Wrangler's migration ledger has not been initialized for that manual migration. Establish a migration baseline before adopting `wrangler d1 migrations apply` for future migrations.
+
+For a fresh local database only:
+
+```sh
+pnpm exec wrangler d1 execute DB --local --config wrangler.json --persist-to .wrangler/state --file drizzle/0000_redundant_wolfsbane.sql
+pnpm start
+```
+
+Local execution does not use the remote D1 data. Remote changes require `--remote` and an authorized account.
+
+## Validation and limitations
+
+Validation on 24 September 2026 passed: pinned pnpm 11.25.0 frozen-lockfile install, TypeScript, all four verification scripts, production build, and Wrangler deployment dry run (1,409.34 KiB compressed Worker with 67 static asset files). The built Worker also passed local runtime checks for five rendered routes, gallery API, actual D1 cart persistence, separate browser sessions, forged identity headers and cross-origin mutation rejection. The store tests additionally cover all four tables, malformed cookies and protected legacy account rows. Lint reports 33 existing errors and 129 warnings in the imported application; baseline comparisons found no new lint errors and no suppression was added. Remote runtime checks remain pending deployment.
+
+Payments, stock, shipping, appointment confirmation and customer notifications remain unconnected. Catalogue research automation was external to the original Site and has not been connected to this repository; the updates page now states that updates are manual. Product photographs still largely use external source URLs.
+
+## Platform references
+
+- [Vinext on Cloudflare](https://vinext.dev/docs/deploying/cloudflare)
+- [Cloudflare Workers Builds configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
+- [Cloudflare build image and version overrides](https://developers.cloudflare.com/workers/ci-cd/builds/build-image/)
+- [Cloudflare D1](https://developers.cloudflare.com/d1/get-started/)
+- [Worker routing and Access](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/)
+
+Vercel remains possible through an adapter/database migration, but it would require changing the current direct `cloudflare:workers`/D1 integration. It offers no deployment simplification for the current source.
