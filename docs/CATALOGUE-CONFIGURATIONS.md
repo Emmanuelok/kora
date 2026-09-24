@@ -1,6 +1,6 @@
 # Ghana prices and exact product configurations
 
-The catalogue records an exact product ID for each selectable configuration. `data/product-families.json` links those IDs into families without changing existing URLs, saved products, baskets or historical quotations. The current import adds 31 phone configurations: 2,393 catalogue records, 12 families, 55 selectable product IDs and 46 dated Ghana retail price references. The other 2,347 records still require a Ghana quotation.
+The catalogue records an exact product ID for each selectable configuration. `data/product-families.json` links those IDs into families without changing existing URLs, saved products, baskets or historical quotations. The current import adds 31 phone configurations: 2,393 catalogue records, 12 families, 55 selectable product IDs and 46 dated Ghana retail price references. No approved KORA fixed prices are loaded, so all records currently require quotation. The 2,338 records outside a family have not been proven to have no other configurations; review the exact source before extending their choices.
 
 Phone choices come from the exact variants exposed by the existing Telefonika product feeds. Current storage examples include iPhone 17 Pro 256GB, 512GB and 1TB; iPhone 17 Pro Max 256GB through 2TB; and Galaxy S26 Ultra 12GB RAM with 256GB or 512GB storage. Retailer prices differ by configuration. These are reference prices, not confirmed KORA selling offers or stock.
 
@@ -17,6 +17,8 @@ Four Galaxy S26 Ultra 1TB variants were not imported: the retailer option says 1
 ## Prices
 
 `ghPrice` now returns only approved all-in selling prices from `data/selling-prices.json`. Retailer references are retained separately by `retailReferenceGhPrice`, which requires a positive GHS amount, source and a valid check date less than 14 days old. A retailer reference is never the customer-price fallback. `ghanaPesewas` produces integer minor units for arithmetic, and `money` preserves two decimal places. See [SELLING-PRICES.md](SELLING-PRICES.md) for the private exact-SKU cost, customs, FX and merchant tax inputs required before publishing a selling price with a 20% markup.
+
+For quotation-first launch, collect those inputs as each quotation is prepared. Fixed prices may be introduced for a selected range later. The [merchant handoff](PRICING-LAUNCH-HANDOFF.md) generates separate incomplete cost drafts for every explicitly mapped configuration in a selected family; approving one option never creates a price for its siblings.
 
 `scripts/refresh-prices.mjs` rechecks the exact retailer variant ID, title and SKU. It fetches each product feed once even when many variants share it. Large changes and identity changes require source review. The updater never adds unverified variants automatically.
 

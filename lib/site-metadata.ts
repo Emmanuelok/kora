@@ -87,6 +87,7 @@ const publicPages: Record<string, PageCopy> = {
 };
 
 const privatePages: Record<string, PageCopy> = {
+  '/admin': { title: 'KORA administration', description: 'Manage authorised KORA operations.' },
   '/sign-in': { title: 'Welcome back to KORA', description: 'Sign in securely to keep your KORA bag, saved products and requests together.' },
   '/sign-up': { title: 'Make yourself at home', description: 'Create your KORA account with your email and password, or Google.' },
   '/account': { title: 'My KORA', description: 'Your KORA account, shopping profile and requests.' },
@@ -96,6 +97,12 @@ const privatePages: Record<string, PageCopy> = {
   '/track': { title: 'Track your requests', description: 'Review your KORA quote and service requests.' },
   '/compare': { title: 'The details, side by side', description: 'Compare your selected KORA products in this browser.' },
 };
+
+export const privatePagePaths = Object.keys(privatePages);
+export const indexablePagePaths = [
+  ...Object.keys(publicPages),
+  ...catalogue.map(product => '/product/' + encodeURIComponent(product.id)),
+];
 
 const productsById = new Map(catalogue.map(product => [product.id, product]));
 const departments = departmentNames as Record<string, string>;

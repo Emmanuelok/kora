@@ -7,6 +7,9 @@ const coverage=JSON.parse(fs.readFileSync('data/gallery-coverage.json','utf8'));
 const previews=JSON.parse(fs.readFileSync('data/gallery-previews.json','utf8'));
 const checks=new Map(JSON.parse(fs.readFileSync('data/gallery-image-validation.json','utf8')).map(v=>[v.url,v]));
 const ids=new Set(catalogue.map(p=>p.id));
+for(const product of catalogue){
+ if(product.image.startsWith('/images/'))assert(fs.existsSync('public'+product.image),'Missing local product cover: '+product.id);
+}
 const canonical=url=>{const u=new URL(url);return u.origin+u.pathname.replace(/\/\d+x\d+\//g,'/SIZE/')};
 for(const [id,photos] of Object.entries(galleries)){
  assert(ids.has(id),'Gallery must preserve a real catalogue ID');assert(photos.length>0&&photos.length<=12);
@@ -36,6 +39,24 @@ let r=await GET(req(multi));assert.equal(r.status,200);let data=await r.json();a
 const fallback=catalogue.find(p=>!galleries[p.id]);r=await GET(req(fallback.id));data=await r.json();assert.equal(data.total,1);assert.equal(data.images[0].url,fallback.image);
 for(const p of catalogue.filter(p=>p.imageVerificationStatus==='under_review')){r=await GET(req(p.id));data=await r.json();assert.equal(data.total,0);assert.deepEqual(data.images,[])}
 assert(!fs.readFileSync('app/store.tsx','utf8').includes("from '../data/product-galleries"),'Gallery metadata remains server-only');
-console.log(JSON.stringify({passed:true,checks:['stable product IDs','distinct source image identities','source URLs and dates','five-image coverage and honest incompleteness','multi-photo API','single-photo fallback','unknown product 404'],...coverage},null,2));
+console.log(JSON.stringify({passed:true,checks:['stable product IDs','local cover assets exist','distinct source image identities','source URLs and dates','five-image coverage and honest incompleteness','multi-photo API','single-photo fallback','unknown product 404'],...coverage},null,2));
 delete globalThis.__galleryTest;
-if(process.argv.includes('--require-five'))assert.equal(coverage.productsAwaitingFiveImages,0,`${coverage.productsAwaitingFiveImages} products still require verified photos before the five-image target is complete`);
+const options=process.argv.slice(2);
+const requireFive=options.includes('--require-five');
+let scopePath;
+for(let i=0;i<options.length;i++){
+ if(options[i]==='--require-five')continue;
+ if(options[i]==='--scope'&&!scopePath&&options[i+1]&&!options[i+1].startsWith('--')){scopePath=options[++i];continue;}
+ throw new Error('Unknown or incomplete gallery verification option: '+options[i]);
+}
+assert(!scopePath||requireFive,'--scope must be combined with --require-five');
+if(requireFive){
+ const scope=scopePath?JSON.parse(fs.readFileSync(scopePath,'utf8')):catalogue.map(p=>p.id);
+ assert(Array.isArray(scope)&&scope.length>0,'A launch scope must be a nonempty JSON array of exact product IDs');
+ assert.equal(new Set(scope).size,scope.length,'A launch scope must not contain duplicate product IDs');
+ for(const id of scope)assert(typeof id==='string'&&ids.has(id),'Unknown launch-scope product: '+id);
+ const counts=new Map(catalogue.map((product,index)=>[product.id,visibleCounts[index]]));
+ const incomplete=scope.filter(id=>counts.get(id)<5);
+ assert.equal(incomplete.length,0,`${incomplete.length} of ${scope.length} ${scopePath?'selected':'catalogue'} products still require verified photos before the five-image target is complete`);
+ console.log(JSON.stringify({fiveImageGate:'passed',scope:scopePath?'explicit product subset':'entire catalogue',products:scope.length,rightsApproval:'separate owner approval required'}));
+}

@@ -14,8 +14,11 @@ This repository contains the source recovered from KORA's ChatGPT Site, includin
 - Approved selling-price pipeline for one all-in GHS amount, with verified costs, explicit tax treatment and a 20% markup.
 - No complete merchant cost records have been supplied yet, so all 2,393 products currently require quotations. The 46 Ghana retailer references are retained as source evidence and are not shown as final selling prices.
 - Service, business, trade-in, return and contact enquiry forms.
+- A private quotation-operations workspace at `/admin`, with customer-visible status updates, one complete GHS quotation and an expiry. It requires operator configuration and the additive operations migration; source availability does not mean production activation.
 
 Payments, merchant inventory, shipping, appointment confirmation and customer notification delivery are not connected. Checkout submits a quotation request and collects no money. Catalogue figures describe the imported snapshot dated 24 September 2026.
+
+Start with the [quotation-first launch checklist](docs/LAUNCH-CHECKLIST.md) and [operator guide](docs/QUOTE-OPERATIONS.md). They separate implemented features from the owner credentials, product/photo approvals, business details and manual follow-up needed before inviting real enquiries.
 
 ## Technology
 
@@ -32,10 +35,11 @@ pnpm install --frozen-lockfile
 pnpm build
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_redundant_wolfsbane.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_customer_auth.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0002_launch_operations.sql
 pnpm dev
 ```
 
-Apply the original `0000` schema only to a fresh local database; the additive `0001` authentication migration is safe to reapply. `pnpm dev` normally serves on `http://localhost:5173`. `pnpm start` previews the built Worker locally; it does not deploy. The legacy `install:ci` script requires the managed Linux Sites environment; use the direct pnpm installation command above for a normal checkout.
+Apply the original `0000` schema only to a fresh local database; the additive `0001` authentication and `0002` operations migrations are safe to reapply. `pnpm dev` normally serves on `http://localhost:5173`. `pnpm start` previews the built Worker locally; it does not deploy. The legacy `install:ci` script requires the managed Linux Sites environment; use the direct pnpm installation command above for a normal checkout.
 
 `wrangler.json` identifies the independent Cloudflare Worker and D1 database. Local development still uses local D1 emulation; it does not write to the remote database. The original framework and Sites runtime notes are preserved in [SITES-STARTER.md](docs/SITES-STARTER.md).
 
@@ -48,9 +52,14 @@ pnpm exec tsc --noEmit
 pnpm lint
 node scripts/verify-auth.mjs
 node scripts/verify-store.mjs
+pnpm verify:launch-operations
 node scripts/verify-variants.mjs
 pnpm verify:selling-prices
+pnpm verify:pricing-workflow
 node scripts/verify-galleries.mjs
+node scripts/verify-gallery-import.mjs
+pnpm verify:metadata
+pnpm verify:pwa
 node scripts/verify-image-route.mjs
 node scripts/verify-links.mjs
 pnpm build
@@ -63,6 +72,7 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 | Path | Contents |
 | --- | --- |
 | `app/store.tsx` | Main storefront, catalogue and account/request views |
+| `app/admin/`, `app/api/admin/requests/` | Private operator workspace and authorised request updates |
 | `app/api/` | Store, gallery and image endpoints |
 | `app/product-gallery.tsx`, `app/storefront-hero.tsx` | Gallery and hero interactions |
 | `data/` | Catalogue, sources, galleries and update evidence |
@@ -75,7 +85,7 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 
 ## Data and deployment notes
 
-The product catalogue is in `data/products.json`. The four D1 tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights.
+The product catalogue is in `data/products.json`. The original four shopping tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights. See the [photo completion handoff](docs/GALLERY-COMPLETION.md) and [sharing/PWA asset review](docs/ASSET-LAUNCH-READINESS.md).
 
 Customer prices come only from approved records in `data/selling-prices.json`; incomplete or expired records return to quotation. The private cost importer requires the exact SKU, actual supplier costs and original fees, sourcing route, applicable freight/insurance and customs assessment, verified FX where needed, and merchant output-tax policy. It adds a 20% markup to reviewed landed cost. Ghana local purchases are handled separately so import costs are not added again. Private invoices, cost components, FX, tax lines and markup amounts stay outside the public dataset under ignored `work/pricing/`. See [selling-price setup](docs/SELLING-PRICES.md) and [exact product configurations](docs/CATALOGUE-CONFIGURATIONS.md).
 

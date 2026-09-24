@@ -13,6 +13,20 @@ The chosen methods are **email/password signup and sign-in, plus Google**. Magic
 - Production still needs a signing secret and Google OAuth credentials. No credentials are checked into Git.
 - The dashboard currently reports Workers Free. No paid plan has been purchased.
 
+The migration and dashboard observations above are the earlier deployment record, not fresh verification of every production setting. A read-only check of the public `/api/auth/config` endpoint on 24 September 2026 at 20:42 UTC returned HTTP 200, `Cache-Control: no-store` and `{"configured":false,"password":false,"google":false}`: production authentication is still disabled. The launch audit verified the current implementation locally without changing secrets, enabling registration, creating production accounts or making live Google calls. A capability value of `true` means the required bindings are present; it does not prove that Google credentials are valid, tables are healthy or password hashing fits the production CPU allowance.
+
+## Owner inputs still required
+
+| Input | Where it belongs | Why it is required |
+|---|---|---|
+| A new random `BETTER_AUTH_SECRET` of at least 32 characters | Encrypted Worker secret, entered directly by the owner | Signs sessions and protects OAuth state/tokens |
+| A Google Cloud project and OAuth web client owned by the business | Google Auth Platform | Establishes the app identity and exact approved callback |
+| `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` | Encrypted Worker secrets, entered directly by the owner | Enables Google sign-in |
+| A real Google OAuth support contact and intended audience/test users | Google Auth Platform branding/audience | Completes the consent setup for the people allowed to sign in |
+| A disposable test account and a Google test user | Live browser after configuration | Verifies actual signup, sign-in, logout and consent without using customer data |
+
+The existing Workers address can be used for testing. A custom domain is optional; if one is chosen, settle it before registering the final callback. Do not paste signing secrets, OAuth secrets or customer passwords into chat or commit them to the repository.
+
 ## Enable email/password accounts
 
 1. In the Kora Worker's **Settings → Variables and Secrets**, add an encrypted `BETTER_AUTH_SECRET`: a cryptographically random secret of at least 32 characters. Generate and save it through a secure password/secret workflow. Enter it directly in Cloudflare, not chat, and do not reuse a Google secret.
@@ -46,13 +60,27 @@ Guest sessions last 30 days in a host-only, HttpOnly cookie. Account sessions la
 
 After sign-in, the frontend atomically imports this browser's guest shopping session. A permanent D1 claim prevents import into two accounts. Quantities merge up to 20 per exact product configuration; saved products merge; requests transfer; an existing account profile takes precedence. The guest cookie then expires. Signing out starts fresh guest browsing and does not expose the previous account's data.
 
-Auth responses and all personal APIs use `Cache-Control: no-store`; the PWA never caches them. Auth configuration/database failures fail closed instead of silently writing account activity to a new guest owner. Rate limits persist in D1.
+Auth responses and all personal APIs use `Cache-Control: no-store`; the PWA never caches them. Auth configuration/database failures fail closed instead of silently writing account activity to a new guest owner. Rate limits persist in D1. Auth request bodies are limited to 16 KiB of actual bytes before JSON/form parsing, database access or password hashing. Oversized bodies receive HTTP 413, including chunked requests, multibyte payloads and understated `Content-Length` headers.
 
 ## Verification
 
 Run `pnpm run verify:auth`, `pnpm run verify:store`, `pnpm run verify:metadata`, `pnpm run verify:pwa`, and `pnpm exec tsc --noEmit --incremental false` before building. Auth tests exercise installed Better Auth and Drizzle/D1 against SQLite using synthetic local accounts, without external email or Google calls. Test the compiled Worker locally as well; production OAuth and CPU checks remain separate activation requirements.
 
 Local development can use an ignored `.dev.vars` with a local-only signing secret, `BETTER_AUTH_URL=http://127.0.0.1:8787` and `KORA_AUTH_ALLOW_LOCAL=true`. Never enable the local override in production or commit secret files.
+
+### Local implementation versus production activation
+
+| Check | Current evidence |
+|---|---|
+| Password signup/sign-in, salted hashes, logout and expired sessions | Exercised against the installed Better Auth library and a SQLite-backed D1 adapter |
+| Forged cookies/headers, callback redirects, method removal and recovery restrictions | Covered by local regression tests |
+| Persistent signup/sign-in rate limits | Covered across concurrent requests and new auth instances using the D1 adapter |
+| Oversized request protection | Covered for missing/false length headers, UTF-8 bytes and an endless chunked stream that is cancelled at the bound |
+| Guest-to-account ownership and account isolation | Covered by the separate store regression suite |
+| Google consent and a real provider callback | Still requires configured credentials and a live Google test user |
+| Deployed password CPU usage and production account lifecycle | Still requires the signing secret and a live test; a successful local build is not evidence of Free-plan compatibility |
+
+After activation, verify the public `/api/auth/config` endpoint, complete both sign-in methods in a browser, confirm a second browser cannot see the first account's shopping data, then sign out and retry the old session. Check Worker logs for resource-limit failures without recording passwords or session tokens. No paid service or plan upgrade is authorized by this implementation audit.
 
 ## References
 

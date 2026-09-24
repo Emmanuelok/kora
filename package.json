@@ -20,7 +20,11 @@
     "verify:store": "node scripts/verify-store.mjs",
     "verify:variants": "node scripts/verify-variants.mjs",
     "verify:selling-prices": "node scripts/verify-selling-prices.mjs",
-    "verify:galleries": "node scripts/verify-galleries.mjs"
+    "verify:galleries": "node scripts/verify-galleries.mjs",
+    "pricing:audit": "node scripts/audit-selling-price-inputs.mjs",
+    "pricing:template": "node scripts/create-selling-price-template.mjs",
+    "verify:pricing-workflow": "node scripts/verify-pricing-workflow.mjs",
+    "verify:launch-operations": "node scripts/verify-launch-operations.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

@@ -5,6 +5,7 @@ import { drizzle } from 'drizzle-orm/d1';
 import { authSchema } from '../db/auth-schema';
 
 export const DEFAULT_AUTH_ORIGIN = 'https://kora.eo-kingsford.workers.dev';
+export const AUTH_MAX_BODY_BYTES = 16 * 1024;
 
 export interface AuthBindings {
   DB?: D1Database;
@@ -128,6 +129,40 @@ export function createCustomerAuth(bindings: AuthBindings) {
 
 export type CustomerAuth = NonNullable<ReturnType<typeof createCustomerAuth>>;
 
+// Better Auth's fetch adapter parses JSON/form bodies without a size limit.
+// Bound the actual stream before parsing or hashing, including chunked requests
+// and requests whose Content-Length is absent or understates their size.
+async function boundedAuthRequest(request: Request): Promise<Request | null> {
+  if (Number(request.headers.get('content-length')) > AUTH_MAX_BODY_BYTES) {
+    void request.body?.cancel().catch(() => {});
+    return null;
+  }
+  if (!request.body) return request;
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let length = 0;
+  try {
+    while (true) {
+      const chunk = await reader.read();
+      if (chunk.done) break;
+      length += chunk.value.byteLength;
+      if (length > AUTH_MAX_BODY_BYTES) {
+        void reader.cancel().catch(() => {});
+        return null;
+      }
+      chunks.push(chunk.value);
+    }
+  } finally { reader.releaseLock(); }
+  const body = new Uint8Array(length);
+  let offset = 0;
+  for (const chunk of chunks) { body.set(chunk, offset); offset += chunk.byteLength; }
+  const headers = new Headers(request.headers);
+  headers.delete('content-length');
+  // Vinext's Request may come from a different implementation than Workerd's
+  // constructor. Rebuild from the URL instead of cloning a foreign/used body.
+  return new Request(request.url, { method: request.method, headers, body, signal: request.signal, redirect: request.redirect });
+}
+
 export async function handleCustomerAuth(request: Request, bindings: AuthBindings) {
   const capabilities = authCapabilities(bindings);
   const pathname = new URL(request.url).pathname.replace(/\/+$/, '');
@@ -146,9 +181,11 @@ export async function handleCustomerAuth(request: Request, bindings: AuthBinding
   if (request.method !== 'GET' && request.method !== 'HEAD' && request.headers.get('origin') !== origin) {
     return Response.json({ code: 'INVALID_ORIGIN', message: 'Open Kora and try signing in again.' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
   }
-  const auth = createCustomerAuth(bindings)!;
   try {
-    const response = await auth.handler(request);
+    const boundedRequest = await boundedAuthRequest(request);
+    if (!boundedRequest) return Response.json({ code: 'AUTH_REQUEST_TOO_LARGE', message: 'Your sign-in request is too large. Check your details and try again.' }, { status: 413, headers: { 'Cache-Control': 'no-store' } });
+    const auth = createCustomerAuth(bindings)!;
+    const response = await auth.handler(boundedRequest);
     const headers = new Headers(response.headers);
     headers.set('Cache-Control', 'no-store');
     headers.set('Pragma', 'no-cache');

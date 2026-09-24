@@ -4,6 +4,8 @@ Customer pages, bags and new quotation snapshots use `ghPrice`, which reads only
 
 The input audit identifies 2,393 products: 2,330 CAD references, 46 GHS retailer references, 13 USD manufacturer references, one JPY reference and three without an amount/currency. None contains the complete supplier checkout, shipment, customs and merchant tax-policy evidence needed for a final all-in price.
 
+This does not block a quotation-first launch. Keep unapproved products as Price on request, review actual costs for each quotation, and prepare fixed prices for a selected range when the merchant inputs are available. Start with the owner checklist and exact-SKU draft generator in [PRICING-LAUNCH-HANDOFF.md](PRICING-LAUNCH-HANDOFF.md).
+
 ## Calculation
 
 `lib/landed-pricing.mjs` is a private import-time calculator. It totals verified retail cost, original retailer fees, applicable shipment costs, the exact Ghana customs assessment and other allocated costs. It then applies **landed cost × 1.20**, a 20% markup. A 20% markup is not a 20% profit margin. Any additional output taxes are applied only under an explicit reviewed merchant policy.
@@ -49,11 +51,14 @@ node scripts/audit-selling-price-inputs.mjs
 node scripts/import-selling-prices.mjs work/pricing/merchant-costs.json
 ```
 
-The audit writes a private SKU gap list and summary under `work/pricing/`. The importer validates every submitted record and writes `work/pricing/last-import-preview.json`, including the private cost audit. It makes no public price change in preview mode. After reviewing the concrete prices and supporting merchant inputs:
+The audit writes a private SKU gap list and summary under `work/pricing/`. It checks public amount, currency, policy, revision, exact identity and expiry, rejects duplicate records and unexpected public fields, and reports each family's unpriced options. `--require-priced PRODUCT_ID ...` is an optional fixed-price gate for a selected range, not a requirement to price the entire catalogue. `scripts/create-selling-price-template.mjs` creates incomplete private drafts for selected IDs or a real option family, requiring an explicit acquisition route and leaving all costs unset.
+
+The importer validates every submitted record and writes `work/pricing/last-import-preview.json`, including the private cost audit. It makes no public price change in preview mode. After reviewing the concrete prices and supporting merchant inputs:
 
 ```sh
 node scripts/import-selling-prices.mjs work/pricing/merchant-costs.json --apply
 node scripts/verify-selling-prices.mjs
+node scripts/verify-pricing-workflow.mjs
 node scripts/verify-variants.mjs
 node scripts/verify-store.mjs
 ```

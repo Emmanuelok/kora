@@ -29,7 +29,7 @@ registerHooks({
 });
 const sqlite=new DatabaseSync(':memory:');
 sqlite.exec('PRAGMA foreign_keys=ON');
-for(const migration of ['0000_redundant_wolfsbane.sql','0001_customer_auth.sql'])sqlite.exec(fs.readFileSync('drizzle/'+migration,'utf8'));
+for(const migration of ['0000_redundant_wolfsbane.sql','0001_customer_auth.sql','0002_launch_operations.sql'])sqlite.exec(fs.readFileSync('drizzle/'+migration,'utf8'));
 let failSqlContaining='';let batchQueue=Promise.resolve();
 const DB={
  prepare(sql){let values=[];const execute=()=>{if(failSqlContaining&&sql.includes(failSqlContaining))throw new Error('Simulated D1 failure');return{success:true,results:sqlite.prepare(sql).all(...values),meta:{changes:sqlite.prepare('SELECT changes() AS n').get().n}}};return{
@@ -72,7 +72,7 @@ r=await route.POST(req({action:'profile',profile:{name:'Preview QA',city:'Kumasi
 r=await route.POST(req({action:'request',kind:'quote',form:{name:'Preview QA',email:'qa@example.invalid',city:'Kumasi',address:'Test address',paymentPreference:'MTN MoMo'}}));assert.equal(r.status,200);const receipt=await r.json();assert.match(receipt.id,/^KR-/);
 r=await route.GET(req());const saved=await r.json();assert.equal(saved.cart[0].quantity,2);assert.equal(saved.saved[0],catalogue[0].id);assert.equal(saved.profile.city,'Kumasi');assert.equal(saved.requests[0].data.paymentStatus,'No payment collected');assert.equal(saved.requests[0].data.indicativeTotal,ghPrice(catalogue[0])*2);
 const unpriced=catalogue.find(p=>ghPrice(p)===null);r=await route.POST(req({action:'cart',product:unpriced.id,quantity:3}));assert.equal(r.status,200);
-r=await route.POST(req({action:'request',kind:'quote',form:{name:'Mixed basket',email:'qa@example.invalid'}}));assert.equal(r.status,200);const mixedId=(await r.json()).id;const mixed=(await (await route.GET(req())).json()).requests.find(x=>x.id===mixedId);assert.equal(mixed.data.unpricedQuantity,3);assert.equal(mixed.data.indicativeTotal,ghPrice(catalogue[0])*2);assert.equal(mixed.data.items.find(x=>x.id===unpriced.id).indicativeUnitPrice,null);
+r=await route.POST(req({action:'request',kind:'quote',form:{name:'Mixed basket',email:'qa@example.invalid',address:'12 Test Road, Kumasi'}}));assert.equal(r.status,200);const mixedId=(await r.json()).id;const mixed=(await (await route.GET(req())).json()).requests.find(x=>x.id===mixedId);assert.equal(mixed.data.unpricedQuantity,3);assert.equal(mixed.data.indicativeTotal,ghPrice(catalogue[0])*2);assert.equal(mixed.data.items.find(x=>x.id===unpriced.id).indicativeUnitPrice,null);
 const assertEmptySession=data=>{assert.deepEqual(data.cart,[]);assert.deepEqual(data.saved,[]);assert.deepEqual(data.profile,{});assert.deepEqual(data.requests,[]);assert.equal(data.email,null)};
 const otherCookie='kora_session=aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa';
 r=await route.GET(req(null,{headers:{Cookie:otherCookie}}));assertEmptySession(await r.json());
@@ -120,7 +120,7 @@ for(const separator of [';','; ',';\t']){
  assert.equal(r.headers.get('set-cookie'),null);assert.deepEqual(await r.json(),guestAfter);
 }
 r=await route.POST(req({action:'save',product:catalogue[0].id,value:true},{headers:{Origin:'https://outside.example'}}));assert.equal(r.status,403);
-r=await route.POST(req({action:'request',kind:'service',form:{name:'Preview QA',email:'bad-address'}}));assert.equal(r.status,400);
+r=await route.POST(req({action:'request',kind:'service',form:{name:'Preview QA',email:'bad-address',message:'Please help set up this device.'}}));assert.equal(r.status,400);assert.match((await r.json()).error,/valid email/);
 
 // Account tests exercise actual Better Auth-signed sessions, not forged user mocks.
 Object.assign(globalThis.__koraStoreTestBindings,{
@@ -261,7 +261,7 @@ assert.notEqual(ghPrice(pricedVariants[0].product),ghPrice(pricedVariants[1].pro
 const variantBuyer=await signIn('variants@example.com','Variant buyer');
 for(const item of pricedVariants)await mutate(variantBuyer,{action:'cart',product:item.product.id,quantity:item.quantity});
 assert.equal((await getState(variantBuyer)).cart.length,2,'Different storage SKUs remain separate bag lines');
-r=await mutate(variantBuyer,{action:'request',kind:'quote',form:{name:'Variant buyer',email:'variants@example.com',indicativeUnitPrice:0,options:{Storage:'attacker-supplied'}}});
+r=await mutate(variantBuyer,{action:'request',kind:'quote',form:{name:'Variant buyer',email:'variants@example.com',address:'24 Test Avenue, Accra',indicativeUnitPrice:0,options:{Storage:'attacker-supplied'}}});
 const variantQuoteId=(await r.json()).id;
 const variantQuote=(await getState(variantBuyer)).requests.find(request=>request.id===variantQuoteId).data;
 assert.equal(variantQuote.items.length,2);
@@ -281,13 +281,14 @@ const historyFunction=storeSource.statements.find(node=>ts.isFunctionDeclaration
 assert(historyFunction,'RequestList must remain available for the history regression');
 const historyJs=ts.transpileModule(historyFunction.getText(storeSource),{compilerOptions:{target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.React}}).outputText;
 const StoreContext=React.createContext(null);
-const RequestList=new Function('React','useContext','useState','StoreContext','money','ChevronDown','Empty',historyJs+';return RequestList;')(React,React.useContext,React.useState,StoreContext,priceModule.money,()=>null,()=>null);
+const {requestKindLabels}=await import('../lib/request-status.ts');
+const RequestList=new Function('React','useContext','useState','useEffect','StoreContext','money','ChevronDown','Download','Empty','requestKindLabels',historyJs+';return RequestList;')(React,React.useContext,React.useState,React.useEffect,StoreContext,priceModule.money,()=>null,()=>null,()=>null,requestKindLabels);
 const historyRecord={id:'KR-HISTORY',created:'2026-01-01T00:00:00.000Z',status:'Request received',data:{name:'History QA',city:'Accra',service:'Device setup & data transfer'}};
 const renderHistory=kind=>renderToStaticMarkup(React.createElement(StoreContext.Provider,{value:{state:{requests:[{...historyRecord,kind}]},loaded:true}},React.createElement(RequestList)));
 const legacyQuoteMarkup=renderHistory('quote');
 assert.match(legacyQuoteMarkup,/<strong>Product quotation<\/strong>/);
 assert(!legacyQuoteMarkup.includes('Device setup'));
-assert.match(renderHistory('service'),/<strong>Device setup &amp; data transfer<\/strong>/);
+assert.match(renderHistory('service'),/Device setup &amp; data transfer/);
 const ids=new Set(catalogue.map(p=>p.id));assert.equal(ids.size,catalogue.length);assert(catalogue.length>=1000);for(const p of catalogue){assert(p.name&&p.image&&p.sourceUrl&&p.department&&p.category);assert(Number.isFinite(p.priceCAD)&&p.priceCAD>=0)}
 console.log(JSON.stringify({passed:true,checks:['catalogue integrity','stale and missing Ghana prices stay unpriced','mixed quote totals exclude unpriced lines','secure guest identity cookie and no-store responses','cart persistence','invalid quantities and missing products','wishlist persistence','profile persistence','quote receipt and recalculated total','no-payment status','cross-session isolation across all four entities','forged identity headers cannot read or mutate legacy user data','forged identity headers preserve guest ownership and never authenticate email','new sessions remain distinct with identical forged headers','invalid cookies rotate and valid cookies survive ordinary separators','cross-origin rejection','invalid email rejection','quote history ignores stale service labels while service requests retain theirs','actual signed accounts remain isolated despite forged identity headers','guest claim requires authentication and GET never performs the merge','atomic guest merge preserves requests, combines bags with quantity cap and preserves an existing profile','same-account and cross-account claim replays cannot duplicate or steal records','retired guest cookies rotate and cannot read or mutate account data','concurrent different-account claims have exactly one owner; retries are idempotent','failed D1 merge rolls back the claim guard and every record then permits retry','auth configuration and database outages fail closed while anonymous browsing remains available','quotes snapshot exact server-selected variants and calculate GHS totals in integer pesewas','missing and null origins cannot mutate account state'],products:catalogue.length,departments:new Set(catalogue.map(p=>p.department)).size,categories:new Set(catalogue.map(p=>p.department+'|'+p.category)).size,transport:'Actual Better Auth session verification, actual store route/helpers, SQLite with serialized transactional D1 batches'},null,2));
 sqlite.close();delete globalThis.__koraStoreTestBindings;

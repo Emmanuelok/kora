@@ -26,7 +26,7 @@ registerHooks({
   },
 });
 
-const { createCustomerAuth, handleCustomerAuth, authCapabilities, resolveAuthOrigin, DEFAULT_AUTH_ORIGIN } = await import('../lib/auth-core.ts');
+const { createCustomerAuth, handleCustomerAuth, authCapabilities, resolveAuthOrigin, DEFAULT_AUTH_ORIGIN, AUTH_MAX_BODY_BYTES } = await import('../lib/auth-core.ts');
 const { getCustomerSession } = await import('../lib/auth.ts');
 const sqlite = new DatabaseSync(':memory:');
 sqlite.exec('PRAGMA foreign_keys = ON;');
@@ -76,6 +76,52 @@ assert.equal(response.status, 503);
 assert.equal(response.headers.get('cache-control'), 'no-store');
 assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_user').get().n, 0);
 checks.push('password capability requires configured D1 and secret; no email provider is needed');
+
+// Reject oversized actual streams before the auth adapter allocates a parsed
+// body, accesses D1 or performs expensive password hashing.
+let bodyGuardDbAccess = 0;
+const bodyGuardEnv = { ...env, DB: { prepare() { bodyGuardDbAccess++; throw new Error('Body guard must run before D1'); } } };
+for (const headers of [{}, { 'Content-Length': '1' }]) {
+  response = await handleCustomerAuth(request('/sign-up/email', { email: 'large@example.com', name: 'Large input', password, extra: 'x'.repeat(AUTH_MAX_BODY_BYTES) }, { headers }), bodyGuardEnv);
+  assert.equal(response.status, 413);
+  assert.equal((await response.json()).code, 'AUTH_REQUEST_TOO_LARGE');
+  assert.equal(response.headers.get('cache-control'), 'no-store');
+  assert(!sessionCookie(response));
+}
+const multibyteBody = JSON.stringify({ email: 'large@example.com', password, name: 'é'.repeat(AUTH_MAX_BODY_BYTES / 2) });
+assert(multibyteBody.length < AUTH_MAX_BODY_BYTES);
+response = await handleCustomerAuth(new Request(origin + '/api/auth/sign-up/email', {
+  method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: multibyteBody,
+}), bodyGuardEnv);
+assert.equal(response.status, 413, 'The bound is UTF-8 bytes, not JavaScript characters');
+let pulled = 0, cancelled = false;
+const chunked = new ReadableStream({
+  pull(controller) { pulled++; controller.enqueue(new Uint8Array(1024)); },
+  cancel() { cancelled = true; },
+}, { highWaterMark: 0 });
+response = await handleCustomerAuth(new Request(origin + '/api/auth/sign-up/email', {
+  method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' }, body: chunked, duplex: 'half',
+}), bodyGuardEnv);
+assert.equal(response.status, 413);assert(cancelled);assert.equal(pulled, AUTH_MAX_BODY_BYTES / 1024 + 1);
+assert.equal(bodyGuardDbAccess, 0);
+assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_user').get().n, 0);
+checks.push('auth request streams are bounded before D1/parsing/hashing, including chunked, multibyte and false-length bodies');
+
+// Vinext can pass a Request from another implementation into Workerd's native
+// Request constructor. Native constructors stringify that foreign instance as
+// "[object Request]" instead of accepting it as a clonable native Request.
+const incoming = request('/sign-up/email', { email: 'foreign-request@example.com', password: 'short', name: 'Foreign request' });
+const foreignRequest = {
+  [Symbol.toStringTag]: 'Request',
+  url: incoming.url, method: incoming.method, headers: incoming.headers,
+  body: incoming.body, signal: incoming.signal, redirect: incoming.redirect,
+};
+assert.throws(() => new Request(foreignRequest, { method: 'POST', body: '{}' }), /URL/);
+response = await handleCustomerAuth(foreignRequest, env);
+assert.equal(response.status, 400, 'A framework Request must reach Better Auth validation, not fail with AUTH_UNAVAILABLE');
+assert.equal((await response.json()).code, 'PASSWORD_TOO_SHORT');
+assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_user').get().n, 0);
+checks.push('framework Request implementations are rebuilt from their URL and reach actual Better Auth validation');
 
 for (const invalidPassword of ['short', 'x'.repeat(129)]) {
   response = await signup('invalid-password@example.com', { password: invalidPassword });

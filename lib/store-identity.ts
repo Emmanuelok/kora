@@ -29,6 +29,8 @@ export async function claimGuest(db: D1Database, guestOwner: string, accountOwne
     db.prepare(`INSERT OR IGNORE INTO saved(owner,product) SELECT ?,product FROM saved WHERE owner=? AND ${guard}`).bind(accountOwner, guestOwner, guestOwner, accountOwner),
     db.prepare(`INSERT OR IGNORE INTO profiles(owner,data) SELECT ?,data FROM profiles WHERE owner=? AND ${guard}`).bind(accountOwner, guestOwner, guestOwner, accountOwner),
     db.prepare(`UPDATE requests SET owner=? WHERE owner=? AND ${guard}`).bind(accountOwner, guestOwner, guestOwner, accountOwner),
+    db.prepare(`INSERT INTO request_keys(owner,key,request_id,body_hash,created) SELECT ?,key,request_id,body_hash,created FROM request_keys WHERE owner=? AND ${guard} ON CONFLICT(owner,key) DO NOTHING`).bind(accountOwner, guestOwner, guestOwner, accountOwner),
+    db.prepare(`DELETE FROM request_keys WHERE owner=? AND ${guard}`).bind(guestOwner, guestOwner, accountOwner),
     ...['basket', 'saved', 'profiles'].map(table => db.prepare(`DELETE FROM ${table} WHERE owner=? AND ${guard}`).bind(guestOwner, guestOwner, accountOwner)),
   ]);
 }

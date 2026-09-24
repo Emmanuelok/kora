@@ -29,7 +29,7 @@ In Cloudflare **Workers & Pages → Create application → Connect GitHub**, aut
 | Build variable `NODE_VERSION` | `24.19.0` |
 | Build variable `PNPM_VERSION` | `11.25.0` |
 
-Dependencies are pinned in `pnpm-lock.yaml`; install with `pnpm install --frozen-lockfile`. No application secrets are currently required. Runtime database configuration comes from `wrangler.json`, not from build variables.
+Dependencies are pinned in `pnpm-lock.yaml`; install with `pnpm install --frozen-lockfile`. Guest browsing and requests work without application secrets. Customer authentication needs the runtime settings in [Cloudflare authentication setup](CLOUDFLARE-AUTH.md); the team inbox additionally requires `KORA_ADMIN_USER_IDS`. Runtime database configuration comes from `wrangler.json`, not from build variables.
 
 The Vite plugin reads the source Wrangler configuration and produces `dist/server/wrangler.json`. Deploy that compiled configuration, which contains the bundled Worker and asset directory. Do not deploy the source entry directly.
 
@@ -51,10 +51,14 @@ The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-u
 
 The initial SQL was executed manually on the new remote database. Do not rerun `drizzle/0000_redundant_wolfsbane.sql` on it: its tables already exist. Wrangler's migration ledger has not been initialized for that manual migration. Establish a migration baseline before adopting `wrangler d1 migrations apply` for future migrations.
 
+The additive `0001_customer_auth.sql` schema is present in production. On 24 September 2026, `0002_launch_operations.sql` was also applied through the D1 console and its four tables and two indexes were verified. It adds duplicate-request protection, request limits, update versions and customer-visible update history. Existing customer rows are preserved. Apply this migration **before** deploying code that reads the new tables. It is safe to reapply, but do not rerun the initial non-idempotent migration.
+
 For a fresh local database only:
 
 ```sh
 pnpm exec wrangler d1 execute DB --local --config wrangler.json --persist-to .wrangler/state --file drizzle/0000_redundant_wolfsbane.sql
+pnpm exec wrangler d1 execute DB --local --config wrangler.json --persist-to .wrangler/state --file drizzle/0001_customer_auth.sql
+pnpm exec wrangler d1 execute DB --local --config wrangler.json --persist-to .wrangler/state --file drizzle/0002_launch_operations.sql
 pnpm start
 ```
 
@@ -66,7 +70,7 @@ Validation on 24 September 2026 passed: pinned pnpm 11.25.0 frozen-lockfile inst
 
 The live customer journey passed search, product details, gallery navigation, wishlist persistence, bag quantity persistence, required-field validation, quotation submission, and same-browser request tracking after reload. Synthetic request `KR-C1924125` is clearly labelled “KORA TEST — ignore” and “Do not fulfil or contact”; it contains two Sony WH-1000XM6 units and remains as test evidence. A separate cookie-free guest session returned no saved items, cart, profile name or requests. Testing found an incorrect service label on quotation history; quotation rendering now explicitly uses “Product quotation”, and quote forms omit the unrelated service field. A regression covers legacy quotation records and real service requests.
 
-Payments, stock, shipping, appointment confirmation and customer notifications remain unconnected. Catalogue research automation was external to the original Site and has not been connected to this repository; the updates page now states that updates are manual. Product photographs still largely use external source URLs.
+The owner selected a quotation-first commercial launch; online payments are deferred. The private `/admin` workspace supports request review, one complete GHS quotation with expiry, and customer-visible status updates. It remains locked until authentication and an immutable account-ID allowlist are configured. See [launch checklist](LAUNCH-CHECKLIST.md) and [quotation operations](QUOTE-OPERATIONS.md). Payments, live stock, shipping integrations, appointment confirmation and outbound customer notifications remain unconnected. Catalogue research automation was external to the original Site and has not been connected to this repository; the updates page now states that updates are manual. Product photographs still largely use external source URLs.
 
 ## Sharing previews and installable app
 
