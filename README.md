@@ -70,6 +70,6 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 
 The product catalogue is in `data/products.json`. The four D1 tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights.
 
-The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer sign-in, cross-device access and account recovery are not implemented. The original Site was owner-private; public Worker and preview routes remain disabled until the desired access policy is configured. See [hosting guidance](docs/HOSTING.md).
+The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer sign-in, cross-device access and account recovery are not implemented. Cloudflare Access protects all Worker traffic and permits only members of the owner's Cloudflare account. Preview builds and URLs are disabled. See [hosting guidance](docs/HOSTING.md).
 
 `CATALOGUE-UPDATES.md` describes the existing ChatGPT research/update task. That schedule is external to GitHub and does not automatically follow this repository. Older snapshot statistics in `BUILD-NOTES.md`, `data/provenance.json` and `data/quality-summary.json` are historical; use current catalogue data for current counts.

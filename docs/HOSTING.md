@@ -9,8 +9,9 @@ KORA serves its frontend and API together on Cloudflare Workers, with Cloudflare
 - D1 database created: `kora-db` (`983dc2a9-1cb3-4af0-b656-b1c6db1d7aab`), binding `DB`.
 - Initial schema applied through the D1 console on 24 September 2026. Confirmed tables: `basket`, `profiles`, `requests`, `saved`; confirmed index: `requests_owner_created`.
 - No original customer data was transferred: all four source tables were empty at retrieval.
-- GitHub is connected in the Cloudflare dashboard and `Emmanuelok/kora` is selected. The deployment form is prepared; deployment is pending approval of Cloudflare's deployment-token and access settings. No live independent website URL has been verified yet.
-- `workers_dev: false`, `preview_urls: false`, and `routes: []` prevent publishing an unprotected endpoint while access is being configured. The original Site was owner-private.
+- GitHub is connected to the Worker. Production builds use `main`, the `kora-builds` deployment token, and the settings below. Preview builds are disabled.
+- Cloudflare Access is configured for **All traffic**, with the **Cloudflare account members** allow policy and 24-hour sessions. The saved Worker policy requires login on every production and preview URL. Its Access application ID is `0276be08-5cc2-4964-ae2a-7e5c9392ec8e`.
+- `workers_dev: true` enables the production URL behind that saved Access protection. `preview_urls: false` and `routes: []` keep preview URLs and custom routes disabled. Do not remove the Access application while the production URL is enabled.
 
 The account and database IDs are resource identifiers, not credentials. Do not commit API tokens or session secrets.
 
@@ -42,7 +43,7 @@ CLI deployment additionally requires an authorized Cloudflare login/token. The d
 
 ## Access and sessions
 
-Before enabling a website URL, choose its audience. For an owner-only test, configure Cloudflare Zero Trust/Access and protect both the production and preview hostnames. For a public storefront preview, explicitly enable `workers_dev` after approving public access, then rebuild and deploy. No custom domain has been selected.
+The approved audience is members of the owner's Cloudflare account. The Worker-level Access application protects **All traffic**, including every associated hostname, and is configured separately from Wrangler. The production route was enabled only after verifying that saved policy in the dashboard. Removing Access would expose the enabled route; public launch requires a separate access-policy decision. No custom domain has been selected.
 
 The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-user-email`. Cart, saved items, profile and requests belong to a random guest cookie for this browser. It is HttpOnly, SameSite=Lax, Secure on HTTPS, and expires after 30 days. Clearing cookies, changing browsers or cookie expiry loses access to the earlier session. Customer sign-in and account recovery are not implemented. Cloudflare Access can protect the entire preview but is not customer account functionality.
 
