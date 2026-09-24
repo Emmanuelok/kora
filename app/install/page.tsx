@@ -51,7 +51,7 @@ export default function InstallPage() {
           <div className="kora-install-benefit-grid">
             <article><span className="kora-install-feature-icon"><Compass size={25} aria-hidden="true" /></span><span className="kora-install-feature-number">01</span><h3>Straight to discovery.</h3><p>Launch from your home screen or dock. Browse technology, appliances, gaming and more in one place.</p></article>
             <article><span className="kora-install-feature-icon"><Bookmark size={25} aria-hidden="true" /></span><span className="kora-install-feature-number">02</span><h3>A space of its own.</h3><p>On supported devices, Kora opens in its own window, so you can focus on finding your next favourite.</p></article>
-            <article><span className="kora-install-feature-icon"><ShieldCheck size={25} aria-hidden="true" /></span><span className="kora-install-feature-number">03</span><h3>Simple by design.</h3><p>No app-store account or customer sign-in. You choose when to install and when to refresh for an update.</p></article>
+            <article><span className="kora-install-feature-icon"><ShieldCheck size={25} aria-hidden="true" /></span><span className="kora-install-feature-number">03</span><h3>Simple by design.</h3><p>No app-store account required. Browsing is always open. You choose when to install and when to refresh for an update.</p></article>
           </div>
         </section>
 
@@ -64,7 +64,7 @@ export default function InstallPage() {
           </div>
         </section>
 
-        <section className="kora-install-good-to-know" aria-labelledby="know-heading"><div><Wifi size={25} aria-hidden="true" /><h2 id="know-heading">A quick heads-up.</h2></div><p><strong>Keep a connection handy.</strong> Browsing, product photos, saved items and sending or tracking requests need internet. If you lose signal, Kora shows a helpful offline screen; it does not send requests in the background.</p><p><strong>Your browser session matters.</strong> Installing may open a separate session on some devices. Saved items and requests don’t sync across browsers or devices. Keep using the same session to return to them. <a href="/help/privacy">How your information works<ArrowUpRight size={14} aria-hidden="true" /></a></p></section>
+        <section className="kora-install-good-to-know" aria-labelledby="know-heading"><div><Wifi size={25} aria-hidden="true" /><h2 id="know-heading">A quick heads-up.</h2></div><p><strong>Keep a connection handy.</strong> Browsing, product photos, saved items and sending or tracking requests need internet. If you lose signal, Kora shows a helpful offline screen; it does not send requests in the background.</p><p><strong>Your browser session matters.</strong> Installing may open a separate session on some devices. Guest saved items and requests stay in that browser. Sign in to your Kora account to access your shopping across devices when account sign-in is available. <a href="/help/privacy">How your information works<ArrowUpRight size={14} aria-hidden="true" /></a></p></section>
 
         <section className="kora-install-bottom"><Image src="/icons/kora-192.png" width={72} height={72} unoptimized alt="Kora app icon" /><div><p>GOOD TECH. GREAT POSSIBILITIES.</p><h2>Your next favourite is waiting.</h2></div><a href="/shop">Explore Kora<ArrowRight size={20} aria-hidden="true" /></a></section>
       </main>

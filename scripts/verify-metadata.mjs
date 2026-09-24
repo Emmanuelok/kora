@@ -68,7 +68,7 @@ assert.equal(filtered.metadata.robots.index, false);
 assert.equal(filtered.metadata.alternates.canonical, `${SITE_ORIGIN}/shop`);
 assert.equal(render(['shop'], { department: '<script>injected</script>' }).metadata.title, render(['shop']).metadata.title);
 
-for (const route of ['account', 'cart', 'checkout', 'saved', 'track', 'compare']) {
+for (const route of ['account', 'cart', 'checkout', 'saved', 'track', 'compare', 'sign-in', 'sign-up']) {
   const { metadata, html } = render([route], { name: 'Private Person', email: 'private@example.com' });
   assert.equal(metadata.robots.index, false, route);
   assert.equal(metadata.robots.follow, false, route);
@@ -102,4 +102,4 @@ const productHead = render(['product', category.id]);
 assert(productHead.html.includes(' | KORA Ghana</title>'));
 assert(!productHead.html.includes(' | KORA Ghana | KORA Ghana'));
 
-console.log(JSON.stringify({ passed: true, publicRoutes: publicRoutes.length + 1, productRoutes: products.length, privateRoutes: 6, unknownRoutes: 5, renderer: 'Installed Vinext metadata renderer', verified: ['canonical origin validation', 'Open Graph and Twitter cards', 'Apple/PWA metadata', 'route titles', 'query privacy', 'guest session noindex', 'product images and fallback'] }, null, 2));
+console.log(JSON.stringify({ passed: true, publicRoutes: publicRoutes.length + 1, productRoutes: products.length, privateRoutes: 8, unknownRoutes: 5, renderer: 'Installed Vinext metadata renderer', verified: ['canonical origin validation', 'Open Graph and Twitter cards', 'Apple/PWA metadata', 'route titles', 'query privacy', 'guest session noindex', 'product images and fallback'] }, null, 2));

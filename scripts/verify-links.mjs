@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const products=JSON.parse(fs.readFileSync('data/products.json','utf8'));
 const source=fs.readFileSync('app/store.tsx','utf8');
-const pages=new Set(['/','/shop','/departments','/saved','/compare','/cart','/checkout','/account','/track','/services','/trade-in','/business','/advisor','/brands','/collections','/new-releases','/updates']);
+const pages=new Set(['/sign-in','/sign-up','/install','/','/shop','/departments','/saved','/compare','/cart','/checkout','/account','/track','/services','/trade-in','/business','/advisor','/brands','/collections','/new-releases','/updates']);
 const staticLinks=[...source.matchAll(/href="(\/[^"{}]*)"/g)].map(m=>m[1]);
 const downloads=new Set(['/catalogue-inventory.csv','/catalogue-gallery-gaps.csv']);
 for(const link of staticLinks){const path=link.split('?')[0];assert(pages.has(path)||(path.startsWith('/product/')&&products.some(p=>path==='/product/'+p.id))||path.startsWith('/help/')||path==='/help'||(downloads.has(path)&&fs.existsSync('public'+path)),`Unimplemented link ${link}`)}

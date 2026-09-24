@@ -16,6 +16,13 @@ for(const [id,photos] of Object.entries(galleries)){
 assert.equal(coverage.totalProducts,catalogue.length);
 assert.equal(coverage.productsWithMultipleImages,Object.values(galleries).filter(p=>p.length>1).length);
 assert.equal(coverage.galleryPhotos,Object.values(galleries).reduce((n,p)=>n+p.length,0));
+const visibleCounts=catalogue.map(p=>p.imageVerificationStatus==='under_review'?0:(galleries[p.id]?.length||1));
+assert.equal(coverage.requiredImagesPerProduct,5);
+assert.equal(coverage.productsWithFiveOrMoreImages,visibleCounts.filter(n=>n>=5).length);
+assert.equal(coverage.productsAwaitingFiveImages,visibleCounts.filter(n=>n<5).length);
+assert.equal(coverage.minimumAdditionalImagesRequired,visibleCounts.reduce((sum,n)=>sum+Math.max(0,5-n),0));
+assert.equal(coverage.complete,visibleCounts.every(n=>n>=5),'Completion must mean five distinct images for every product');
+assert.equal(coverage.productsWithFiveOrMoreImages+coverage.productsAwaitingFiveImages,catalogue.length);
 assert.equal(Object.keys(previews).length,coverage.productsWithMultipleImages);
 for(const [id,preview] of Object.entries(previews)){assert.equal(preview.count,galleries[id].length);assert.equal(preview.alternate,galleries[id][1].url)}
 globalThis.__galleryTest={catalogue,galleries};
@@ -29,5 +36,6 @@ let r=await GET(req(multi));assert.equal(r.status,200);let data=await r.json();a
 const fallback=catalogue.find(p=>!galleries[p.id]);r=await GET(req(fallback.id));data=await r.json();assert.equal(data.total,1);assert.equal(data.images[0].url,fallback.image);
 for(const p of catalogue.filter(p=>p.imageVerificationStatus==='under_review')){r=await GET(req(p.id));data=await r.json();assert.equal(data.total,0);assert.deepEqual(data.images,[])}
 assert(!fs.readFileSync('app/store.tsx','utf8').includes("from '../data/product-galleries"),'Gallery metadata remains server-only');
-console.log(JSON.stringify({passed:true,checks:['stable product IDs','distinct source image identities','source URLs and dates','truthful coverage counts','multi-photo API','single-photo fallback','unknown product 404'],...coverage},null,2));
+console.log(JSON.stringify({passed:true,checks:['stable product IDs','distinct source image identities','source URLs and dates','five-image coverage and honest incompleteness','multi-photo API','single-photo fallback','unknown product 404'],...coverage},null,2));
 delete globalThis.__galleryTest;
+if(process.argv.includes('--require-five'))assert.equal(coverage.productsAwaitingFiveImages,0,`${coverage.productsAwaitingFiveImages} products still require verified photos before the five-image target is complete`);

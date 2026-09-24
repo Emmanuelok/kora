@@ -81,17 +81,19 @@ const publicPages: Record<string, PageCopy> = {
   '/updates': { title: 'New possibilities. Verified sources.', description: 'Read KORA’s catalogue update history, product sourcing notes and image coverage. Catalogue updates are currently checked manually.' },
   '/help': { title: 'Clear answers. Real support.', description: 'Learn how the KORA catalogue works, how to request a quotation and what to confirm before purchasing.' },
   '/help/catalogue': { title: 'About the KORA catalogue', description: 'Understand KORA’s product catalogue, dated price references and quotation process. Final prices and availability require confirmation.' },
-  '/help/privacy': { title: 'Privacy & terms', description: 'Learn how KORA’s guest browser sessions store saved products, shopping bags and enquiries, and read the preview’s privacy and purchase information.' },
+  '/help/privacy': { title: 'Privacy & terms', description: 'Learn how KORA accounts and guest sessions store saved products, shopping bags and enquiries, and read the preview’s privacy and purchase information.' },
   '/help/delivery': { title: 'Delivery information', description: 'Learn how delivery interest is captured across Ghana. Confirm your address, coverage, fees and timing in your final KORA quotation.' },
   '/install': { title: 'Your next favourite. One tap away.', description: 'Add KORA to your home screen for an app-like experience. Discover tech, home and everyday life with a quicker way back to the catalogue.' },
 };
 
 const privatePages: Record<string, PageCopy> = {
-  '/account': { title: 'My KORA', description: 'Your KORA guest session, profile and requests in this browser.' },
-  '/cart': { title: 'Your shopping bag', description: 'Review the products in your KORA guest shopping bag.' },
+  '/sign-in': { title: 'Welcome back to KORA', description: 'Sign in securely to keep your KORA bag, saved products and requests together.' },
+  '/sign-up': { title: 'Make yourself at home', description: 'Create your KORA account with Google or a secure email link.' },
+  '/account': { title: 'My KORA', description: 'Your KORA account, shopping profile and requests.' },
+  '/cart': { title: 'Your shopping bag', description: 'Review the products in your KORA shopping bag.' },
   '/checkout': { title: 'Request a quotation', description: 'Request a KORA quotation for the products in your shopping bag.' },
-  '/saved': { title: 'Your saved collection', description: 'Return to your favourites saved in this browser’s KORA session.' },
-  '/track': { title: 'Track your requests', description: 'Review requests saved in this browser’s KORA guest session.' },
+  '/saved': { title: 'Your saved collection', description: 'Return to your favourite products saved with KORA.' },
+  '/track': { title: 'Track your requests', description: 'Review your KORA quote and service requests.' },
   '/compare': { title: 'The details, side by side', description: 'Compare your selected KORA products in this browser.' },
 };
 

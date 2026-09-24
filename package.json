@@ -15,12 +15,17 @@
     "assets:brand": "node scripts/generate-brand-assets.mjs",
     "verify:metadata": "node scripts/verify-metadata.mjs",
     "verify:pwa": "node scripts/verify-pwa.mjs",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "verify:auth": "node scripts/verify-auth.mjs",
+    "verify:store": "node scripts/verify-store.mjs",
+    "verify:variants": "node scripts/verify-variants.mjs",
+    "verify:galleries": "node scripts/verify-galleries.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@hookform/resolvers": "^5.7.1",
     "@shadcn/react": "^0.3.0",
+    "better-auth": "1.7.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "^1.1.1",

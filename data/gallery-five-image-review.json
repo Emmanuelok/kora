@@ -1,0 +1,483 @@
+{
+  "checkedAt": "2026-09-24",
+  "source": "Exact-SKU source arrays in data/gallery-source-review.json; downloaded views inspected on contact sheets",
+  "products": {
+    "bbca-19504344": {
+      "acceptedAdditionalViews": [
+        4,
+        5
+      ],
+      "rejectedViews": {
+        "3": "Same board angle already present in the package composite; avoid repeating the photograph."
+      },
+      "note": "Distinct board reverse-angle and connector edge accepted; source cannot supply five distinct views after deduplication.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/msi-pro-b760m-p-matx-socket-1700-ddr5-motherboard-for-12-13-14th-gen-intel-cpus/19504344",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19504/19504344_3.png",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19504/19504344_4.png"
+      ]
+    },
+    "bbca-19741478": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "rejectedViews": {
+        "7": "Accessory I/O shield without the motherboard."
+      },
+      "note": "Distinct board angles and connector-edge photograph match model layout and colour.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/asus-prime-b550-plus-ac-hes-wi-fi-5-am4-ddr4-motherboard-for-amd-ryzen-cpus/19741478",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19741/19741478_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19741/19741478_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19741/19741478_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19741/19741478_5.jpg"
+      ]
+    },
+    "bbca-19409769": {
+      "acceptedAdditionalViews": [
+        4,
+        5,
+        6
+      ],
+      "note": "Opposite three-quarter angle, top perspective and connector edge; same TUF model and configuration.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/asus-tuf-gaming-b650e-plus-wi-fi-6e-am5-ddr5-motherboard-for-amd-ryzen-9000-8000-7000-series-cpus/19409769",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/194/19409/19409769_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/194/19409/19409769_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/194/19409/19409769_5.jpg"
+      ]
+    },
+    "bbca-18906093": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        8
+      ],
+      "note": "Front with mesh removed, side panel and open chassis perspective match black 4000D ARGB case. Avoided assembled-PC showcase views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/corsair-frame-4000d-argb-mid-tower-atx-computer-case-black/18906093",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18906/18906093_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18906/18906093_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18906/18906093_7.jpg"
+      ]
+    },
+    "bbca-17929700": {
+      "acceptedAdditionalViews": [
+        4,
+        6,
+        8
+      ],
+      "note": "Side, top with mesh removed and front are distinct views of the black 3500X.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/corsair-3500x-mid-tower-atx-computer-case-black/17929700",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17929/17929700_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17929/17929700_5.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17929/17929700_7.jpg"
+      ]
+    },
+    "bbca-15820057": {
+      "acceptedAdditionalViews": [
+        5,
+        6,
+        8
+      ],
+      "note": "Front, side and top I/O detail match empty black 7000D Airflow chassis; avoided additional assembled-PC showcase views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/corsair-7000d-airflow-full-tower-atx-computer-case-black/15820057",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/158/15820/15820057_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/158/15820/15820057_5.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/158/15820/15820057_7.jpg"
+      ]
+    },
+    "bbca-14683402": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        6
+      ],
+      "note": "Distinct opposite-side perspective, low-angle connector view and back face of the grey T7.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/samsung-t7-1tb-usb-3-2-external-solid-state-drive-mu-pc1t0t-am-grey-english/14683402",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/146/14683/14683402_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/146/14683/14683402_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/146/14683/14683402_5.jpg"
+      ]
+    },
+    "bbca-19866223": {
+      "acceptedAdditionalViews": [
+        6
+      ],
+      "rejectedViews": {
+        "2": "Packaging comparison, already excluded in previous review.",
+        "4": "Laptop/app promotion without a distinct SSD view.",
+        "5": "Desktop promotion without a distinct SSD view."
+      },
+      "note": "Installed SSD photograph accepted; source yields three suitable distinct product photos.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/western-digitalblack-2tb-sn7100-nvme-internal-gaming-ssd-solid-state-drive-wds200t4x0e/19866223",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19866/19866223_5.jpeg"
+      ]
+    },
+    "bbca-14916470": {
+      "acceptedAdditionalViews": [
+        4,
+        5,
+        6
+      ],
+      "note": "Distinct contextual product photographs with the same Extreme enclosure: lock-scale scene, vehicle tyre scene, water-resistance scene.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/sandisk-extreme-2tb-external-solid-state-drive-sdssde61-2t00-g25/14916470",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14916/14916470_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14916/14916470_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14916/14916470_5.jpg"
+      ]
+    },
+    "bbca-19826455": {
+      "acceptedAdditionalViews": [
+        4,
+        5,
+        7
+      ],
+      "note": "High/front angle, bottom/front angle and rear port face of the same ASUS router; non-product service graphics excluded.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/asus-rog-strix-wireless-tri-band-wi-fi-7-gaming-router-gs-be12000/19826455",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19826/19826455_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19826/19826455_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19826/19826455_6.jpg"
+      ]
+    },
+    "bbca-19945069": {
+      "acceptedAdditionalViews": [
+        3,
+        7,
+        8
+      ],
+      "note": "Front view, front/side dimension composite with new side view, and included-contents image; same four-antenna AC1200 model.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/wavlink-ac1200-wireless-router-dual-band-wifi-router-with-gigabit-wan-lan-port-supports-mu-mimo-beamforming-lnapa-ipv6-router-ap-repeater-modes-for-home-gaming-black/19945069",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19945/19945069_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19945/19945069_6.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19945/19945069_7.jpeg"
+      ]
+    },
+    "bbca-19193195": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        5
+      ],
+      "note": "Side, rear ports and physical desk-context views of RS100.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/netgear-nighthawk-wireless-be3600-dual-band-wi-fi-7-router-rs100-100cns/19193195",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/191/19193/19193195_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/191/19193/19193195_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/191/19193/19193195_4.jpg"
+      ]
+    },
+    "bbca-19946256": {
+      "acceptedAdditionalViews": [
+        7,
+        9
+      ],
+      "note": "Wall/pole mounting configurations and exact included contents accepted. Other promo images reuse the same frontal rendering or do not show product; source remains below five.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/wavlink-ax3000-wifi6-outdoor-access-point-dual-band-wifi-router-with-48v-poe-ip67-weatherproof-15kv-esd-protection-wireless-router-supports-mu-mimo-beamforming-white/19946256",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19946/19946256_6.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19946/19946256_8.jpeg"
+      ]
+    },
+    "bbca-19949006": {
+      "acceptedAdditionalViews": [
+        3,
+        5,
+        7
+      ],
+      "note": "Distinct head-on, lower desk and high desk perspectives of the same four-antenna Wi-Fi 7 router.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/wavlink-be5100-wifi-7-router-dual-band-gaming-router-with-ofdma-and-mu-mimo-guest-wifi-qos-ipv6-advanced-vpn-wireless-router-with-multiple-modes-black/19949006",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19949/19949006_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19949/19949006_4.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19949/19949006_6.jpeg"
+      ]
+    },
+    "bbca-15101526": {
+      "acceptedAdditionalViews": [
+        3,
+        5
+      ],
+      "rejectedViews": {
+        "4": "Connector arrangement appears mirrored from view 3; excluded rather than counted as a new photograph."
+      },
+      "note": "Angled connector and unwrapped cable photographs accepted; only four distinct suitable photos.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/best-buy-essentials-7-63m-25ft-cat6-ethernet-cable-be-pec6st25-c/15101526",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101526_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101526_4.jpg"
+      ]
+    },
+    "bbca-15101523": {
+      "acceptedAdditionalViews": [
+        3,
+        5
+      ],
+      "rejectedViews": {
+        "4": "Connector arrangement appears mirrored from view 3; excluded rather than counted as a new photograph."
+      },
+      "note": "Angled connector and unwrapped cable photographs accepted; only four distinct suitable photos.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/best-buy-essentials-15-25m-50ft-cat6-ethernet-cable-be-pec6st50-c/15101523",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101523_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101523_4.jpg"
+      ]
+    },
+    "bbca-19831877": {
+      "acceptedAdditionalViews": [
+        3,
+        5,
+        8
+      ],
+      "note": "Back face, narrow side and open front tray; rejected redundant print/photo-swapped frontal renderings.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/polaroid-hi-print-photo-printer-white/19831877",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19831/19831877_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19831/19831877_4.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19831/19831877_7.jpg"
+      ]
+    },
+    "bbca-19847480": {
+      "acceptedAdditionalViews": [
+        6
+      ],
+      "note": "Desk-context printer photograph accepted. Remaining entries are text-only, comparison cards, repeated body renders or obscure the printer; no five distinct views available.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-envy-6155-all-in-one-inkjet-printer-hp-instant-ink-3-month-free-trial-included/19847480",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19847/19847480_5.jpg"
+      ]
+    },
+    "bbca-17983857": {
+      "acceptedAdditionalViews": [
+        3,
+        5
+      ],
+      "rejectedViews": {
+        "4": "Rotated frontal printer body from view 1 with print added; conservatively excluded as reused product rendering."
+      },
+      "note": "Alternate perspective and connector edge accepted; four suitable distinct product views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/polaroid-hi-print-gen-2-pocket-photo-printer/17983857",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17983/17983857_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17983/17983857_4.jpg"
+      ]
+    },
+    "bbca-19516796": {
+      "acceptedAdditionalViews": [
+        3,
+        4
+      ],
+      "rejectedViews": {
+        "5": "Packaging only.",
+        "6": "Packaging only."
+      },
+      "note": "Opposite printer angles accepted. Box-only photos do not fill the five product-photograph target.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/polaroid-hiprint-4x6-photo-printer-starter-set/19516796",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19516/19516796_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19516/19516796_3.jpeg"
+      ]
+    },
+    "bbca-19788222": {
+      "acceptedAdditionalViews": [
+        3,
+        5
+      ],
+      "rejectedViews": {
+        "4": "Same angle as current view 2 in a gradient-background crop."
+      },
+      "note": "Upright scanner from front and lower opposite perspective accepted; four distinct views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/canon-canoscan-lide400-document-scanner-black/19788222",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19788/19788222_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19788/19788222_4.jpeg"
+      ]
+    },
+    "bbca-15910008": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        7
+      ],
+      "rejectedViews": {
+        "8": "Graphic labels a different 2x3-inch Sprocket instead of the listed Select 2.3x3.4-inch configuration."
+      },
+      "note": "Same patterned Select body in hand, with open paper compartment, and in desk context; exact variant preserved.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-sprocket-select-portable-instant-photo-printer-for-android-and-ios-devices-eclipse-prints-on-2-3x3-4-sticky-backed-zink-photo-paper-white/15910008",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/159/15910/15910008_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/159/15910/15910008_3.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/159/15910/15910008_6.jpeg"
+      ]
+    },
+    "bbca-18931068": {
+      "acceptedAdditionalViews": [
+        3
+      ],
+      "rejectedViews": {
+        "4": "Reuses the same desk/printer photograph as current view 2.",
+        "5": "Software-only image without scanner.",
+        "6": "Scans/paper only, no scanner.",
+        "7": "Reuses the same desk/printer photograph as current view 2."
+      },
+      "note": "Extended-output-tray scanner view accepted; three distinct suitable photos.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/canon-imageformula-rs40-photo-and-document-scanner-for-windows-and-mac-scans-photos-vibrant-color/18931068",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18931/18931068_2.jpeg"
+      ]
+    },
+    "bbca-17145978": {
+      "acceptedAdditionalViews": [
+        3,
+        7,
+        8
+      ],
+      "note": "Upright open-lid configuration, rear stand and lid-removed book scanning show distinct physical states of the exact scanner.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/epson-perfection-v39-ii-photo-and-document-scanner/17145978",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17145/17145978_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17145/17145978_6.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17145/17145978_7.jpg"
+      ]
+    },
+    "bbca-15333388": {
+      "acceptedAdditionalViews": [],
+      "note": "Additional entries predominantly reuse the existing frontal/angled scanner rendering, change only paper, show no device or show an ambiguous tiny device. No safe further view accepted.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/epson-rapidreceipt-rr-60-mobile-receipt-and-colour-document-portable-scanner/15333388",
+      "acceptedImageUrls": []
+    },
+    "bbca-16561385": {
+      "acceptedAdditionalViews": [
+        3,
+        7,
+        9
+      ],
+      "note": "Opposite-side perspective, higher frontal passport configuration and close overhead feed-tray view; model body and controls match.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/ricoh-fi-8170-color-duplex-document-scanner-pa03810-b055/16561385",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16561/16561385_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16561/16561385_6.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16561/16561385_8.jpeg"
+      ]
+    },
+    "bbca-17340796": {
+      "acceptedAdditionalViews": [
+        3,
+        4,
+        5
+      ],
+      "note": "Angled scanning view, unfolded paper path and closed angled body are distinct from existing frontal photos.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/epson-workforce-es-c320w-wireless-document-scanner/17340796",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/173/17340/17340796_2.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/173/17340/17340796_3.jpg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/173/17340/17340796_4.jpg"
+      ]
+    },
+    "bbca-16445633": {
+      "acceptedAdditionalViews": [
+        3,
+        4
+      ],
+      "rejectedViews": {
+        "5": "Same open scanner image as view 3, rescaled."
+      },
+      "note": "Open scanner and opposite-front operating perspective accepted; four suitable distinct views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/epson-ds-530-ii-document-scanner-b11b261202-black-white/16445633",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16445/16445633_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16445/16445633_3.jpeg"
+      ]
+    },
+    "bbca-10451296": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source media are yield/comparison and output-quality graphics, not distinct supplied-cartridge views.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-hp-65-clear-black-ink-cartridge-2-pack-65/10451296",
+      "acceptedImageUrls": []
+    },
+    "bbca-19798320": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source entries are duplicate packaging, yield/output/compatibility promotions, or ambiguous installation images rather than distinct exact-cartridge photographs.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/canon-pg-243-black-ink-cartridge-genuine-oem-standard-yield-for-pixma-ip2820-mx492-mg2420-mg2520-mg2920-mg2922-mg2924-mg3020-mg2525-ts3120-ts302-ts202-tr4520/19798320",
+      "acceptedImageUrls": []
+    },
+    "bbca-19790328": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source entries are duplicate packaging, yield/output/compatibility promotions, or ambiguous installation images rather than distinct exact-cartridge photographs.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/nynyg-275xl-276-xl-ink-cartridges-for-canon-pg-275xl-cl-276xl-ink-cartridges-compatible-for-pixma-ts3522-ts3520-ts3500-pixma-tr4720-tr4722-tr4700-printers-1black-1tri-color/19790328",
+      "acceptedImageUrls": []
+    },
+    "bbca-10451294": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source entries are duplicate packaging, yield/output/compatibility promotions, or ambiguous installation images rather than distinct exact-cartridge photographs.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-hp-65-tri-colour-ink-cartridge-65/10451294",
+      "acceptedImageUrls": []
+    },
+    "bbca-10451297": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source entries are duplicate packaging, yield/output/compatibility promotions, or ambiguous installation images rather than distinct exact-cartridge photographs.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-hp-65xl-black-ink-cartridge-65xl/10451297",
+      "acceptedImageUrls": []
+    },
+    "bbca-10451298": {
+      "acceptedAdditionalViews": [],
+      "note": "Remaining source entries are duplicate packaging, yield/output/compatibility promotions, or ambiguous installation images rather than distinct exact-cartridge photographs.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/hp-hp-65xl-tri-colour-ink-cartridge-65xl/10451298",
+      "acceptedImageUrls": []
+    },
+    "bbca-19937497": {
+      "acceptedAdditionalViews": [],
+      "note": "No additional complete exact-bundle photography accepted; source graphics repeat package renders or show single reams instead of the listed complete multi-ream bundle.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/copy-paper-office-paper-white-8-5-x-14-inches-legal-size-500-sheets-ream-total-5000-sheets-10-reams-packaging-may-vary/19937497",
+      "acceptedImageUrls": []
+    },
+    "bbca-19937496": {
+      "acceptedAdditionalViews": [],
+      "note": "No additional complete exact-bundle photography accepted; source graphics repeat package renders or show single reams instead of the listed complete multi-ream bundle.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/copy-paper-office-paper-white-8-5-x-14-inches-legal-size-92-brightness-500-sheets-ream-case-of-10-reams-pack-of-2-total-20-reams-packaging-may-vary/19937496",
+      "acceptedImageUrls": []
+    },
+    "bbca-19937495": {
+      "acceptedAdditionalViews": [],
+      "note": "No additional complete exact-bundle photography accepted; source graphics repeat package renders or show single reams instead of the listed complete multi-ream bundle.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/copy-paper-office-paper-white-8-5-x-14-inches-legal-size-92-brightness-500-sheets-ream-pack-of-5-reams-total-2-500-sheets-packaging-may-vary/19937495",
+      "acceptedImageUrls": []
+    },
+    "bbca-19937494": {
+      "acceptedAdditionalViews": [],
+      "note": "No additional complete exact-bundle photography accepted; source graphics repeat package renders or show single reams instead of the listed complete multi-ream bundle.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/copy-paper-office-paper-white-8-5-x-14-inches-legal-size-92-brightness-500-sheets-ream-pack-of-2-reams-total-1-000-sheets-packaging-may-vary/19937494",
+      "acceptedImageUrls": []
+    },
+    "bbca-19946577": {
+      "acceptedAdditionalViews": [],
+      "note": "No additional complete exact-bundle photography accepted; source graphics repeat package renders or show single reams instead of the listed complete multi-ream bundle.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/bond-copy-paper-8-5-x11-500-sheets-10pcs/19946577",
+      "acceptedImageUrls": []
+    },
+    "bbca-19937493": {
+      "acceptedAdditionalViews": [
+        3,
+        5,
+        6
+      ],
+      "note": "Single ream photographed on desk, held with both hands, and a more frontal package view; same legal-size 500-sheet configuration visible.",
+      "sourceUrl": "https://www.bestbuy.ca/en-ca/product/copy-paper-office-paper-white-8-5-x-14-inches-legal-size-500-sheets-1-ream-packaging-may-vary/19937493",
+      "acceptedImageUrls": [
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19937/19937493_2.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19937/19937493_4.jpeg",
+        "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19937/19937493_5.jpeg"
+      ]
+    }
+  }
+}

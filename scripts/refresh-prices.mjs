@@ -3,13 +3,15 @@ import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 const path='data/products.json', products=JSON.parse(fs.readFileSync(path,'utf8'));
 const result={checkedAt:new Date().toISOString(),checked:0,changed:0,failures:[]};
+// Many exact configurations share one product feed. Fetch that source only once per run.
+const sourceFeeds=new Map();
 for(const p of products.filter(p=>p.priceMetadataUrl&&p.retailerVariantId)){
  try{
   const url=new URL(p.priceMetadataUrl);
   if(!['telefonika.com','compughana.com','www.compughana.com'].includes(url.hostname)||url.protocol!=='https:')throw Error('Unapproved retailer host');
-  const r=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('HTTP '+r.status);
-  const data=await r.json();const v=data.variants?.find(v=>String(v.id)===String(p.retailerVariantId));
-  if(!v||!Number.isFinite(v.price)||v.price<=0)throw Error('Exact full-price variant unavailable');
+  if(!sourceFeeds.has(url.href))sourceFeeds.set(url.href,(async()=>{const r=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('HTTP '+r.status);return r.json()})());
+  const data=await sourceFeeds.get(url.href);const v=data.variants?.find(v=>String(v.id)===String(p.retailerVariantId));
+  if(!v||!Number.isSafeInteger(v.price)||v.price<=0)throw Error('Exact full-price variant unavailable');
   if(/deposit|pre.?order fee|reservation fee/i.test(data.title+' '+v.title))throw Error('Deposit is not a selling price');
   if((p.retailerSku||'')!==(v.sku||'')||p.retailerVariantTitle!==v.title||p.retailerProductTitle!==data.title)throw Error('Retailer identity changed; manual re-verification needed');
   const next=v.price/100;

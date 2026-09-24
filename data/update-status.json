@@ -5,8 +5,16 @@
   "brands": 195,
   "officialBrands": 9,
   "releaseCount": 17,
-  "priceCount": 15,
+  "priceCount": 46,
   "history": [
+    {
+      "date": "2026-09-24",
+      "summary": "Added 143 reviewed product images across 42 products and set a five-image completion target. 212 of 2393 products meet it; 2181 still need more genuine exact-product photography. Official Samsung galleries now cover all 12 Ghana S26/S26 Ultra configurations. Exact-size Pro/Pro Max photo ambiguity is withheld rather than shown as verified."
+    },
+    {
+      "date": "2026-09-24",
+      "summary": "Imported 31 additional exact Ghana phone configurations and rechecked 46 Ghana retailer price references. Added 12 product families with 55 selectable configurations. Four Samsung S26 Ultra 1TB listings are withheld because their RAM options conflict with retailer SKUs. Remaining catalogue records still require a Ghana quotation."
+    },
     {
       "date": "2026-09-24",
       "summary": "Redesigned the storefront with larger photography, switchable collection scenes and alternate product previews. Added multi-image galleries for 369 more products; 563 of 2362 now have multiple verified photographs. Remaining source and configuration gaps are recorded. One mismatched source cover is withheld pending exact-size verification."
@@ -25,23 +33,37 @@
     }
   ],
   "automationId": "6ab468b79bbc8191aaf96dc006f74327",
-  "checkScope": "17 launch records and 15 Ghana price variants; remaining registry entries await official-source checks.",
+  "checkScope": "17 launch records and 46 exact Ghana retailer price variants; remaining registry entries await official-source checks.",
   "gallery": {
     "checkedAt": "2026-09-24",
-    "totalProducts": 2362,
-    "productsWithMultipleImages": 563,
-    "productsWithThreeOrMoreImages": 373,
-    "reviewedProducts": 594,
-    "galleryPhotos": 2162,
+    "totalProducts": 2393,
+    "productsWithMultipleImages": 577,
+    "productsWithThreeOrMoreImages": 413,
+    "reviewedProducts": 606,
+    "galleryPhotos": 2305,
     "pendingSourceAccess": 1725,
-    "singleImageProducts": 1798,
+    "singleImageProducts": 1794,
     "complete": false,
-    "note": "Further verified manufacturer and exact-SKU retailer galleries were added. Bulk discovery stopped after repeated source timeouts and error responses; other sources returned access errors or exact-configuration gaps. Unrequested products remain pending. Wrong variants, accessory-only pictures and repeated views were excluded; existing covers remain where more photos are unavailable.",
+    "note": "Five distinct exact-product images are required for every item. This batch added 143 reviewed images across 42 products; 212 of 2393 products now meet the target. 2181 remain below five. Twenty-one iPhone 17 Pro/Pro Max configurations, including both base records, are withheld because their retailer photos are shared across device sizes; the prior binder-clip hold remains. Source gaps are explicit; duplicate crops, wrong variants and invented views were not used.",
     "duplicatePhotosExcluded": 7,
     "fullImageValidation": "passed",
-    "productsWithNoVerifiedImage": 1,
-    "productsAwaitingMultipleImages": 1799,
-    "excludedBulkProductGalleries": 21
+    "productsWithNoVerifiedImage": 22,
+    "productsAwaitingMultipleImages": 1816,
+    "excludedBulkProductGalleries": 21,
+    "requiredImagesPerProduct": 5,
+    "productsWithFiveOrMoreImages": 212,
+    "productsAwaitingFiveImages": 2181,
+    "minimumAdditionalImagesRequired": 8051,
+    "imageCountDistribution": {
+      "0": 22,
+      "1": 1794,
+      "2": 164,
+      "3": 72,
+      "4": 129,
+      "5": 57,
+      "6": 154,
+      "7": 1
+    }
   },
   "galleryChecks": {
     "schemaAndApi": "passed",
@@ -50,6 +72,24 @@
     "responsiveVisualReview": "passed_phone_and_tablet_catalogue_and_product_layouts",
     "typescript": "passed",
     "pricingAndCart": "passed",
-    "notes": "Saved shopping API could not be exercised in the preview database; persistence and pricing regression tests passed against a fresh migrated test database. Source access failures are retained in gallery-source-review.json."
+    "notes": "Saved shopping API could not be exercised in the preview database; persistence and pricing regression tests passed against a fresh migrated test database. Source access failures are retained in gallery-source-review.json.",
+    "latestBatch": {
+      "checkedAt": "2026-09-24",
+      "galleryIntegrityAndApi": "passed",
+      "upgradeImportAndRollback": "passed",
+      "linksAndLocalCovers": "passed",
+      "allProductsHaveFiveImages": false,
+      "remainingProductsBelowFive": 2181
+    }
+  },
+  "configurations": {
+    "checkedAt": "2026-09-24T17:51:26.898Z",
+    "families": 12,
+    "selectableProducts": 55,
+    "newProducts": 31,
+    "quarantinedSourceVariants": 4,
+    "priceCurrency": "GHS",
+    "pricingBasis": "Dated Ghana retailer references; final KORA price requires quotation",
+    "evidenceFile": "variant-source-evidence.json"
   }
 }

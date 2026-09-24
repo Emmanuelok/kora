@@ -1,0 +1,360 @@
+{
+  "checkedAt": "2026-09-24",
+  "samsungSources": {
+    "s26-ultra": {
+      "url": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "sha256": "fce85ab17ddf9373e5be28726eae600a1427ce245b376450173c38b072555f54",
+      "httpStatus": 200
+    },
+    "s26": {
+      "url": "https://www.samsung.com/us/smartphones/galaxy-s26/buy/",
+      "sha256": "0549a550d8f033117994ce36547b5d4f921fb7c9802d9c45b64942ec9e0d5637",
+      "httpStatus": 200
+    }
+  },
+  "appleSource": {
+    "url": "https://www.apple.com/uk/shop/buy-iphone/iphone-17",
+    "httpStatus": 200,
+    "sha256": "e8bc04586dac19096d48c9e1452b31711cf32c4ace8cdf64a672cb0bb64e9a1e"
+  },
+  "products": {
+    "gh-telefonika-apple-iphone-17-51572241334548": {
+      "sourceUrl": "https://www.apple.com/uk/shop/buy-iphone/iphone-17",
+      "retailerSourceUrl": "https://telefonika.com/products/apple-iphone-17?variant=51572241334548",
+      "colour": "Mist Blue",
+      "addedImageUrls": [
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxaFUrdlByZTJvbHVPZlZpd2VmTDUrWThoSGozaDhHYjRWeWk3WVBoTXNuNnppRFFUQWNsM2txTVJoMG04WVAwREFYUldRZVYxMHFkRFZrQVZuaWMwSkJGZzRIRERpNldDbHhJWmg3dWt4Z3M",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxaFUrdlByZTJvbHVPZlZpd2VmTDUrWmUxZTZNR2J3MXhyUEZGV3E0a2FOMW82dGJIRVZNUndyOWVxbHpaUDhyOEtkYzJyNDZucEFPaGl5YjJKbWpsa08xVThmOTkxMWhWOVBQckkvdTU4MWlmbW94YnYxc1YvNXZ4emJGL0IxNFp3"
+      ],
+      "review": "Official Apple UK model/colour images for the physical-SIM region: full front/back and head-on camera detail. AV3 repeats the hero crop and is excluded; fewer than five distinct views available."
+    },
+    "gh-telefonika-apple-iphone-17-51572241367316": {
+      "sourceUrl": "https://www.apple.com/uk/shop/buy-iphone/iphone-17",
+      "retailerSourceUrl": "https://telefonika.com/products/apple-iphone-17?variant=51572241367316",
+      "colour": "Lavender",
+      "addedImageUrls": [
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxcUlHcmZkMUl0cGRrS2JXMzRCZWNFazhoSGozaDhHYjRWeWk3WVBoTXNuNnppRFFUQWNsM2txTVJoMG04WVAwREFYUldRZVYxMHFkRFZrQVZuaWMwSkR4MllpU2FhU1VMNEZndkhvL0N1bFc",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxcUlHcmZkMUl0cGRrS2JXMzRCZWNFbGUxZTZNR2J3MXhyUEZGV3E0a2FOMW82dGJIRVZNUndyOWVxbHpaUDhyOEtkYzJyNDZucEFPaGl5YjJKbWpsa1ByaGhPYm9zQ2xXbTd5VHZVWklNaVJmbW94YnYxc1YvNXZ4emJGL0IxNFp3"
+      ],
+      "review": "Official Apple UK model/colour images for the physical-SIM region: full front/back and head-on camera detail. AV3 repeats the hero crop and is excluded; fewer than five distinct views available."
+    },
+    "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212413716",
+      "colour": "Light Violet",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993899?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993900?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993911?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993915?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212282644": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212282644",
+      "colour": "Black",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993324?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993325?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993326?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993335?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993336?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993340?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212348180": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212348180",
+      "colour": "Blue",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992890?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992891?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992892?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992884?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992885?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992889?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212479252": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212479252",
+      "colour": "White",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994233?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994234?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994235?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994244?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994245?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994249?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212675860": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212675860",
+      "colour": "Light Violet",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993899?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993900?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993901?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993910?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993911?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993915?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212544788": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212544788",
+      "colour": "Black",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993324?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993325?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993326?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993335?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993336?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993340?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212610324": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212610324",
+      "colour": "Blue",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992890?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992891?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992892?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992884?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992885?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992889?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-ultra-52002212741396": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212741396",
+      "colour": "White",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994233?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994234?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994235?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994244?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994245?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994249?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-samsung-galaxy-s26-12gb-256gb-blue": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777156372",
+      "colour": "Blue",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942ulbexaa-550995216?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942ulbexaa-550995217?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942ulbexaa-550995221?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942ulbexaa-550995222?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-52001634320660": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001634320660",
+      "colour": "Black",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995405?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995406?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995407?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995412?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995410?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995411?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-52001777221908": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777221908",
+      "colour": "Light Violet",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995596?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995597?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995598?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995595?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995601?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995602?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    },
+    "gh-telefonika-samsung-galaxy-s26-52001777287444": {
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26/buy/",
+      "retailerSourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777287444",
+      "colour": "White",
+      "addedImageUrls": [
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995748?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995749?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995750?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995747?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995753?$product-details-jpg$",
+        "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995754?$product-details-jpg$"
+      ],
+      "review": "Official manufacturer model/colour images, visually matched to retailer photographs. Retailer Blue matches Samsung Sky Blue; Light Violet matches Cobalt Violet. RAM, storage and price remain bound to each retailer variant; these do not change the pictured external body."
+    }
+  },
+  "heldProducts": [
+    {
+      "productId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51420813328660",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946888468",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209495828",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209528596",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946921236",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792040212",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792072980",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792105748",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076892948",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688515348",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51301360730388",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076925716",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688548116",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688580884",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688613652",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688646420",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688679188",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688711956",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688744724",
+      "cover": "/images/photo-under-review.svg",
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "imageVerificationStatus": "under_review",
+      "verificationNote": "Telefonika reuses image URLs across iPhone 17 Pro and Pro Max. The exact size cannot be independently verified from these shared retailer photographs. Exact-model photos are withheld pending a suitable source."
+    }
+  ],
+  "sourceGaps": [
+    "Apple iPhone17 Pro marketing/purchase pages now redirect to generic iPhone pages.",
+    "Another exact iPhone17 Pro retailer returned HTTP403; stopped without bypassing access.",
+    "iPhone17 Mist Blue/Lavender have two distinct verified views; repeated hero crops excluded."
+  ]
+}

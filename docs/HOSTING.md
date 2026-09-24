@@ -45,7 +45,7 @@ CLI deployment additionally requires an authorized Cloudflare login/token. The d
 
 The owner approved anyone with the production URL to test the site without signing in. The Worker-level Access application now protects **Previews only** and is configured separately from Wrangler. The dashboard confirms “Production stays public”; cookie-free requests to the homepage, search, product, tracking and guest API routes returned HTTP 200 without an authentication redirect. No custom domain has been selected.
 
-The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-user-email`. Cart, saved items, profile and requests belong to a random guest cookie for this browser. It is HttpOnly, SameSite=Lax, Secure on HTTPS, and expires after 30 days. Clearing cookies, changing browsers or cookie expiry loses access to the earlier session. Customer sign-in and account recovery are not implemented. Cloudflare Access can protect the entire preview but is not customer account functionality.
+The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-user-email`. Cart, saved items, profile and requests belong to a random guest cookie for this browser. It is HttpOnly, SameSite=Lax, Secure on HTTPS, and expires after 30 days. Clearing cookies, changing browsers or cookie expiry loses access to the earlier session. Customer account support is now implemented in the Worker with D1 sessions and an atomic guest-session transfer. Google and magic-link methods remain hidden until operator configuration is complete; follow [Cloudflare authentication setup](CLOUDFLARE-AUTH.md). Cloudflare Access can protect the entire preview but is not customer account functionality.
 
 ## Database maintenance
 

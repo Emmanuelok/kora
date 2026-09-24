@@ -1,0 +1,551 @@
+[
+  {
+    "id": "samsung-990-pro",
+    "name": "Samsung 990 Pro",
+    "axes": [
+      "Storage"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-16624802",
+        "options": {
+          "Storage": "1 TB"
+        }
+      },
+      {
+        "productId": "bbca-16624805",
+        "options": {
+          "Storage": "2 TB"
+        }
+      }
+    ]
+  },
+  {
+    "id": "best-buy-essentials-cat6",
+    "name": "Best Buy Essentials Cat6 Ethernet Cable",
+    "axes": [
+      "Length"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-15101526",
+        "options": {
+          "Length": "25 ft (7.63 m)"
+        }
+      },
+      {
+        "productId": "bbca-15101523",
+        "options": {
+          "Length": "50 ft (15.25 m)"
+        }
+      },
+      {
+        "productId": "bbca-15101522",
+        "options": {
+          "Length": "100 ft (30.5 m)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fitbit-charge-6",
+    "name": "Google Fitbit Charge 6",
+    "axes": [
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-17257418",
+        "options": {
+          "Colour": "Obsidian / Black"
+        }
+      },
+      {
+        "productId": "bbca-17257416",
+        "options": {
+          "Colour": "Silver / Porcelain"
+        }
+      },
+      {
+        "productId": "bbca-17257417",
+        "options": {
+          "Colour": "Coral / Gold"
+        }
+      }
+    ]
+  },
+  {
+    "id": "apple-watch-series-12-black-aluminum-gps",
+    "name": "Apple Watch Series 12 GPS, Black Aluminium, Black Sport Band",
+    "axes": [
+      "Case size",
+      "Band size"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-20154597",
+        "options": {
+          "Case size": "46 mm",
+          "Band size": "Medium / Large"
+        }
+      },
+      {
+        "productId": "bbca-20154588",
+        "options": {
+          "Case size": "42 mm",
+          "Band size": "Small / Medium"
+        }
+      }
+    ]
+  },
+  {
+    "id": "garmin-cirqa",
+    "name": "Garmin CIRQA",
+    "axes": [
+      "Band size",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-19993447",
+        "options": {
+          "Band size": "Large / X-Large",
+          "Colour": "French Grey"
+        }
+      },
+      {
+        "productId": "bbca-19993450",
+        "options": {
+          "Band size": "Small / Medium",
+          "Colour": "Captain Blue"
+        }
+      },
+      {
+        "productId": "bbca-19994603",
+        "options": {
+          "Band size": "Small / Medium",
+          "Colour": "French Grey"
+        }
+      },
+      {
+        "productId": "bbca-19994602",
+        "options": {
+          "Band size": "Large / X-Large",
+          "Colour": "Black"
+        }
+      }
+    ]
+  },
+  {
+    "id": "apple-airtag-2",
+    "name": "Apple AirTag (2nd generation)",
+    "axes": [
+      "Pack"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-19720273",
+        "options": {
+          "Pack": "1 tracker"
+        }
+      },
+      {
+        "productId": "bbca-19720272",
+        "options": {
+          "Pack": "4 trackers"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dji-osmo-mobile-8p",
+    "name": "DJI Osmo Mobile 8P",
+    "axes": [
+      "Kit"
+    ],
+    "evidence": {
+      "kind": "existing-source-title-and-description",
+      "checkedAt": "2026-09-24"
+    },
+    "variants": [
+      {
+        "productId": "bbca-19858730",
+        "options": {
+          "Kit": "Standard"
+        }
+      },
+      {
+        "productId": "bbca-19858725",
+        "options": {
+          "Kit": "Advanced Tracking Combo"
+        }
+      },
+      {
+        "productId": "bbca-19858726",
+        "options": {
+          "Kit": "Creator Combo"
+        }
+      }
+    ]
+  },
+  {
+    "id": "telefonika-apple-iphone-17",
+    "name": "Apple iPhone 17 (1SIM)",
+    "axes": [
+      "Storage",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "exact-retailer-variant-json",
+      "checkedAt": "2026-09-24T17:51:26.898Z",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17.js"
+    },
+    "variants": [
+      {
+        "productId": "gh-apple-iphone-17-256gb-black-1sim",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Black"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-51572241334548",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Mist Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-51572241367316",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Lavender"
+        }
+      }
+    ]
+  },
+  {
+    "id": "telefonika-apple-iphone-17-pro-1sim",
+    "name": "Apple iPhone 17 Pro (1SIM)",
+    "axes": [
+      "Storage",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "exact-retailer-variant-json",
+      "checkedAt": "2026-09-24T17:51:26.898Z",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim.js"
+    },
+    "variants": [
+      {
+        "productId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51420813328660",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946888468",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Silver"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209495828",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209528596",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946921236",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Silver"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792040212",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792072980",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792105748",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Silver"
+        }
+      }
+    ]
+  },
+  {
+    "id": "telefonika-apple-iphone-17-pro-max-1sim",
+    "name": "Apple iPhone 17 Pro Max (1SIM)",
+    "axes": [
+      "Storage",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "exact-retailer-variant-json",
+      "checkedAt": "2026-09-24T17:51:26.898Z",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim.js"
+    },
+    "variants": [
+      {
+        "productId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076892948",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Cosmic Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688515348",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Silver"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51301360730388",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076925716",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Cosmic Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688548116",
+        "options": {
+          "Storage": "512GB",
+          "Colour": "Silver"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688580884",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688613652",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Cosmic Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688646420",
+        "options": {
+          "Storage": "1TB",
+          "Colour": "Silver"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688679188",
+        "options": {
+          "Storage": "2TB",
+          "Colour": "Deep Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688711956",
+        "options": {
+          "Storage": "2TB",
+          "Colour": "Cosmic Orange"
+        }
+      },
+      {
+        "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688744724",
+        "options": {
+          "Storage": "2TB",
+          "Colour": "Silver"
+        }
+      }
+    ]
+  },
+  {
+    "id": "telefonika-samsung-galaxy-s26-ultra",
+    "name": "Samsung Galaxy S26 Ultra",
+    "axes": [
+      "RAM",
+      "Storage",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "exact-retailer-variant-json",
+      "checkedAt": "2026-09-24T17:51:26.898Z",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra.js"
+    },
+    "variants": [
+      {
+        "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "256GB",
+          "Colour": "Light Violet"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212282644",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "256GB",
+          "Colour": "Black"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212348180",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "256GB",
+          "Colour": "Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212479252",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "256GB",
+          "Colour": "White"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212675860",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "512GB",
+          "Colour": "Light Violet"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212544788",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "512GB",
+          "Colour": "Black"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212610324",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "512GB",
+          "Colour": "Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212741396",
+        "options": {
+          "RAM": "12GB",
+          "Storage": "512GB",
+          "Colour": "White"
+        }
+      }
+    ]
+  },
+  {
+    "id": "telefonika-samsung-galaxy-s26",
+    "name": "Samsung Galaxy S26",
+    "axes": [
+      "Storage",
+      "Colour"
+    ],
+    "evidence": {
+      "kind": "exact-retailer-variant-json",
+      "checkedAt": "2026-09-24T17:51:26.898Z",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26.js"
+    },
+    "variants": [
+      {
+        "productId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Blue"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-52001634320660",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Black"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-52001777221908",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "Light Violet"
+        }
+      },
+      {
+        "productId": "gh-telefonika-samsung-galaxy-s26-52001777287444",
+        "options": {
+          "Storage": "256GB",
+          "Colour": "White"
+        }
+      }
+    ]
+  }
+]

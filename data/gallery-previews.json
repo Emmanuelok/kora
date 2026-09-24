@@ -679,6 +679,14 @@
     "count": 3,
     "alternate": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxb2VRRjNicDE2eUYxNWtxdDZEUE9tUjZxZmJIdzBBQWpZVTVJdFRoUUcxVloyU1hvUEtRbDVNbTllSjBLTk1lc0Q2K3c3eDN1QlVKV09nQzhyNmV5TTFHQlJWZzByU21DbUFERkJnRlpYeEw"
   },
+  "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet": {
+    "count": 5,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993899?$product-details-jpg$"
+  },
+  "gh-samsung-galaxy-s26-12gb-256gb-blue": {
+    "count": 5,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942ulbexaa-550995216?$product-details-jpg$"
+  },
   "gh-apple-macbook-pro-m5-14-16gb-1tb-black": {
     "count": 2,
     "alternate": "https://lantre.pl/media/catalog/product/cache/0f7431f5367b37c067ffd8dcd36cc722/a/p/apple-macbook-pro-14-m5-10-core-cpu-10-core-gpu-16gb-ram-1tb-ssd-klawiatura-us-gwiezdna-czern-space-black-mde14-us_2.jpg"
@@ -1580,27 +1588,27 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16550/16550116_1.jpg"
   },
   "bbca-19504344": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19504/19504344_1.png"
   },
   "bbca-19741478": {
-    "count": 2,
+    "count": 6,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19741/19741478_1.jpg"
   },
   "bbca-19409769": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/194/19409/19409769_1.jpg"
   },
   "bbca-18906093": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18906/18906093_1.jpg"
   },
   "bbca-17929700": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17929/17929700_1.jpg"
   },
   "bbca-15820057": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/158/15820/15820057_1.jpg"
   },
   "bbca-16624802": {
@@ -1612,11 +1620,11 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/182/18218/18218228_1.jpg"
   },
   "bbca-14683402": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/146/14683/14683402_1.jpg"
   },
   "bbca-19866223": {
-    "count": 2,
+    "count": 3,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19866/19866223_2.jpeg"
   },
   "bbca-15142523": {
@@ -1628,27 +1636,27 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/166/16624/16624805_1.jpg"
   },
   "bbca-14916470": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14916/14916470_1.jpg"
   },
   "bbca-19826455": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19826/19826455_1.jpg"
   },
   "bbca-19945069": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19945/19945069_1.jpeg"
   },
   "bbca-19193195": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/191/19193/19193195_1.jpg"
   },
   "bbca-19946256": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19946/19946256_1.jpeg"
   },
   "bbca-19949006": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19949/19949006_1.jpeg"
   },
   "bbca-19193196": {
@@ -1664,7 +1672,7 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19714/19714796_1.jpg"
   },
   "bbca-15101523": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101523_1.jpg"
   },
   "bbca-19388566": {
@@ -1672,11 +1680,11 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/193/19388/19388566_1.jpg"
   },
   "bbca-15101526": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/151/15101/15101526_1.jpg"
   },
   "bbca-19831877": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19831/19831877_1.jpg"
   },
   "bbca-17699359": {
@@ -1684,11 +1692,11 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/176/17699/17699359_1.png"
   },
   "bbca-19847480": {
-    "count": 2,
+    "count": 3,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19847/19847480_4.jpg"
   },
   "bbca-17983857": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17983/17983857_1.jpg"
   },
   "bbca-16680665": {
@@ -1696,19 +1704,19 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/166/16680/16680665_1.jpg"
   },
   "bbca-19516796": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/195/19516/19516796_1.jpeg"
   },
   "bbca-19788222": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19788/19788222_1.jpeg"
   },
   "bbca-18931068": {
-    "count": 2,
+    "count": 3,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/189/18931/18931068_1.jpeg"
   },
   "bbca-15910008": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/159/15910/15910008_1.jpeg"
   },
   "bbca-19396883": {
@@ -1720,15 +1728,15 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/153/15333/15333388_2.jpg"
   },
   "bbca-17145978": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/171/17145/17145978_1.jpg"
   },
   "bbca-17340796": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/173/17340/17340796_1.jpg"
   },
   "bbca-16561385": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/165/16561/16561385_1.jpeg"
   },
   "bbca-19827189": {
@@ -1736,7 +1744,7 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/198/19827/19827189_1.jpeg"
   },
   "bbca-16445633": {
-    "count": 2,
+    "count": 4,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/164/16445/16445633_1.jpeg"
   },
   "bbca-10668857": {
@@ -1788,7 +1796,7 @@
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19937/19937495_1.jpeg"
   },
   "bbca-19937493": {
-    "count": 2,
+    "count": 5,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/199/19937/19937493_3.jpeg"
   },
   "bbca-19937428": {
@@ -2250,5 +2258,53 @@
   "bbca-19757126": {
     "count": 2,
     "alternate": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/197/19757/19757126_1.jpg"
+  },
+  "gh-telefonika-apple-iphone-17-51572241334548": {
+    "count": 2,
+    "alternate": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxaFUrdlByZTJvbHVPZlZpd2VmTDUrWmUxZTZNR2J3MXhyUEZGV3E0a2FOMW82dGJIRVZNUndyOWVxbHpaUDhyOEtkYzJyNDZucEFPaGl5YjJKbWpsa08xVThmOTkxMWhWOVBQckkvdTU4MWlmbW94YnYxc1YvNXZ4emJGL0IxNFp3"
+  },
+  "gh-telefonika-apple-iphone-17-51572241367316": {
+    "count": 2,
+    "alternate": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxcUlHcmZkMUl0cGRrS2JXMzRCZWNFbGUxZTZNR2J3MXhyUEZGV3E0a2FOMW82dGJIRVZNUndyOWVxbHpaUDhyOEtkYzJyNDZucEFPaGl5YjJKbWpsa1ByaGhPYm9zQ2xXbTd5VHZVWklNaVJmbW94YnYxc1YvNXZ4emJGL0IxNFp3"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212282644": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993325?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212348180": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992891?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212479252": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994234?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212675860": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzvaxaa-550993900?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212544788": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzkaxaa-550993325?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212610324": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948ulbaxaa-550992891?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-ultra-52002212741396": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-ultra-s948-sm-s948uzwaxaa-550994234?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-52001634320660": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzkexaa-550995406?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-52001777221908": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzvexaa-550995597?$product-details-jpg$"
+  },
+  "gh-telefonika-samsung-galaxy-s26-52001777287444": {
+    "count": 6,
+    "alternate": "https://images.samsung.com/is/image/samsung/p6pim/us/s2602/gallery/us-galaxy-s26-s942-sm-s942uzwexaa-550995749?$product-details-jpg$"
   }
 }

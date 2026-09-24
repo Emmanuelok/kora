@@ -1,0 +1,863 @@
+{
+  "checkedAt": "2026-09-24T17:51:26.898Z",
+  "changes": [
+    {
+      "productId": "gh-apple-iphone-17-256gb-black-1sim",
+      "retailerVariantId": "51572241301780",
+      "priceGHS": 12390,
+      "title": "256GB / Black",
+      "created": false
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-51572241334548",
+      "retailerVariantId": "51572241334548",
+      "priceGHS": 12390,
+      "title": "256GB / Mist Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-51572241367316",
+      "retailerVariantId": "51572241367316",
+      "priceGHS": 12390,
+      "title": "256GB / Lavender",
+      "created": true
+    },
+    {
+      "productId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420813033748",
+      "priceGHS": 18390,
+      "title": "256GB / Deep Blue",
+      "created": false
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51420813328660",
+      "retailerVariantId": "51420813328660",
+      "priceGHS": 18390,
+      "title": "256GB / Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946888468",
+      "retailerVariantId": "51581946888468",
+      "priceGHS": 18390,
+      "title": "256GB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209495828",
+      "retailerVariantId": "51561209495828",
+      "priceGHS": 22490,
+      "title": "512GB / Deep Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209528596",
+      "retailerVariantId": "51561209528596",
+      "priceGHS": 22490,
+      "title": "512GB / Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946921236",
+      "retailerVariantId": "51581946921236",
+      "priceGHS": 22490,
+      "title": "512GB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792040212",
+      "retailerVariantId": "52267792040212",
+      "priceGHS": 24900,
+      "title": "1TB / Deep Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792072980",
+      "retailerVariantId": "52267792072980",
+      "priceGHS": 24900,
+      "title": "1TB / Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792105748",
+      "retailerVariantId": "52267792105748",
+      "priceGHS": 24900,
+      "title": "1TB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51301360697620",
+      "priceGHS": 20990,
+      "title": "256GB / Deep Blue",
+      "created": false
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076892948",
+      "retailerVariantId": "51391076892948",
+      "priceGHS": 20990,
+      "title": "256GB / Cosmic Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688515348",
+      "retailerVariantId": "51420688515348",
+      "priceGHS": 20990,
+      "title": "256GB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51301360730388",
+      "retailerVariantId": "51301360730388",
+      "priceGHS": 23990,
+      "title": "512GB / Deep Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076925716",
+      "retailerVariantId": "51391076925716",
+      "priceGHS": 23990,
+      "title": "512GB / Cosmic Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688548116",
+      "retailerVariantId": "51420688548116",
+      "priceGHS": 23990,
+      "title": "512GB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688580884",
+      "retailerVariantId": "51420688580884",
+      "priceGHS": 27900,
+      "title": "1TB / Deep Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688613652",
+      "retailerVariantId": "51420688613652",
+      "priceGHS": 27900,
+      "title": "1TB / Cosmic Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688646420",
+      "retailerVariantId": "51420688646420",
+      "priceGHS": 27900,
+      "title": "1TB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688679188",
+      "retailerVariantId": "51420688679188",
+      "priceGHS": 33900,
+      "title": "2TB / Deep Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688711956",
+      "retailerVariantId": "51420688711956",
+      "priceGHS": 33900,
+      "title": "2TB / Cosmic Orange",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688744724",
+      "retailerVariantId": "51420688744724",
+      "priceGHS": 33900,
+      "title": "2TB / Silver",
+      "created": true
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212413716",
+      "priceGHS": 14899,
+      "title": "12GB+256GB / Light Violet",
+      "created": false
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212282644",
+      "retailerVariantId": "52002212282644",
+      "priceGHS": 14899,
+      "title": "12GB+256GB / Black",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212348180",
+      "retailerVariantId": "52002212348180",
+      "priceGHS": 14899,
+      "title": "12GB+256GB / Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212479252",
+      "retailerVariantId": "52002212479252",
+      "priceGHS": 14899,
+      "title": "12GB+256GB / White",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212675860",
+      "retailerVariantId": "52002212675860",
+      "priceGHS": 17299,
+      "title": "12GB+512GB / Light Violet",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212544788",
+      "retailerVariantId": "52002212544788",
+      "priceGHS": 17299,
+      "title": "12GB+512GB / Black",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212610324",
+      "retailerVariantId": "52002212610324",
+      "priceGHS": 17299,
+      "title": "12GB+512GB / Blue",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212741396",
+      "retailerVariantId": "52002212741396",
+      "priceGHS": 17299,
+      "title": "12GB+512GB / White",
+      "created": true
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "retailerVariantId": "52001777156372",
+      "priceGHS": 10599,
+      "title": "256GB / Blue",
+      "created": false
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001634320660",
+      "retailerVariantId": "52001634320660",
+      "priceGHS": 10599,
+      "title": "256GB / Black",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001777221908",
+      "retailerVariantId": "52001777221908",
+      "priceGHS": 10599,
+      "title": "256GB / Light Violet",
+      "created": true
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001777287444",
+      "retailerVariantId": "52001777287444",
+      "priceGHS": 10599,
+      "title": "256GB / White",
+      "created": true
+    },
+    {
+      "productId": "gh-apple-macbook-pro-m5-14-16gb-1tb-black",
+      "retailerVariantId": "51300198318356",
+      "priceGHS": 27000,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-apple-macbook-air-m5-15-16gb-512gb-midnight",
+      "retailerVariantId": "51300205560084",
+      "priceGHS": 21900,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-hp-250r-g10-core3-100u-8gb-512gb",
+      "retailerVariantId": "47330970075371",
+      "priceGHS": 7299,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-dell-pro-15-essential-pv15250",
+      "retailerVariantId": "47437908312299",
+      "priceGHS": 6999,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-lg-50ua85006la",
+      "retailerVariantId": "47143218905323",
+      "priceGHS": 5599,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-lg-43ur73006la",
+      "retailerVariantId": "47152548937963",
+      "priceGHS": 4499,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-tcl-65c6k",
+      "retailerVariantId": "47152561520875",
+      "priceGHS": 10999,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-nasco-nas-07-tw",
+      "retailerVariantId": "47143294304491",
+      "priceGHS": 1599,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-lg-mh8265dis",
+      "retailerVariantId": "47155211600107",
+      "priceGHS": 2899,
+      "title": "Default Title",
+      "created": false
+    },
+    {
+      "productId": "gh-sencor-srm-1000ss",
+      "retailerVariantId": "47970630533355",
+      "priceGHS": 300,
+      "title": "Default Title",
+      "created": false
+    }
+  ],
+  "imageMappings": [
+    {
+      "productId": "gh-apple-iphone-17-256gb-black-1sim",
+      "baseProductId": "gh-apple-iphone-17-256gb-black-1sim",
+      "retailerVariantId": "51572241301780",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Black"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone17Black.jpg?v=1769523308",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17?variant=51572241301780"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-51572241334548",
+      "baseProductId": "gh-apple-iphone-17-256gb-black-1sim",
+      "retailerVariantId": "51572241334548",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Mist Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone17Blue.jpg?v=1769523309",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17?variant=51572241334548"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-51572241367316",
+      "baseProductId": "gh-apple-iphone-17-256gb-black-1sim",
+      "retailerVariantId": "51572241367316",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Lavender"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone17Lavender.jpg?v=1769523309",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17?variant=51572241367316"
+    },
+    {
+      "productId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420813033748",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51420813033748"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51420813328660",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420813328660",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51420813328660"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946888468",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51581946888468",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51581946888468"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209495828",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51561209495828",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51561209495828"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51561209528596",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51561209528596",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51561209528596"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-51581946921236",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "51581946921236",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=51581946921236"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792040212",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "52267792040212",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=52267792040212"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792072980",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "52267792072980",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=52267792072980"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-1sim-52267792105748",
+      "baseProductId": "gh-apple-iphone-17-pro-256gb-deep-blue-1sim",
+      "retailerVariantId": "52267792105748",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-1sim?variant=52267792105748"
+    },
+    {
+      "productId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51301360697620",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51301360697620"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076892948",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51391076892948",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Cosmic Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51391076892948"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688515348",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688515348",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688515348"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51301360730388",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51301360730388",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51301360730388"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51391076925716",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51391076925716",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Cosmic Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51391076925716"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688548116",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688548116",
+      "options": {
+        "Storage": "512GB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688548116"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688580884",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688580884",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688580884"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688613652",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688613652",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Cosmic Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688613652"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688646420",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688646420",
+      "options": {
+        "Storage": "1TB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688646420"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688679188",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688679188",
+      "options": {
+        "Storage": "2TB",
+        "Colour": "Deep Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Deep_Blue.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688679188"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688711956",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688711956",
+      "options": {
+        "Storage": "2TB",
+        "Colour": "Cosmic Orange"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Max_Cosmic_Orange.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688711956"
+    },
+    {
+      "productId": "gh-telefonika-apple-iphone-17-pro-max-1sim-51420688744724",
+      "baseProductId": "gh-apple-iphone-17-pro-max-256gb-deep-blue-1sim",
+      "retailerVariantId": "51420688744724",
+      "options": {
+        "Storage": "2TB",
+        "Colour": "Silver"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/iPhone_17_Pro_Silver.jpg?v=1772210609",
+      "sourceUrl": "https://telefonika.com/products/apple-iphone-17-pro-max-1sim?variant=51420688744724"
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212413716",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "Colour": "Light Violet"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_256GB_VI_c8a800a3-ebbf-485a-9e01-36969cf656c1.png?v=1788302895",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212413716"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212282644",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212282644",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "Colour": "Black"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_256GB_BK_a99cd886-a58b-47b7-94c6-02381e78f58a.png?v=1788302895",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212282644"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212348180",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212348180",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "Colour": "Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_256GB_BU_1800eb27-e40f-4479-a8c5-afe3c398dea8.png?v=1788302894",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212348180"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212479252",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212479252",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "Colour": "White"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_256GB_WH_07789d19-8412-4697-b107-1867c2a99bb8.png?v=1788302895",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212479252"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212675860",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212675860",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "512GB",
+        "Colour": "Light Violet"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_512GB_VI_78dad9f3-0a62-4817-9f2b-2131643d86dd.png?v=1788302946",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212675860"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212544788",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212544788",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "512GB",
+        "Colour": "Black"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_512GB_BK_c8732454-f548-4f15-81eb-f7a6500d2200.png?v=1788302895",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212544788"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212610324",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212610324",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "512GB",
+        "Colour": "Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_512GB_BU_62c44773-4946-4099-b76c-b3ca0270e05b.png?v=1788302895",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212610324"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-ultra-52002212741396",
+      "baseProductId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212741396",
+      "options": {
+        "RAM": "12GB",
+        "Storage": "512GB",
+        "Colour": "White"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S948_S26U_12_512GB_WH_54891f37-1c5a-4edf-b036-80599ce8c193.png?v=1788302946",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26-ultra?variant=52002212741396"
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "baseProductId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "retailerVariantId": "52001777156372",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Blue"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S942_S26_12_256GB_BLU_23633759-2ec9-4bb5-ae4c-c1ebbb9deeae.png?v=1788302894",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777156372"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001634320660",
+      "baseProductId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "retailerVariantId": "52001634320660",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Black"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S942_S26_12_256GB_BLK_8f03e1a6-37e5-448f-946a-4ce35b732df7.png?v=1788302894",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001634320660"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001777221908",
+      "baseProductId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "retailerVariantId": "52001777221908",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "Light Violet"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S942_S26_12_256GB_VIO_01d07143-e404-48f8-ad3f-dd2fc28f44dd.png?v=1788302894",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777221908"
+    },
+    {
+      "productId": "gh-telefonika-samsung-galaxy-s26-52001777287444",
+      "baseProductId": "gh-samsung-galaxy-s26-12gb-256gb-blue",
+      "retailerVariantId": "52001777287444",
+      "options": {
+        "Storage": "256GB",
+        "Colour": "White"
+      },
+      "imageSource": "https://cdn.shopify.com/s/files/1/0952/4147/0228/files/S942_S26_12_256GB_WHT_8c6d271e-5297-479d-a302-d8103c7bee28.png?v=1788302894",
+      "sourceUrl": "https://telefonika.com/products/samsung-galaxy-s26?variant=52001777287444"
+    },
+    {
+      "productId": "gh-apple-macbook-pro-m5-14-16gb-1tb-black",
+      "baseProductId": "gh-apple-macbook-pro-m5-14-16gb-1tb-black",
+      "retailerVariantId": "51300198318356",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://telefonika.com/products/apple-macbook-pro-14-inch-m5-16gb-1tb-black-supercharged-by-m5-chip?variant=51300198318356"
+    },
+    {
+      "productId": "gh-apple-macbook-air-m5-15-16gb-512gb-midnight",
+      "baseProductId": "gh-apple-macbook-air-m5-15-16gb-512gb-midnight",
+      "retailerVariantId": "51300205560084",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://telefonika.com/products/apple-macbook-air-m5-15-inch-16gb-512gb-midnight-super-thin-super-powerful?variant=51300205560084"
+    },
+    {
+      "productId": "gh-hp-250r-g10-core3-100u-8gb-512gb",
+      "baseProductId": "gh-hp-250r-g10-core3-100u-8gb-512gb",
+      "retailerVariantId": "47330970075371",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/hp-250r-g10-core3-100u-8gb-512gb-15-6-inch-laptop?variant=47330970075371"
+    },
+    {
+      "productId": "gh-dell-pro-15-essential-pv15250",
+      "baseProductId": "gh-dell-pro-15-essential-pv15250",
+      "retailerVariantId": "47437908312299",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/dell-pro-15-essential-pv15250-c3-100u-8gb-512gb-ssd-15-6-inch-laptop?variant=47437908312299"
+    },
+    {
+      "productId": "gh-lg-50ua85006la",
+      "baseProductId": "gh-lg-50ua85006la",
+      "retailerVariantId": "47143218905323",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/lg-led-50ua85006la-uhd-smart-satellite-4k-ai-thinq-television?variant=47143218905323"
+    },
+    {
+      "productId": "gh-lg-43ur73006la",
+      "baseProductId": "gh-lg-43ur73006la",
+      "retailerVariantId": "47152548937963",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/lg-43ur73006la-43-led-uhd-smart-satellite-4k-television?variant=47152548937963"
+    },
+    {
+      "productId": "gh-tcl-65c6k",
+      "baseProductId": "gh-tcl-65c6k",
+      "retailerVariantId": "47152561520875",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/tcl-qled-65c6k-qd-mini-led-4k-smart-television?variant=47152561520875"
+    },
+    {
+      "productId": "gh-nasco-nas-07-tw",
+      "baseProductId": "gh-nasco-nas-07-tw",
+      "retailerVariantId": "47143294304491",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/nasco-7kg-nas-07-tw-washing-machine-white?variant=47143294304491"
+    },
+    {
+      "productId": "gh-lg-mh8265dis",
+      "baseProductId": "gh-lg-mh8265dis",
+      "retailerVariantId": "47155211600107",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/lg-42l-neocheftm-stainless-steel-microwave-with-smart-inverter-grill-oven?variant=47155211600107"
+    },
+    {
+      "productId": "gh-sencor-srm-1000ss",
+      "baseProductId": "gh-sencor-srm-1000ss",
+      "retailerVariantId": "47970630533355",
+      "options": {
+        "Title": "Default Title"
+      },
+      "imageSource": null,
+      "sourceUrl": "https://compughana.com/products/sencor-srm-1000ss-rice-cooker?variant=47970630533355"
+    }
+  ],
+  "quarantined": [
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212938004",
+      "title": "16GB+1TB / Light Violet",
+      "sku": "S948 S26U(12+1TB)VIOL",
+      "reason": "Retailer option RAM/storage conflicts with the exact SKU. Supplier verification required."
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212806932",
+      "title": "16GB+1TB / Black",
+      "sku": "S948 S26U(12+1TB)BLAK",
+      "reason": "Retailer option RAM/storage conflicts with the exact SKU. Supplier verification required."
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002212872468",
+      "title": "16GB+1TB / Blue",
+      "sku": "S948 S26U(12+1TB)LBLU",
+      "reason": "Retailer option RAM/storage conflicts with the exact SKU. Supplier verification required."
+    },
+    {
+      "productId": "gh-samsung-galaxy-s26-ultra-12gb-256gb-light-violet",
+      "retailerVariantId": "52002213003540",
+      "title": "16GB+1TB / White",
+      "sku": "S948 S26U(12+1TB)WHT",
+      "reason": "Retailer option RAM/storage conflicts with the exact SKU. Supplier verification required."
+    }
+  ]
+}
