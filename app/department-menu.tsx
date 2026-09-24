@@ -25,7 +25,7 @@ export default function DepartmentMenu() {
   const categoryTitleRef = useRef<HTMLHeadingElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const departmentButtons = useRef<Record<string, HTMLButtonElement | null>>({});
-  const previousView = useRef(false);
+  const pendingFocus = useRef<'category' | 'department' | null>(null);
   const active = navigationDepartments.find(department => department.id === activeId) || navigationDepartments[0];
   const searching = normalize(query).length > 0;
   const results = useMemo(() => {
@@ -38,19 +38,22 @@ export default function DepartmentMenu() {
   }, [query]);
 
   useEffect(() => {
-    if (!open) return;
-    if (showCategories) categoryTitleRef.current?.focus();
-    else if (previousView.current) departmentButtons.current[activeId]?.focus();
-    previousView.current = showCategories;
+    if (!open || searching || !pendingFocus.current) return;
+    const target = pendingFocus.current === 'category' ? categoryTitleRef.current : departmentButtons.current[activeId];
+    target?.focus();
+    pendingFocus.current = null;
   }, [activeId, open, showCategories, searching]);
 
   function changeOpen(value: boolean) {
     setOpen(value);
-    if (!value) { setQuery(''); setShowCategories(false); previousView.current = false; }
+    if (!value) { setQuery(''); setShowCategories(false); pendingFocus.current = null; }
   }
   function selectDepartment(id: string) {
+    if (id === activeId && showCategories && !searching) { categoryTitleRef.current?.focus(); return; }
+    pendingFocus.current = 'category';
     setActiveId(id); setQuery(''); setShowCategories(true);
   }
+  function backToDepartments() { pendingFocus.current = 'department'; setShowCategories(false); }
   function clearSearch() { setQuery(''); searchRef.current?.focus(); }
 
   return <Dialog open={open} onOpenChange={changeOpen}>
@@ -75,7 +78,7 @@ export default function DepartmentMenu() {
           }}><MenuImage src={department.image}/><span>{department.title}</span><ChevronRight size={16}/></button>)}
         </div>
         {active && <section className="explore-categories" id="explore-categories" key={active.id} aria-label={active.title + ' categories'}>
-          <div className="explore-category-heading"><button className="explore-back" onClick={() => setShowCategories(false)}><ArrowLeft size={17}/> All departments</button><div className="explore-department-intro"><MenuImage src={active.image}/><div><p className="explore-kicker">YOUR WORLD, UPGRADED</p><h3 ref={categoryTitleRef} tabIndex={-1}>{active.title}</h3><a href={active.href}>Explore the department <ArrowRight size={16}/></a></div></div></div>
+          <div className="explore-category-heading"><button className="explore-back" onClick={backToDepartments}><ArrowLeft size={17}/> All departments</button><div className="explore-department-intro"><MenuImage src={active.image}/><div><p className="explore-kicker">YOUR WORLD, UPGRADED</p><h3 ref={categoryTitleRef} tabIndex={-1}>{active.title}</h3><a href={active.href}>Explore the department <ArrowRight size={16}/></a></div></div></div>
           <div className="explore-category-scroll"><p className="explore-list-label">Find your kind of favourite</p><div className="explore-category-grid">{active.categories.map(category => <a key={category.href} href={category.href}><MenuImage src={category.image}/><span><strong>{category.name}</strong></span><ArrowUpRight size={16}/></a>)}</div></div>
         </section>}
       </div>}
