@@ -116,20 +116,16 @@ r=await route.POST(req({action:'save',product:catalogue[0].id,value:true},{heade
 r=await route.POST(req({action:'request',kind:'service',form:{name:'Preview QA',email:'bad-address'}}));assert.equal(r.status,400);
 
 // Account tests exercise actual Better Auth-signed sessions, not forged user mocks.
-const authEmails=[];
 Object.assign(globalThis.__koraStoreTestBindings,{
  BETTER_AUTH_SECRET:'store-test-only-secret-abcdefghijklmnopqrstuvwxyz-0123456789',
- BETTER_AUTH_URL:origin,AUTH_EMAIL_FROM:'signin@kora.example',
- EMAIL:{async send(message){authEmails.push(message);return{messageId:'test-only'}}}
+ BETTER_AUTH_URL:origin,
 });
 let authIp=1;
 async function signIn(email,name){
- const response=await handleCustomerAuth(new Request(origin+'/api/auth/sign-in/magic-link',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json','CF-Connecting-IP':`198.51.100.${authIp++}`},body:JSON.stringify({email,name,callbackURL:'/account'})}),globalThis.__koraStoreTestBindings);
+ const response=await handleCustomerAuth(new Request(origin+'/api/auth/sign-up/email',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json','CF-Connecting-IP':`198.51.100.${authIp++}`},body:JSON.stringify({email,name,password:'store-test-password-2026',callbackURL:'/account'})}),globalThis.__koraStoreTestBindings);
  assert.equal(response.status,200,await response.clone().text());
- const url=authEmails.at(-1).text.match(/account: (\S+)/)[1];
- const verified=await handleCustomerAuth(new Request(url,{headers:{'CF-Connecting-IP':`198.51.100.${authIp++}`}}),globalThis.__koraStoreTestBindings);
- assert.equal(verified.status,302);
- const authCookie=verified.headers.getSetCookie().find(value=>value.startsWith('__Secure-kora.auth.session_token='))?.split(';')[0];assert(authCookie);
+ assert.equal((await response.clone().json()).user.emailVerified,false);
+ const authCookie=response.headers.getSetCookie().find(value=>value.startsWith('__Secure-kora.auth.session_token='))?.split(';')[0];assert(authCookie);
  const id=sqlite.prepare('SELECT id FROM auth_user WHERE email=?').get(email).id;
  return{cookie:authCookie,id,owner:'account:'+id};
 }

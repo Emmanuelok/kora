@@ -28,7 +28,6 @@ registerHooks({
 
 const { createCustomerAuth, handleCustomerAuth, authCapabilities, resolveAuthOrigin, DEFAULT_AUTH_ORIGIN } = await import('../lib/auth-core.ts');
 const { getCustomerSession } = await import('../lib/auth.ts');
-const { magicLinkEmail } = await import('../lib/auth-email.ts');
 const sqlite = new DatabaseSync(':memory:');
 sqlite.exec('PRAGMA foreign_keys = ON;');
 sqlite.exec(fs.readFileSync('drizzle/0001_customer_auth.sql', 'utf8'));
@@ -46,15 +45,13 @@ const DB = {
     };
   },
 };
-const sent = [];
 const env = {
   DB,
   BETTER_AUTH_SECRET: 'test-only-secret-0123456789-abcdefghijklmnopqrstuvwxyz',
-  AUTH_EMAIL_FROM: 'signin@kora.example',
-  EMAIL: { async send(message) { sent.push(message); return { messageId: 'test-message' }; } },
 };
 Object.assign(globalThis.__koraAuthTestBindings, env);
 const origin = DEFAULT_AUTH_ORIGIN;
+const password = 'Kora-test-password-2026';
 let nextIp = 1;
 function request(path, body, options = {}) {
   return new Request((options.originURL || origin) + '/api/auth' + path, {
@@ -64,47 +61,32 @@ function request(path, body, options = {}) {
   });
 }
 const call = (path, body, options, bindings = env) => handleCustomerAuth(request(path, body, options), bindings);
-function emailUrl(message) { return new URL(message.text.match(/account: (\S+)/)[1]); }
 function sessionCookie(response) { return response.headers.getSetCookie().find(value => value.startsWith('__Secure-kora.auth.session_token='))?.split(';')[0]; }
-async function issue(email, options = {}) {
-  const response = await call('/sign-in/magic-link', { email, callbackURL: '/account', errorCallbackURL: '/account', name: 'Kora test' }, options);
-  assert.equal(response.status, 200, await response.clone().text());
-  assert.deepEqual(await response.json(), { status: true });
-  return emailUrl(sent.at(-1));
-}
-function redeem(url, options = {}) {
-  return handleCustomerAuth(new Request(url, { headers: { 'CF-Connecting-IP': `198.51.100.${nextIp++}`, ...options.headers } }), env);
-}
+const signup = (email, extra = {}, options = {}) => call('/sign-up/email', { email, password, name: 'Kora test', callbackURL: '/account', ...extra }, options);
+const signin = (email, suppliedPassword = password, options = {}) => call('/sign-in/email', { email, password: suppliedPassword, callbackURL: '/account' }, options);
 const checks = [];
 
-assert.deepEqual(authCapabilities({}), { configured: false, google: false, magicLink: false });
+assert.deepEqual(authCapabilities({}), { configured: false, password: false, google: false });
+assert.deepEqual(authCapabilities(env), { configured: true, password: true, google: false });
 assert.equal(resolveAuthOrigin({}), origin);
 for (const BETTER_AUTH_URL of ['https://attacker.example/path', '//attacker.example', 'javascript:alert(1)', 'https://user:pass@kora.example', 'http://kora.example', 'https://localhost', 'http://127.0.0.1:8787', 'https://kora.example?x=1']) assert.equal(resolveAuthOrigin({ BETTER_AUTH_URL }), null);
 assert.equal(resolveAuthOrigin({ BETTER_AUTH_URL: 'http://localhost:8787', KORA_AUTH_ALLOW_LOCAL: 'true' }), 'http://localhost:8787');
-let response = await call('/sign-in/magic-link', { email: 'test@example.com' }, {}, {});
+let response = await call('/sign-up/email', { email: 'test@example.com', password, name: 'Test' }, {}, {});
 assert.equal(response.status, 503);
 assert.equal(response.headers.get('cache-control'), 'no-store');
-const before = sqlite.prepare('SELECT COUNT(*) AS n FROM auth_verification').get().n;
-response = await call('/sign-in/magic-link', { email: 'test@example.com' }, {}, { ...env, EMAIL: undefined });
-assert.equal(response.status, 503);
-assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_verification').get().n, before);
-checks.push('missing configuration stays unavailable without fake mail or database writes');
+assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_user').get().n, 0);
+checks.push('password capability requires configured D1 and secret; no email provider is needed');
 
-const url = await issue('customer@example.com');
-assert.equal(url.origin, origin);
-const token = url.searchParams.get('token');
-const record = sqlite.prepare('SELECT * FROM auth_verification').get();
-assert.notEqual(record.identifier, token);
-assert(!JSON.stringify(record).includes(token));
-assert(Math.abs(record.expires_at - Date.now() - 600_000) < 5000);
-assert.equal(sent[0].from.email, env.AUTH_EMAIL_FROM);
-assert(sent[0].html.includes('Sign in to Kora') && sent[0].text.includes('10 minutes'));
-assert(magicLinkEmail('https://kora.example/?x="<&').html.includes('&quot;&lt;&amp;'));
-response = await redeem(new URL(url.href.replace(token, 'invalid-token')));
-assert(!sessionCookie(response));
-response = await redeem(url);
-assert.equal(response.status, 302);
-assert.equal(response.headers.get('location'), origin + '/account');
+for (const invalidPassword of ['short', 'x'.repeat(129)]) {
+  response = await signup('invalid-password@example.com', { password: invalidPassword });
+  assert.equal(response.status, 400);
+  assert(!sessionCookie(response));
+}
+assert.equal(sqlite.prepare('SELECT id FROM auth_user WHERE email=?').get('invalid-password@example.com'), undefined);
+response = await signup('customer@example.com', { emailVerified: true });
+assert.equal(response.status, 200, await response.clone().text());
+const signupBody = await response.clone().json();
+assert.equal(signupBody.user.emailVerified, false, 'Client cannot claim a verified email');
 const cookie = sessionCookie(response);
 assert(cookie);
 const fullCookie = response.headers.getSetCookie().find(value => value.startsWith(cookie));
@@ -115,28 +97,45 @@ assert.equal(response.headers.get('referrer-policy'), 'no-referrer');
 const auth = createCustomerAuth(env);
 const session = await auth.api.getSession({ headers: new Headers({ Cookie: cookie }) });
 assert.equal(session.user.email, 'customer@example.com');
-assert.equal(session.user.emailVerified, true);
+assert.equal(session.user.emailVerified, false);
 assert.equal((await getCustomerSession(request('/get-session', undefined, { headers: { Cookie: cookie } }))).user.id, session.user.id);
 assert.equal(await getCustomerSession(request('/get-session', undefined, { headers: { 'oai-authenticated-user-id': session.user.id } })), null);
+const stored = sqlite.prepare('SELECT password,provider_id FROM auth_account WHERE user_id=?').get(session.user.id);
+assert.equal(stored.provider_id, 'credential');
+assert.match(stored.password, /^[a-f0-9]{32}:[a-f0-9]{128}$/);
+assert(!stored.password.includes(password));
+response = await signup('another@example.com');
+assert.equal(response.status, 200);
+const anotherHash = sqlite.prepare('SELECT password FROM auth_account WHERE user_id=(SELECT id FROM auth_user WHERE email=?)').get('another@example.com').password;
+assert.notEqual(stored.password, anotherHash, 'Identical passwords receive independent random salts');
 const savedSecret = globalThis.__koraAuthTestBindings.BETTER_AUTH_SECRET;
 delete globalThis.__koraAuthTestBindings.BETTER_AUTH_SECRET;
 await assert.rejects(() => getCustomerSession(request('/get-session', undefined, { headers: { Cookie: cookie } })), /temporarily unavailable/);
 assert.equal(await getCustomerSession(request('/get-session')), null);
 globalThis.__koraAuthTestBindings.BETTER_AUTH_SECRET = savedSecret;
-response = await redeem(url);
-assert(!sessionCookie(response));
-assert(new URL(response.headers.get('location')).searchParams.get('error') === 'INVALID_TOKEN');
-checks.push('hashed ten-minute magic links, verified signup, signed secure cookie and single-use redemption');
+checks.push('12–128 character passwords; salted scrypt storage; unverified signup is never falsely marked verified');
+checks.push('password accounts authenticate by signed session and immutable user ID; configuration outages fail closed');
 
-const raceUrl = await issue('race@example.com');
-const raced = await Promise.all([redeem(raceUrl), redeem(raceUrl)]);
-assert.equal(raced.filter(result => sessionCookie(result)).length, 1);
-const expiredUrl = await issue('expired@example.com');
-sqlite.prepare('UPDATE auth_verification SET expires_at=?').run(Date.now() - 10_000);
-response = await redeem(expiredUrl);
-assert(!sessionCookie(response));
-assert.equal(sqlite.prepare('SELECT id FROM auth_user WHERE email=?').get('expired@example.com'), undefined);
-checks.push('concurrent token redemption is atomic; expired links cannot create users');
+const wrong = await signin('customer@example.com', 'wrong-password-2026');
+const absent = await signin('does-not-exist@example.com', 'wrong-password-2026');
+assert.equal(wrong.status, 401); assert.equal(absent.status, 401);
+assert.equal((await wrong.json()).code, (await absent.json()).code);
+assert(!sessionCookie(wrong)); assert(!sessionCookie(absent));
+response = await signup('CUSTOMER@example.com', { password: 'attacker-new-password' });
+assert.equal(response.status, 422);
+assert.equal(sqlite.prepare('SELECT password FROM auth_account WHERE user_id=?').get(session.user.id).password, stored.password);
+response = await signin('CUSTOMER@example.com');
+assert.equal(response.status, 200, await response.clone().text());
+assert.equal((await response.json()).user.id, session.user.id);
+assert(sessionCookie(response));
+checks.push('correct-password sign-in works; wrong/unknown accounts fail uniformly; duplicate signup cannot overwrite credentials');
+
+response = await signin('customer@example.com', 'x'.repeat(129));
+assert.equal(response.status, 400); assert.equal((await response.json()).code, 'PASSWORD_TOO_LONG');
+response = await call('/change-password', { currentPassword: 'x'.repeat(129), newPassword: 'new-test-password-2026' }, { headers: { Cookie: cookie } });
+assert.equal(response.status, 400); assert.equal((await response.json()).code, 'PASSWORD_TOO_LONG');
+assert.equal(sqlite.prepare('SELECT password FROM auth_account WHERE user_id=?').get(session.user.id).password, stored.password);
+checks.push('oversized sign-in and current-password inputs are rejected before password hashing');
 
 const signedValue = decodeURIComponent(cookie.split('=')[1]);
 const rawToken = signedValue.slice(0, signedValue.lastIndexOf('.'));
@@ -147,43 +146,53 @@ response = await call('/sign-out', {}, { headers: { Cookie: cookie } });
 assert.equal(response.status, 200);
 assert.equal(await auth.api.getSession({ headers: new Headers({ Cookie: cookie }) }), null);
 assert.equal(sqlite.prepare('SELECT id FROM auth_session WHERE id=?').get(session.session.id), undefined);
-const secondUrl = await issue('customer@example.com');
-const secondCookie = sessionCookie(await redeem(secondUrl));
+const expiredCookie = sessionCookie(await signin('customer@example.com'));
 sqlite.prepare('UPDATE auth_session SET expires_at=? WHERE user_id=?').run(Date.now() - 1000, session.user.id);
-assert.equal(await auth.api.getSession({ headers: new Headers({ Cookie: secondCookie }) }), null);
-checks.push('forged and expired cookies fail; logout revokes the database session immediately');
+assert.equal(await auth.api.getSession({ headers: new Headers({ Cookie: expiredCookie }) }), null);
+checks.push('signed HttpOnly/Secure/SameSite cookies, forged and expired-cookie rejection, immediate DB logout revocation');
 
 for (const headers of [{ Origin: 'https://outside.example' }, { Origin: '' }, { Origin: 'null' }]) {
-  response = await call('/sign-in/magic-link', { email: 'cross-origin@example.com' }, { headers });
+  response = await signin('customer@example.com', password, { headers });
   assert.equal(response.status, 403);
 }
 for (const callbackURL of ['https://outside.example/steal', '//outside.example', '/\\outside.example']) {
-  response = await call('/sign-in/magic-link', { email: 'redirect@example.com', callbackURL });
+  response = await call('/sign-in/email', { email: 'customer@example.com', password, callbackURL });
   assert.equal(response.status, 403);
 }
-const redirectUrl = await issue('redirect@example.com');
-redirectUrl.searchParams.set('callbackURL', 'https://outside.example');
-response = await redeem(redirectUrl);
-assert.equal(response.status, 403);
-assert(!sessionCookie(response));
 checks.push('cross-origin requests and callback open redirects are rejected');
 
-response = await call('/sign-in/magic-link', { email: 'delivery@example.com' }, {}, { ...env, EMAIL: { async send() { throw new Error('Simulated provider failure'); } } });
-assert.equal(response.status, 503);
-assert.equal((await response.json()).code, 'EMAIL_DELIVERY_FAILED');
-checks.push('Cloudflare email delivery failure never reports a successful send');
+const previousVerificationCount = sqlite.prepare('SELECT COUNT(*) AS n FROM auth_verification').get().n;
+for (const path of ['/request-password-reset', '/reset-password', '/reset-password/fake-token', '/forget-password', '/send-verification-email', '/verify-email', '/change-email']) {
+  response = await call(path, { email: 'customer@example.com', token: 'fake-token', newPassword: 'new-test-password' });
+  assert.equal(response.status, 503, path);
+  const data = await response.json(); assert.equal(data.code, 'EMAIL_RECOVERY_UNAVAILABLE'); assert(data.message.includes('No email has been sent'));
+}
+for (const path of ['/sign-in/magic-link', '/sign-in/magic-link/', '/magic-link/verify?token=old', '/link-social', '/unlink-account', '/set-password']) {
+  response = await call(path, path.includes('verify') ? undefined : { email: 'customer@example.com' });
+  assert.equal(response.status, 404, path);
+  assert.equal((await response.json()).code, 'AUTH_METHOD_UNAVAILABLE');
+}
+assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM auth_verification').get().n, previousVerificationCount);
+assert.equal(sqlite.prepare('SELECT password FROM auth_account WHERE user_id=?').get(session.user.id).password, stored.password);
+checks.push('magic links, provider linking and email-dependent recovery are explicitly unavailable without fake success');
 
-const rateIp = '203.0.113.15';
-const rateResponses = await Promise.all(Array.from({ length: 7 }, (_, index) => call('/sign-in/magic-link', { email: `rate${index}@example.com` }, { ip: rateIp })));
-assert.equal(rateResponses.filter(result => result.status === 200).length, 3);
-assert.equal(rateResponses.filter(result => result.status === 429).length, 4);
-assert(rateResponses.find(result => result.status === 429).headers.get('retry-after'));
-response = await handleCustomerAuth(request('/sign-in/magic-link', { email: 'rate-next@example.com' }, { ip: rateIp }), { ...env });
-assert.equal(response.status, 429, 'Fresh auth instances share D1 rate limits');
-checks.push('D1 rate limits hold under concurrency and across fresh Worker auth instances');
+const signupRateIp = '203.0.113.15';
+const rateSignups = await Promise.all(Array.from({ length: 7 }, (_, index) => signup(`rate${index}@example.com`, {}, { ip: signupRateIp })));
+assert.equal(rateSignups.filter(result => result.status === 200).length, 3);
+assert.equal(rateSignups.filter(result => result.status === 429).length, 4);
+assert(rateSignups.find(result => result.status === 429).headers.get('retry-after'));
+response = await handleCustomerAuth(request('/sign-up/email', { email: 'rate-next@example.com', password, name: 'Rate test' }, { ip: signupRateIp }), { ...env });
+assert.equal(response.status, 429, 'Fresh auth instances share D1 signup rate limits');
+const signinRateIp = '203.0.113.25';
+const rateSignins = await Promise.all(Array.from({ length: 13 }, () => signin('rate0@example.com', 'incorrect-password', { ip: signinRateIp })));
+assert.equal(rateSignins.filter(result => result.status === 401).length, 10);
+assert.equal(rateSignins.filter(result => result.status === 429).length, 3);
+response = await signin('rate0@example.com', password, { ip: signinRateIp });
+assert.equal(response.status, 429);
+checks.push('persistent D1 signup/sign-in throttles hold under concurrent requests and fresh auth instances');
 
 const googleEnv = { ...env, GOOGLE_CLIENT_ID: 'test-client.apps.googleusercontent.com', GOOGLE_CLIENT_SECRET: 'test-secret' };
-assert.deepEqual(authCapabilities(googleEnv), { configured: true, google: true, magicLink: true });
+assert.deepEqual(authCapabilities(googleEnv), { configured: true, password: true, google: true });
 response = await call('/sign-in/social', { provider: 'google', callbackURL: '/account' }, { originURL: 'https://attacker.example' }, googleEnv);
 assert.equal(response.status, 200);
 const authorization = new URL((await response.json()).url);
@@ -194,11 +203,32 @@ assert.equal(authorization.searchParams.get('access_type'), 'online');
 assert(authorization.searchParams.get('state'));
 assert(response.headers.getSetCookie().some(value => value.includes('oauth_state') || value.includes('state')));
 const googleAuth = createCustomerAuth(googleEnv);
-assert.equal(googleAuth.options.account.accountLinking.requireLocalEmailVerified, true);
+assert.equal(googleAuth.options.account.accountLinking.enabled, false);
+assert.equal(googleAuth.options.account.accountLinking.disableImplicitLinking, true);
 assert.deepEqual(googleAuth.options.account.accountLinking.trustedProviders, []);
 assert.equal(googleAuth.options.account.encryptOAuthTokens, true);
-await assert.rejects(() => googleAuth.options.databaseHooks.user.create.before({ emailVerified: false }), /verified email/);
-checks.push('Google uses only identity scopes, fixed callback origin, state cookie, encrypted tokens and verified-email linking');
+assert.equal(googleAuth.options.socialProviders.google.requireEmailVerification, true);
 
-console.log(JSON.stringify({ passed: true, checks, transport: 'Actual Better Auth 1.7.5 + Drizzle D1 adapter against SQLite', sends: 'Stub Cloudflare binding only; no real email or OAuth account used' }, null, 2));
+// Exercise the installed OAuth ownership resolver with authenticated-provider
+// claims after its token-verification boundary; no Google network calls are made.
+const { handleOAuthUserInfo } = await import('../node_modules/better-auth/dist/oauth2/link-account.mjs');
+const googleContext = await googleAuth.$context;
+const oauthInfo = (email, subject, emailVerified = true) => ({ userInfo: { id: subject, email, emailVerified, name: 'Google test' }, account: { providerId: 'google', accountId: subject }, callbackURL: '/account', disableSignUp: false });
+const credentialsBeforeCollision = sqlite.prepare('SELECT * FROM auth_account WHERE user_id=?').all(session.user.id);
+const collision = await handleOAuthUserInfo({ context: googleContext }, oauthInfo('customer@example.com', 'google-customer-subject'));
+assert.equal(collision.error, 'account not linked'); assert.equal(collision.data, null);
+assert.deepEqual(sqlite.prepare('SELECT * FROM auth_account WHERE user_id=?').all(session.user.id), credentialsBeforeCollision);
+assert.equal(sqlite.prepare('SELECT email_verified FROM auth_user WHERE id=?').get(session.user.id).email_verified, 0);
+const googleSignup = await handleOAuthUserInfo({ context: googleContext }, oauthInfo('google-only@example.com', 'google-only-subject'));
+assert.equal(googleSignup.error, null); assert.equal(googleSignup.data.user.emailVerified, true);
+const googleRepeat = await handleOAuthUserInfo({ context: googleContext }, oauthInfo('google-only@example.com', 'google-only-subject'));
+assert.equal(googleRepeat.error, null); assert.equal(googleRepeat.data.user.id, googleSignup.data.user.id);
+response = await signup('google-only@example.com'); assert.equal(response.status, 422);
+assert.equal(sqlite.prepare("SELECT id FROM auth_account WHERE user_id=? AND provider_id='credential'").get(googleSignup.data.user.id), undefined);
+const unverifiedGoogle = await handleOAuthUserInfo({ context: googleContext }, oauthInfo('unverified-google@example.com', 'unverified-google-subject', false));
+assert.equal(unverifiedGoogle.error, 'email_not_verified'); assert.equal(unverifiedGoogle.data, null);
+checks.push('Google identity scopes and fixed callback/state; existing password/Google email collisions cannot link or overwrite accounts');
+checks.push('verified Google users can sign in repeatedly; unverified Google identities receive no session');
+
+console.log(JSON.stringify({ passed: true, checks, transport: 'Actual Better Auth 1.7.5 + Drizzle D1 adapter against SQLite', externalServices: 'No email provider or live OAuth calls; default scrypt hashing is exercised' }, null, 2));
 sqlite.close();

@@ -88,7 +88,7 @@ const publicPages: Record<string, PageCopy> = {
 
 const privatePages: Record<string, PageCopy> = {
   '/sign-in': { title: 'Welcome back to KORA', description: 'Sign in securely to keep your KORA bag, saved products and requests together.' },
-  '/sign-up': { title: 'Make yourself at home', description: 'Create your KORA account with Google or a secure email link.' },
+  '/sign-up': { title: 'Make yourself at home', description: 'Create your KORA account with your email and password, or Google.' },
   '/account': { title: 'My KORA', description: 'Your KORA account, shopping profile and requests.' },
   '/cart': { title: 'Your shopping bag', description: 'Review the products in your KORA shopping bag.' },
   '/checkout': { title: 'Request a quotation', description: 'Request a KORA quotation for the products in your shopping bag.' },

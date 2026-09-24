@@ -1,10 +1,8 @@
 import { betterAuth } from 'better-auth';
-import { APIError } from 'better-auth/api';
+import { APIError, createAuthMiddleware } from 'better-auth/api';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { magicLink } from 'better-auth/plugins/magic-link';
 import { drizzle } from 'drizzle-orm/d1';
 import { authSchema } from '../db/auth-schema';
-import { magicLinkEmail, type CloudflareEmailBinding } from './auth-email';
 
 export const DEFAULT_AUTH_ORIGIN = 'https://kora.eo-kingsford.workers.dev';
 
@@ -16,9 +14,10 @@ export interface AuthBindings {
   KORA_AUTH_ALLOW_LOCAL?: string;
   GOOGLE_CLIENT_ID?: string;
   GOOGLE_CLIENT_SECRET?: string;
-  AUTH_EMAIL_FROM?: string;
-  EMAIL?: CloudflareEmailBinding;
 }
+
+const unavailableEmailPaths = ['/request-password-reset', '/reset-password', '/forget-password', '/send-verification-email', '/verify-email', '/change-email'];
+const removedPaths = ['/sign-in/magic-link', '/magic-link/verify', '/link-social', '/unlink-account', '/set-password'];
 
 // Configuration is supplied by the operator, never inferred from request or proxy headers.
 export function resolveAuthOrigin(bindings: AuthBindings): string | null {
@@ -37,8 +36,8 @@ export function authCapabilities(bindings: AuthBindings) {
   const configured = Boolean(bindings.DB && bindings.BETTER_AUTH_SECRET && bindings.BETTER_AUTH_SECRET.length >= 32 && resolveAuthOrigin(bindings));
   return {
     configured,
+    password: configured,
     google: configured && Boolean(bindings.GOOGLE_CLIENT_ID && bindings.GOOGLE_CLIENT_SECRET),
-    magicLink: configured && Boolean(bindings.EMAIL && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(bindings.AUTH_EMAIL_FROM || '')),
   };
 }
 
@@ -54,7 +53,16 @@ export function createCustomerAuth(bindings: AuthBindings) {
     secret: bindings.BETTER_AUTH_SECRET,
     trustedOrigins: [origin],
     database: drizzleAdapter(drizzle(bindings.DB, { schema: authSchema }), { provider: 'sqlite', schema: authSchema, transaction: false }),
-    emailAndPassword: { enabled: false },
+    emailAndPassword: {
+      enabled: true,
+      minPasswordLength: 12,
+      maxPasswordLength: 128,
+      requireEmailVerification: false,
+      autoSignIn: true,
+      // Better Auth's salted scrypt defaults are retained without weakening them.
+    },
+    emailVerification: { sendOnSignUp: false, sendOnSignIn: false },
+    disabledPaths: [...unavailableEmailPaths, ...removedPaths],
     socialProviders: capabilities.google ? {
       google: {
         clientId: bindings.GOOGLE_CLIENT_ID!,
@@ -64,11 +72,14 @@ export function createCustomerAuth(bindings: AuthBindings) {
         accessType: 'online',
         includeGrantedScopes: false,
         prompt: 'select_account',
+        requireEmailVerification: true,
       },
     } : {},
     account: {
       encryptOAuthTokens: true,
-      accountLinking: { enabled: true, requireLocalEmailVerified: true, trustedProviders: [], allowDifferentEmails: false },
+      // Password signup proves knowledge of a password, not ownership of an
+      // email inbox. Never merge accounts just because their email strings match.
+      accountLinking: { enabled: false, disableImplicitLinking: true, requireLocalEmailVerified: true, trustedProviders: [], allowDifferentEmails: false },
       storeStateStrategy: 'database',
     },
     session: {
@@ -89,34 +100,23 @@ export function createCustomerAuth(bindings: AuthBindings) {
       window: 60,
       max: 60,
       customRules: {
-        '/sign-in/magic-link': { window: 600, max: 3 },
-        '/magic-link/verify': { window: 600, max: 10 },
+        '/sign-up/email': { window: 600, max: 3 },
+        '/sign-in/email': { window: 600, max: 10 },
+        '/change-password': { window: 600, max: 5 },
         '/sign-in/social': { window: 60, max: 10 },
       },
     },
-    databaseHooks: {
-      user: {
-        create: {
-          before: async user => {
-            if (!user.emailVerified) throw new APIError('FORBIDDEN', { code: 'EMAIL_VERIFICATION_REQUIRED', message: 'Use a verified email address to create your Kora account.' });
-          },
-        },
-      },
-    },
-    plugins: [magicLink({
-      expiresIn: 600,
-      storeToken: 'hashed',
-      sendMagicLink: async ({ email, url }) => {
-        if (!capabilities.magicLink || !bindings.EMAIL || !bindings.AUTH_EMAIL_FROM) throw new APIError('SERVICE_UNAVAILABLE', { code: 'EMAIL_NOT_CONFIGURED', message: 'Email sign-in is being set up. Please try another sign-in option.' });
-        try {
-          const result = await bindings.EMAIL.send({ to: email, from: { email: bindings.AUTH_EMAIL_FROM, name: 'Kora Ghana' }, ...magicLinkEmail(url) });
-          if (!result?.messageId) throw new Error('Email service did not acknowledge the message');
-        } catch {
-          // Do not log email addresses, sign-in tokens, links or provider responses.
-          throw new APIError('SERVICE_UNAVAILABLE', { code: 'EMAIL_DELIVERY_FAILED', message: 'We could not send your sign-in link. Please wait a moment and try again.' });
+    hooks: {
+      before: createAuthMiddleware(async context => {
+        // Better Auth enforces the new-password limit itself; constrain existing
+        // passwords too, before the sign-in/change-password hashing work starts.
+        for (const key of ['password', 'currentPassword']) {
+          if (typeof context.body?.[key] === 'string' && context.body[key].length > 128) {
+            throw new APIError('BAD_REQUEST', { code: 'PASSWORD_TOO_LONG', message: 'Use a password of at most 128 characters.' });
+          }
         }
-      },
-    })],
+      }),
+    },
     telemetry: { enabled: false },
     logger: {
       level: 'error',
@@ -130,8 +130,14 @@ export type CustomerAuth = NonNullable<ReturnType<typeof createCustomerAuth>>;
 
 export async function handleCustomerAuth(request: Request, bindings: AuthBindings) {
   const capabilities = authCapabilities(bindings);
-  const pathname = new URL(request.url).pathname;
-  if (!capabilities.configured || (pathname === '/api/auth/sign-in/magic-link' && !capabilities.magicLink) || (pathname === '/api/auth/sign-in/social' && !capabilities.google)) {
+  const pathname = new URL(request.url).pathname.replace(/\/+$/, '');
+  if (unavailableEmailPaths.some(path => pathname === '/api/auth' + path || pathname.startsWith('/api/auth' + path + '/'))) {
+    return Response.json({ code: 'EMAIL_RECOVERY_UNAVAILABLE', message: 'Email verification and password reset are not available yet. No email has been sent.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+  }
+  if (removedPaths.some(path => pathname === '/api/auth' + path || pathname.startsWith('/api/auth' + path + '/'))) {
+    return Response.json({ code: 'AUTH_METHOD_UNAVAILABLE', message: 'This authentication method is not available. Use email and password or Google.' }, { status: 404, headers: { 'Cache-Control': 'no-store' } });
+  }
+  if (!capabilities.configured || (pathname === '/api/auth/sign-in/social' && !capabilities.google)) {
     return Response.json({ code: 'AUTH_NOT_CONFIGURED', message: 'This sign-in option is being set up. You can continue browsing as a guest.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
   // The app has one public origin. Reject cross-origin POSTs even before a user

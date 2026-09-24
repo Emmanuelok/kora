@@ -9,7 +9,7 @@ This repository contains the source recovered from KORA's ChatGPT Site, includin
 - 2,393 catalogue products across 29 departments and 224 categories.
 - Search, filters, product details, comparison, collections and a product finder.
 - Product galleries with reviewed source imagery; current five-image coverage is recorded in `data/gallery-coverage.json`.
-- Persistent guest shopping and Cloudflare-hosted customer accounts, with Google and magic-link integration awaiting provider configuration.
+- Persistent guest shopping and Cloudflare-hosted customer accounts, with email/password and Google sign-in awaiting production configuration.
 - Storage, colour, size and bundle selection across 12 product families and 55 exact configurations.
 - 46 dated Ghana retailer price references in GHS; 2,347 other products require quotations.
 - Service, business, trade-in, return and contact enquiry forms.
@@ -74,6 +74,6 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 
 The product catalogue is in `data/products.json`. The four D1 tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights.
 
-The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer account code now runs on Workers and D1 using Better Auth. Google OAuth credentials and optional Cloudflare Email configuration must be supplied before customer sign-in becomes available; see [Cloudflare authentication setup](docs/CLOUDFLARE-AUTH.md). Production is public for customer testing at https://kora.eo-kingsford.workers.dev. Cloudflare Access protects previews only; preview builds and URLs are disabled. See [hosting guidance](docs/HOSTING.md).
+The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer account code now runs on Workers and D1 using Better Auth. A signing secret enables email/password accounts; Google OAuth credentials enable Google sign-in. Magic links are removed, and email verification/password reset remain unavailable; see [Cloudflare authentication setup](docs/CLOUDFLARE-AUTH.md). Production is public for customer testing at https://kora.eo-kingsford.workers.dev. Cloudflare Access protects previews only; preview builds and URLs are disabled. See [hosting guidance](docs/HOSTING.md).
 
 `CATALOGUE-UPDATES.md` describes the existing ChatGPT research/update task. That schedule is external to GitHub and does not automatically follow this repository. Older snapshot statistics in `BUILD-NOTES.md`, `data/provenance.json` and `data/quality-summary.json` are historical; use current catalogue data for current counts.

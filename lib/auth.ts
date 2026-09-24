@@ -13,5 +13,7 @@ export async function getCustomerSession(request: Request) {
   const auth = createCustomerAuth(bindings());
   if (!auth) throw new Error('Authentication is temporarily unavailable');
   const result = await auth.api.getSession({ headers: request.headers, query: { disableCookieCache: true } });
-  return result?.user.emailVerified ? result : null;
+  // Password accounts may have unverified email addresses. Ownership is based
+  // solely on the authenticated immutable user ID, never an email match.
+  return result;
 }
