@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import ts from 'typescript';
 import {DatabaseSync} from 'node:sqlite';
 import assert from 'node:assert/strict';
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
 const catalogue=JSON.parse(fs.readFileSync('data/products.json','utf8'));
 const sqlite=new DatabaseSync(':memory:');sqlite.exec(fs.readFileSync('drizzle/0000_redundant_wolfsbane.sql','utf8'));
 const DB={prepare(sql){let values=[];return {bind(...args){values=args;return this},async run(){return sqlite.prepare(sql).run(...values)},async all(){return {results:sqlite.prepare(sql).all(...values)}}}},async batch(statements){return Promise.all(statements.map(s=>s.all()))}};
@@ -77,6 +79,19 @@ for(const separator of [';','; ',';\t']){
 }
 r=await route.POST(req({action:'save',product:catalogue[0].id,value:true},{headers:{Origin:'https://outside.example'}}));assert.equal(r.status,403);
 r=await route.POST(req({action:'request',kind:'service',form:{name:'Preview QA',email:'bad-address'}}));assert.equal(r.status,400);
+// Render the real history component: older quotes may contain an unrelated service value.
+const storeSource=ts.createSourceFile('app/store.tsx',fs.readFileSync('app/store.tsx','utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+const historyFunction=storeSource.statements.find(node=>ts.isFunctionDeclaration(node)&&node.name?.text==='RequestList');
+assert(historyFunction,'RequestList must remain available for the history regression');
+const historyJs=ts.transpileModule(historyFunction.getText(storeSource),{compilerOptions:{target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.React}}).outputText;
+const StoreContext=React.createContext(null);
+const RequestList=new Function('React','useContext','useState','StoreContext','money','ChevronDown','Empty',historyJs+';return RequestList;')(React,React.useContext,React.useState,StoreContext,priceModule.money,()=>null,()=>null);
+const historyRecord={id:'KR-HISTORY',created:'2026-01-01T00:00:00.000Z',status:'Request received',data:{name:'History QA',city:'Accra',service:'Device setup & data transfer'}};
+const renderHistory=kind=>renderToStaticMarkup(React.createElement(StoreContext.Provider,{value:{state:{requests:[{...historyRecord,kind}]},loaded:true}},React.createElement(RequestList)));
+const legacyQuoteMarkup=renderHistory('quote');
+assert.match(legacyQuoteMarkup,/<strong>Product quotation<\/strong>/);
+assert(!legacyQuoteMarkup.includes('Device setup'));
+assert.match(renderHistory('service'),/<strong>Device setup &amp; data transfer<\/strong>/);
 const ids=new Set(catalogue.map(p=>p.id));assert.equal(ids.size,catalogue.length);assert(catalogue.length>=1000);for(const p of catalogue){assert(p.name&&p.image&&p.sourceUrl&&p.department&&p.category);assert(Number.isFinite(p.priceCAD)&&p.priceCAD>=0)}
-console.log(JSON.stringify({passed:true,checks:['catalogue integrity','stale and missing Ghana prices stay unpriced','mixed quote totals exclude unpriced lines','secure guest identity cookie and no-store responses','cart persistence','invalid quantities and missing products','wishlist persistence','profile persistence','quote receipt and recalculated total','no-payment status','cross-session isolation across all four entities','forged identity headers cannot read or mutate legacy user data','forged identity headers preserve guest ownership and never authenticate email','new sessions remain distinct with identical forged headers','invalid cookies rotate and valid cookies survive ordinary separators','cross-origin rejection','invalid email rejection'],products:catalogue.length,departments:new Set(catalogue.map(p=>p.department)).size,categories:new Set(catalogue.map(p=>p.department+'|'+p.category)).size},null,2));
+console.log(JSON.stringify({passed:true,checks:['catalogue integrity','stale and missing Ghana prices stay unpriced','mixed quote totals exclude unpriced lines','secure guest identity cookie and no-store responses','cart persistence','invalid quantities and missing products','wishlist persistence','profile persistence','quote receipt and recalculated total','no-payment status','cross-session isolation across all four entities','forged identity headers cannot read or mutate legacy user data','forged identity headers preserve guest ownership and never authenticate email','new sessions remain distinct with identical forged headers','invalid cookies rotate and valid cookies survive ordinary separators','cross-origin rejection','invalid email rejection','quote history ignores stale service labels while service requests retain theirs'],products:catalogue.length,departments:new Set(catalogue.map(p=>p.department)).size,categories:new Set(catalogue.map(p=>p.department+'|'+p.category)).size},null,2));
 sqlite.close();delete globalThis.__koraTest;

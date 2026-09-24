@@ -10,8 +10,8 @@ KORA serves its frontend and API together on Cloudflare Workers, with Cloudflare
 - Initial schema applied through the D1 console on 24 September 2026. Confirmed tables: `basket`, `profiles`, `requests`, `saved`; confirmed index: `requests_owner_created`.
 - No original customer data was transferred: all four source tables were empty at retrieval.
 - GitHub is connected to the Worker. Production builds use `main`, the `kora-builds` deployment token, and the settings below. Preview builds are disabled.
-- Cloudflare Access is configured for **All traffic**, with the **Cloudflare account members** allow policy and 24-hour sessions. The saved Worker policy requires login on every production and preview URL. Its Access application ID is `0276be08-5cc2-4964-ae2a-7e5c9392ec8e`.
-- `workers_dev: true` enables the production URL behind that saved Access protection. `preview_urls: false` and `routes: []` keep preview URLs and custom routes disabled. Do not remove the Access application while the production URL is enabled.
+- Production is public at https://kora.eo-kingsford.workers.dev for the owner's requested customer test drive. On 24 September 2026, Cloudflare Access was changed to **Previews only**, retaining the **Cloudflare account members** policy and 24-hour sessions for previews. Its Access application ID is `0276be08-5cc2-4964-ae2a-7e5c9392ec8e`.
+- `workers_dev: true` enables the public production URL. `preview_urls: false` and `routes: []` keep preview URLs and custom routes disabled.
 
 The account and database IDs are resource identifiers, not credentials. Do not commit API tokens or session secrets.
 
@@ -43,7 +43,7 @@ CLI deployment additionally requires an authorized Cloudflare login/token. The d
 
 ## Access and sessions
 
-The approved audience is members of the owner's Cloudflare account. The Worker-level Access application protects **All traffic**, including every associated hostname, and is configured separately from Wrangler. The production route was enabled only after verifying that saved policy in the dashboard. Removing Access would expose the enabled route; public launch requires a separate access-policy decision. No custom domain has been selected.
+The owner approved anyone with the production URL to test the site without signing in. The Worker-level Access application now protects **Previews only** and is configured separately from Wrangler. The dashboard confirms “Production stays public”; cookie-free requests to the homepage, search, product, tracking and guest API routes returned HTTP 200 without an authentication redirect. No custom domain has been selected.
 
 The independent API ignores `oai-authenticated-user-id` and `oai-authenticated-user-email`. Cart, saved items, profile and requests belong to a random guest cookie for this browser. It is HttpOnly, SameSite=Lax, Secure on HTTPS, and expires after 30 days. Clearing cookies, changing browsers or cookie expiry loses access to the earlier session. Customer sign-in and account recovery are not implemented. Cloudflare Access can protect the entire preview but is not customer account functionality.
 
@@ -62,7 +62,9 @@ Local execution does not use the remote D1 data. Remote changes require `--remot
 
 ## Validation and limitations
 
-Validation on 24 September 2026 passed: pinned pnpm 11.25.0 frozen-lockfile install, TypeScript, all four verification scripts, production build, and Wrangler deployment dry run (1,409.34 KiB compressed Worker with 67 static asset files). The built Worker also passed local runtime checks for five rendered routes, gallery API, actual D1 cart persistence, separate browser sessions, forged identity headers and cross-origin mutation rejection. The store tests additionally cover all four tables, malformed cookies and protected legacy account rows. Lint reports 33 existing errors and 129 warnings in the imported application; baseline comparisons found no new lint errors and no suppression was added. Remote runtime checks remain pending deployment.
+Validation on 24 September 2026 passed: pinned pnpm 11.25.0 frozen-lockfile install, TypeScript, all four verification scripts, production build, and Wrangler deployment dry run (1,409.34 KiB compressed Worker with 67 static asset files). The built Worker also passed local runtime checks for five rendered routes, gallery API, actual D1 cart persistence, separate browser sessions, forged identity headers and cross-origin mutation rejection. The store tests additionally cover all four tables, malformed cookies and protected legacy account rows. Lint reports 33 existing errors and 129 warnings in the imported application; baseline comparisons found no new lint errors and no suppression was added.
+
+The live customer journey passed search, product details, gallery navigation, wishlist persistence, bag quantity persistence, required-field validation, quotation submission, and same-browser request tracking after reload. Synthetic request `KR-C1924125` is clearly labelled “KORA TEST — ignore” and “Do not fulfil or contact”; it contains two Sony WH-1000XM6 units and remains as test evidence. A separate cookie-free guest session returned no saved items, cart, profile name or requests. Testing found an incorrect service label on quotation history; quotation rendering now explicitly uses “Product quotation”, and quote forms omit the unrelated service field. A regression covers legacy quotation records and real service requests.
 
 Payments, stock, shipping, appointment confirmation and customer notifications remain unconnected. Catalogue research automation was external to the original Site and has not been connected to this repository; the updates page now states that updates are manual. Product photographs still largely use external source URLs.
 
