@@ -1,0 +1,21 @@
+{
+  "lastChecked": "2026-09-24",
+  "schedule": "Daily",
+  "status": "Scheduled",
+  "brands": 195,
+  "officialBrands": 9,
+  "releaseCount": 17,
+  "priceCount": 15,
+  "history": [
+    {
+      "date": "2026-09-24",
+      "summary": "Verified 15 exact Ghana retailer configurations and activated daily catalogue update task."
+    },
+    {
+      "date": "2026-09-23",
+      "summary": "Added 17 manufacturer-verified current and upcoming products with exact source images. Removed arbitrary currency conversion."
+    }
+  ],
+  "automationId": "6ab468b79bbc8191aaf96dc006f74327",
+  "checkScope": "17 launch records and 15 Ghana price variants; remaining registry entries await official-source checks."
+}

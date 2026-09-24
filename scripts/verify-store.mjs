@@ -5,8 +5,11 @@ import assert from 'node:assert/strict';
 const catalogue=JSON.parse(fs.readFileSync('data/products.json','utf8'));
 const sqlite=new DatabaseSync(':memory:');sqlite.exec(fs.readFileSync('drizzle/0000_redundant_wolfsbane.sql','utf8'));
 const DB={prepare(sql){let values=[];return {bind(...args){values=args;return this},async run(){return sqlite.prepare(sql).run(...values)},async all(){return {results:sqlite.prepare(sql).all(...values)}}}},async batch(statements){return Promise.all(statements.map(s=>s.all()))}};
-let src=fs.readFileSync('app/api/store/route.ts','utf8').replace("import { env } from 'cloudflare:workers';",'const env=globalThis.__koraTest.env;').replace("import { catalogue, ghPrice } from '@/lib/catalogue';",'const catalogue=globalThis.__koraTest.catalogue; const ghPrice=p=>Math.round(p.priceCAD*9.5);');
-globalThis.__koraTest={env:{DB},catalogue};
+let src=fs.readFileSync('app/api/store/route.ts','utf8').replace("import { env } from 'cloudflare:workers';",'const env=globalThis.__koraTest.env;').replace("import { catalogue, ghPrice } from '@/lib/catalogue';",'const catalogue=globalThis.__koraTest.catalogue; const ghPrice=globalThis.__koraTest.ghPrice;');
+const priceSource=fs.readFileSync('lib/catalogue.ts','utf8').replace("import products from '../data/products.json';",'const products=[];');
+const priceModule=await import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(priceSource,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText).toString('base64'));
+const {ghPrice}=priceModule;assert.equal(ghPrice({priceCAD:100}),null);assert.equal(ghPrice({priceGHS:100,priceSource:'Test',priceCheckedAt:'2020-01-01'}),null);
+globalThis.__koraTest={env:{DB},catalogue,ghPrice};
 const js=ts.transpileModule(src,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText;
 const route=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 const origin='https://kora.example';let cookie='';
@@ -18,10 +21,12 @@ r=await route.POST(req({action:'cart',product:'unknown',quantity:1}));assert.equ
 r=await route.POST(req({action:'save',product:catalogue[0].id,value:true}));assert.equal(r.status,200);
 r=await route.POST(req({action:'profile',profile:{name:'Preview QA',city:'Kumasi'}}));assert.equal(r.status,200);
 r=await route.POST(req({action:'request',kind:'quote',form:{name:'Preview QA',email:'qa@example.invalid',city:'Kumasi',address:'Test address',paymentPreference:'MTN MoMo'}}));assert.equal(r.status,200);const receipt=await r.json();assert.match(receipt.id,/^KR-/);
-r=await route.GET(req());const saved=await r.json();assert.equal(saved.cart[0].quantity,2);assert.equal(saved.saved[0],catalogue[0].id);assert.equal(saved.profile.city,'Kumasi');assert.equal(saved.requests[0].data.paymentStatus,'No payment collected');assert.equal(saved.requests[0].data.indicativeTotal,Math.round(catalogue[0].priceCAD*9.5)*2);
+r=await route.GET(req());const saved=await r.json();assert.equal(saved.cart[0].quantity,2);assert.equal(saved.saved[0],catalogue[0].id);assert.equal(saved.profile.city,'Kumasi');assert.equal(saved.requests[0].data.paymentStatus,'No payment collected');assert.equal(saved.requests[0].data.indicativeTotal,ghPrice(catalogue[0])*2);
+const unpriced=catalogue.find(p=>ghPrice(p)===null);r=await route.POST(req({action:'cart',product:unpriced.id,quantity:3}));assert.equal(r.status,200);
+r=await route.POST(req({action:'request',kind:'quote',form:{name:'Mixed basket',email:'qa@example.invalid'}}));assert.equal(r.status,200);const mixedId=(await r.json()).id;const mixed=(await (await route.GET(req())).json()).requests.find(x=>x.id===mixedId);assert.equal(mixed.data.unpricedQuantity,3);assert.equal(mixed.data.indicativeTotal,ghPrice(catalogue[0])*2);assert.equal(mixed.data.items.find(x=>x.id===unpriced.id).indicativeUnitPrice,null);
 r=await route.GET(req(null,{headers:{Cookie:'kora_session=aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'}}));const other=await r.json();assert.equal(other.cart.length,0);assert.equal(other.requests.length,0);
 r=await route.POST(req({action:'save',product:catalogue[0].id,value:true},{headers:{Origin:'https://outside.example'}}));assert.equal(r.status,403);
 r=await route.POST(req({action:'request',kind:'service',form:{name:'Preview QA',email:'bad-address'}}));assert.equal(r.status,400);
 const ids=new Set(catalogue.map(p=>p.id));assert.equal(ids.size,catalogue.length);assert(catalogue.length>=1000);for(const p of catalogue){assert(p.name&&p.image&&p.sourceUrl&&p.department&&p.category);assert(Number.isFinite(p.priceCAD)&&p.priceCAD>=0)}
-console.log(JSON.stringify({passed:true,checks:['catalogue integrity','guest identity cookie','cart persistence','invalid quantities and missing products','wishlist persistence','profile persistence','quote receipt and recalculated total','no-payment status','cross-session isolation','cross-origin rejection','invalid email rejection'],products:catalogue.length,departments:new Set(catalogue.map(p=>p.department)).size,categories:new Set(catalogue.map(p=>p.department+'|'+p.category)).size},null,2));
+console.log(JSON.stringify({passed:true,checks:['catalogue integrity','stale and missing Ghana prices stay unpriced','mixed quote totals exclude unpriced lines','guest identity cookie','cart persistence','invalid quantities and missing products','wishlist persistence','profile persistence','quote receipt and recalculated total','no-payment status','cross-session isolation','cross-origin rejection','invalid email rejection'],products:catalogue.length,departments:new Set(catalogue.map(p=>p.department)).size,categories:new Set(catalogue.map(p=>p.department+'|'+p.category)).size},null,2));
 sqlite.close();delete globalThis.__koraTest;

@@ -1,0 +1,607 @@
+{
+  "dateChecked": "2026-09-23",
+  "scope": "Manufacturer-verified current products and announced upcoming releases. Prices are original source market currency, never Ghana inventory or final Ghana selling prices.",
+  "products": [
+    {
+      "id": "apple-iphone-duo",
+      "brand": "Apple",
+      "name": "iPhone Duo",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "coming_soon",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1999,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?wid=940&hei=1112&fmt=png-alpha&.v=L2FnUkNTRm43ZDRCREFsdzlaeThkZ3h0LzRVb3pVcDdFRFlBZW9LdlZnTTY3eU1sRElTUWw3VmkwaFcvWFFZdVQ5NVJ4OStiQklybHZqYkJwOUI0UW54dHNyNHVwMVJTcUJTRDV4amNZM3JXeEN5bXRCTGIyQkNzYVFpWTFyclA",
+      "specifications": {
+        "chip": "A20 Pro",
+        "innerDisplay": "7.6-inch",
+        "outerDisplay": "5.4-inch",
+        "storage": "256GB, 512GB, 1TB, 2TB",
+        "rearCameras": "48MP Main + 48MP Ultra Wide",
+        "colors": [
+          "star white",
+          "night sky"
+        ],
+        "sim": "eSIM only"
+      },
+      "announcementDate": "2026-09-09",
+      "preorderDate": "2026-10-16",
+      "releaseDate": "2026-10-23",
+      "sourceRef": "turn153792view0",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/png",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      },
+      "galleryImages": [
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?wid=940&hei=1112&fmt=png-alpha&.v=L2FnUkNTRm43ZDRCREFsdzlaeThkZ3h0LzRVb3pVcDdFRFlBZW9LdlZnTTY3eU1sRElTUWw3VmkwaFcvWFFZdVQ5NVJ4OStiQklybHZqYkJwOUI0UW54dHNyNHVwMVJTcUJTRDV4amNZM3JXeEN5bXRCTGIyQkNzYVFpWTFyclA",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609?wid=940&hei=1112&fmt=png-alpha&.v=L2FnUkNTRm43ZDRCREFsdzlaeThka1hsOUZkQmZFRkQ2eEh0dEM0bVFwVjZIYUZiOEZCU1dSYmlzT2FMVUpPY1gyaWxBVG1PRTU2YzhCN2c2emhzWHZ5ZTZTY3RKM0U0VzN2UzRGTGtzQ3F1ZFJUNEY5WjZkU21Ua0dNWEh2Zy8",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV2?wid=1448&hei=1080&fmt=jpeg&qlt=90&.v=L2FnUkNTRm43ZDRCREFsdzlaeThka1hsOUZkQmZFRkQ2eEh0dEM0bVFwWDQyMkp3ajFERU1EdEpnTkVrNzFmMHFJdkJPZTFIVklMRHF5Qjlvcy9ObW14YXJFQWFnVmkrMkUzQ3k2TDVtN0dZeVdXc0RpQ01aMHg0Q2tCOVExRGh1YmZQMXFXa2w0U3RUanhYSTV4Z29R",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV2?wid=1448&hei=1080&fmt=jpeg&qlt=90&.v=L2FnUkNTRm43ZDRCREFsdzlaeThkZ3h0LzRVb3pVcDdFRFlBZW9LdlZnTzRPY0l5QVNzbnFIeGZoVWFkV1ZNY2JoOGtwUWZDU1NHU2ZTc1UzcnZnaE5lVUN5anBMYXArdTZxQXVZNFlaRkZwWVRGQ1dzcnRpTzJCdEZVUm1lQ05mbW94YnYxc1YvNXZ4emJGL0IxNFp3",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV3?wid=1246&hei=518&fmt=jpeg&qlt=90&.v=L2FnUkNTRm43ZDRCREFsdzlaeThka1hsOUZkQmZFRkQ2eEh0dEM0bVFwVmd1RGp0ZkhQOTVvK0lDdUQxZXNjakViM2VpL0lFSzVCUUtMUjhUTUtHZU5lVUN5anBMYXArdTZxQXVZNFlaRkVWUXgzb0NNZ2MwcUgxQWFSMG5YMVVmbW94YnYxc1YvNXZ4emJGL0IxNFp3",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV3?wid=1246&hei=518&fmt=jpeg&qlt=90&.v=L2FnUkNTRm43ZDRCREFsdzlaeThkZ3h0LzRVb3pVcDdFRFlBZW9LdlZnTklnaEtBS1ZhdkFMZVF3RldYNisreGRxYTBpUDU4UnFLbWI3Rmw4QmdkTGI2TGhYaGhMVkJpQ2RGWWVURTZNbXdMS2JsVk9oSFZOTGNUZE5xdjBlNnI",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?wid=940&hei=1112&fmt=png-alpha&.v=L2FnUkNTRm43ZDRCREFsdzlaeThkZ3h0LzRVb3pVcDdFRFlBZW9LdlZnTTY3eU1sRElTUWw3VmkwaFcvWFFZdVQ5NVJ4OStiQklybHZqYkJwOUI0UW54dHNyNHVwMVJTcUJTRDV4amNZM3JXeEN5bXRCTGIyQkNzYVFpWTFyclA",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609?wid=940&hei=1112&fmt=png-alpha&.v=L2FnUkNTRm43ZDRCREFsdzlaeThka1hsOUZkQmZFRkQ2eEh0dEM0bVFwVjZIYUZiOEZCU1dSYmlzT2FMVUpPY1gyaWxBVG1PRTU2YzhCN2c2emhzWHZ5ZTZTY3RKM0U0VzN2UzRGTGtzQ3F1ZFJUNEY5WjZkU21Ua0dNWEh2Zy8"
+      ],
+      "newsroomImage": "https://www.apple.com/newsroom/images/2026/09/apple-unveils-iphone-duo/article/Apple-iPhone-Duo-colors-260909_big.jpg.large.jpg",
+      "imageNote": "Official exact-model Apple Store product image; gallery has additional finishes."
+    },
+    {
+      "id": "apple-iphone-18-pro",
+      "brand": "Apple",
+      "name": "iPhone 18 Pro",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1199,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVmtqbnQyNWMvcld5Yy9DTnQyVUlQYWlwUGhxdXZuRTRGejlubW1oYWpjbUJ2MUJtQ2VhYWlBc1UxbHhMSzFTQjhlcC9qYU9xUXZmS1NmbGxtTVBCNVAvWncyUEszSEVwdS9nWVBDSFpPZmY",
+      "specifications": {
+        "chip": "A20 Pro",
+        "storage": "256GB, 512GB, 1TB, 2TB",
+        "colors": [
+          "burgundy",
+          "glacier",
+          "silver",
+          "black"
+        ]
+      },
+      "releaseDate": "2026-09-18",
+      "imageNote": "Official exact-model Apple Store product image; gallery has additional finishes.",
+      "sourceRef": "turn713137view0",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/png",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      },
+      "galleryImages": [
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVmtqbnQyNWMvcld5Yy9DTnQyVUlQYWlwUGhxdXZuRTRGejlubW1oYWpjbUJ2MUJtQ2VhYWlBc1UxbHhMSzFTQjhlcC9qYU9xUXZmS1NmbGxtTVBCNVAvWncyUEszSEVwdS9nWVBDSFpPZmY",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCWEQvUEQ2K0RlZDNJelh6T1hiakdBdytYcDJJakhmeWdzWGE3eWZweldlbU01ZlZDa0xRSGNsZGN2cGtrRCtsV0tMSEdWSm02WG9JS0VxaEpJQnZwSFF4aU04bVBaVGpXenUzcE1tZ0JTTWk",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVGJOdEdsYjE3KzExOGFjT0NXdW5CRXlFVTNWQ2NHZnVQZ1ZHVERRSkREclQ5NVJ4OStiQklybHZqYkJwOUI0UWdxbzNTY3U5ODZDSkhYT1hNS1JHaWNmOVR5UGFsc2xtOXNhVml5ZmhaTkg",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609?wid=940&hei=1112&fmt=png-alpha&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCZFJQQXM4NUJneHhVVGhBeWh4RFRuMmd4MlArR3d3Tzc0cVhQN3J0NEdPb1gyaWxBVG1PRTU2YzhCN2c2emhzWHZ5ZTZTY3RKM0U0VzN2UzRGTGtzQ3BSTWlHRk01TzQ3QWhsMHdBb0NQZkk",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVmtqbnQyNWMvcld5Yy9DTnQyVUlQYnd0N0MvN002Q2xTTTlsNDE2S0J6M2h2Q29kcWs4WTl5cjdvUC9sdGZWcmRlVUN5anBMYXArdTZxQXVZNFlaRkdjcy95dXRDa1NDUVdPVmlYeklhNXBmbW94YnYxc1YvNXZ4emJGL0IxNFp3",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCVGJOdEdsYjE3KzExOGFjT0NXdW5CRzFVVXZ0WDBlS281eURIb2h1bGRDYUVrYzZ4aGx2Q085bnhRaVROeFdKVDdrNkxqcEdrM2x6OUZ3Z2JnTllhUU5pTnR1WjBmd3ZFSVQ3ZE5MLzZ4d1Y",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCZFJQQXM4NUJneHhVVGhBeWh4RFRuM2tyb3FXRlg0b3ZVam5YYjd6eTV5aTVIZlkyUVhTaG1vWWJFN2NXNUI3d0w2TGhYaGhMVkJpQ2RGWWVURTZNbXlrbHJzaDlGbDZVSEVtV0JJbkdqcW8",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=ODB3TEdtbk8ybkd3clM3dWVML3VCWEQvUEQ2K0RlZDNJelh6T1hiakdBeUIwVmlobDZUcnBCZWVLZlJ2MWU4Q1orUE1iays0OUh2ZlI4aHRLS0JxTnpNZGEwYVUyTzcvZlg1UkxwTzJQS1c3S256NUR2czJlci9sdjJiZUJXRnk"
+      ],
+      "newsroomImage": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-2up-260909_inline.jpg.large.jpg"
+    },
+    {
+      "id": "apple-iphone-18-pro-max",
+      "brand": "Apple",
+      "name": "iPhone 18 Pro Max",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1299,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNmxIMGwrWFVjeE1VUlRMRWVWaXVleHNjcXQ1U2FBY2RzWU80SEN4Z1NYZXA4TndFSGFWdWZMa21CRXlrUm45elpxZTk0czYvTGlFaFJ6MUo4NytKelc",
+      "specifications": {
+        "chip": "A20 Pro",
+        "storage": "256GB, 512GB, 1TB, 2TB",
+        "colors": [
+          "burgundy",
+          "glacier",
+          "silver",
+          "black"
+        ]
+      },
+      "releaseDate": "2026-09-18",
+      "imageNote": "Official exact-model Apple Store product image; gallery has additional finishes.",
+      "sourceRef": "turn713137view0",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/png",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      },
+      "galleryImages": [
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNmxIMGwrWFVjeE1VUlRMRWVWaXVleHNjcXQ1U2FBY2RzWU80SEN4Z1NYZXA4TndFSGFWdWZMa21CRXlrUm45elpxZTk0czYvTGlFaFJ6MUo4NytKelc",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNlIrVGhreVd3bkM2T2VVUFVFWDlxYWV5ZElERWRzQWhyQ0Rwckl6Y1pkWnBzc0VHaDlyWnc3WFg1a2VpT21xTVVSTFY0UkdPZmR4RjZFWCtGdUNoa2E",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNWtvNWRUSnBraGdtbVpoaEhCcStEZ1JIMnJUYkhxeFlQUFF6U1JnK1dZZmROL1VCcUxMZGhIeWpHS1Y3Y0ZmQnB1TDcrSFk1dTh4UW5LRWFTUk84MUg",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609?wid=940&hei=1112&fmt=png-alpha&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNUx6WCtoaUlSYjRxQWg5OHYwMGU3Y0V3S0grNWRDVTNuaVhuc2dPbTQ4Q0V1RGVGY05iMGVCVXhlTE1BQUZjMDAxTm1nZUsxSHRZRDZzS3RtMVpRd0Q",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNFBqZGJBdFZFTS8vTUNaYm50ajFyQjhSd1ZmVkZET2tSb0UxRUVEVUNhdFAvU3JjZHd1MTRSd0VqZnNnTGdmZmxEOCtYRWJRK0xNTUUwNDE3VlliTTdqeFFxSVJXVFEyak5aRXM1amV5dXZB",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNUczeU83bkpqVjJNa0hHTzZGMFJkOUJzS0RYWXBINXM3OEFKMGgwUWg2N1o0S3NIczRMdVY1Tlh2SlRSaUw4bXdvVyt2VmxhZU4zZHRmY1FSYWRXV1h5R2dydEZKdjJpNHZab2plQ1FnV29B",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNUE3TmE3YnJQWFgzNUVkVTF1cElhWmpzTEluckFmWmFodkg3aDQrVnFnTHlVZUljRWR1UW5tNjlwQnVNUkxlZzBCa2tyS3BNdURWUlF6eHg0ME5yTmJSMm84Uy9oSE50RTV3M2Nmbm1XOE5n",
+        "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609_AV2?wid=724&hei=540&fmt=jpeg&qlt=90&.v=UmkydCsrWUVqOXF2VEM2dzB6cklhWUQ2cmRnWCtSNmVDd2t4cWxWSnIvNndLQk1qNUQvQTVwNnc4cW9FV2IwNkVuS0VWTHhnemtKUlRaOFZUQ0cxcUd4YXJFQWFnVmkrMkUzQ3k2TDVtN0h4M1NEU0c2TVEwbFZkaEN4Y2xnVXdlODBad1VqYUZ3RW54YkRKL2hzbXVR"
+      ],
+      "newsroomImage": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-2up-260909_inline.jpg.large.jpg"
+    },
+    {
+      "id": "samsung-galaxy-s26-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy S26 Ultra",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1099.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "imageUrl": "https://image-us.samsung.com/us/smartphones/galaxy-s26-ultra/gallery/SCOMMRCL-207-M3-Global-Group-Image-800x600.jpg",
+      "specifications": {
+        "display": "6.9-inch QHD+ 1–120Hz AMOLED",
+        "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+        "storage": "256GB",
+        "ram": "12GB",
+        "mainCamera": "200MP",
+        "battery": "5000mAh"
+      },
+      "listPriceOriginal": 1299.99,
+      "specsSourceUrl": "https://news.samsung.com/global/samsung-unveils-galaxy-s26-series-the-most-intuitive-galaxy-ai-phone-yet",
+      "sourceRef": "turn713137view2",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "samsung-galaxy-z-fold8-ultra",
+      "brand": "Samsung",
+      "name": "Galaxy Z Fold8 Ultra",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 2099.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/",
+      "imageUrl": "https://img.global.news.samsung.com/global/wp-content/uploads/2026/07/22220341/Samsung-Mobile-Galaxy-Unpacked-July-2026-Galaxy-Z-Fold8-Ultra-Galaxy-Z-Fold8-Galaxy-Z-Flip8-A-First-Look_main2.jpg",
+      "specifications": {
+        "innerDisplay": "8-inch",
+        "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+        "battery": "5000mAh",
+        "weight": "215g",
+        "storage": "256GB"
+      },
+      "specsSourceUrl": "https://news.samsung.com/global/galaxy-unpacked-july-2026-a-first-look-at-galaxy-z-fold8-ultra-galaxy-z-fold8-and-galaxy-z-flip8",
+      "sourceRef": "turn765388view1",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "samsung-galaxy-z-fold8",
+      "brand": "Samsung",
+      "name": "Galaxy Z Fold8",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": null,
+      "sourceUrl": "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/",
+      "imageUrl": "https://img.global.news.samsung.com/global/wp-content/uploads/2026/07/22220505/Samsung-Mobile-Galaxy-Unpacked-July-2026-Galaxy-Z-Fold8-Ultra-Galaxy-Z-Fold8-Galaxy-Z-Flip8-A-First-Look_main6.jpg",
+      "specifications": {
+        "innerDisplay": "7.6-inch",
+        "coverDisplay": "5.5-inch",
+        "battery": "4800mAh",
+        "weight": "201g"
+      },
+      "specsSourceUrl": "https://news.samsung.com/global/galaxy-unpacked-july-2026-a-first-look-at-galaxy-z-fold8-ultra-galaxy-z-fold8-and-galaxy-z-flip8",
+      "sourceRef": "turn304004view0",
+      "priceNote": "Exact manufacturer price did not render; do not infer.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "google-pixel-11",
+      "brand": "Google",
+      "name": "Pixel 11",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 899,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/NFG_Cubs_Frost.width-1200.format-webp.webp",
+      "specifications": {
+        "chip": "Google Tensor G6",
+        "baseStorage": "256GB",
+        "updates": "7 years OS, security and Pixel Drop"
+      },
+      "releaseDate": "2026-08-20",
+      "sourceRef": "turn713137view1",
+      "imageNote": "Official front/back product photo.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "bytesRead": 16180,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "google-pixel-11-pro",
+      "brand": "Google",
+      "name": "Pixel 11 Pro",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1099,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pixel-11ProXL_Family-Shot.width-1200.format-webp.webp",
+      "specifications": {
+        "chip": "Google Tensor G6",
+        "baseStorage": "256GB",
+        "updates": "7 years OS, security and Pixel Drop"
+      },
+      "releaseDate": "2026-08-20",
+      "sourceRef": "turn713137view1",
+      "imageNote": "Official manufacturer image; Pro family image includes both sizes.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "bytesRead": 17996,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "google-pixel-11-pro-xl",
+      "brand": "Google",
+      "name": "Pixel 11 Pro XL",
+      "category": "smartphones",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1299,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pixel-11ProXL_Family-Shot.width-1200.format-webp.webp",
+      "specifications": {
+        "chip": "Google Tensor G6",
+        "baseStorage": "256GB",
+        "updates": "7 years OS, security and Pixel Drop"
+      },
+      "releaseDate": "2026-08-20",
+      "sourceRef": "turn713137view1",
+      "imageNote": "Official manufacturer image; Pro family image includes both sizes.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "bytesRead": 17996,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "sony-wh-1000xm6",
+      "brand": "Sony",
+      "name": "WH-1000XM6",
+      "category": "audio",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 459.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://electronics.sony.com/audio/headphones/headband/p/wh1000xm6-b?sku=wh1000xm6-b",
+      "imageUrl": "https://d1ncau8tqf99kp.cloudfront.net/converted/152005_original_local_1200x1050_v3_converted.webp",
+      "specifications": {
+        "color": "Black",
+        "battery": "Up to 30 hours",
+        "noiseCancellation": "QN3 processor, 12 microphones"
+      },
+      "sourceRef": "turn522507view1",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "bytesRead": 28352,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "sony-playstation-5-pro",
+      "brand": "Sony",
+      "name": "PlayStation 5 Pro",
+      "category": "gaming",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": null,
+      "sourceUrl": "https://www.playstation.com/en-us/ps5/ps5-pro/",
+      "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-overview-homepage-hero-desktop-background-01-en-16aug24?%24100px%24=",
+      "specifications": {
+        "storage": "2TB SSD",
+        "wireless": "Wi-Fi 7",
+        "graphics": "PSSR, advanced ray tracing",
+        "drive": "Disc drive sold separately"
+      },
+      "sourceRef": "turn505120view1",
+      "priceNote": "Current official price not exposed on read; do not reuse launch price as current.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 7715,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "microsoft-xbox-series-x",
+      "brand": "Microsoft",
+      "name": "Xbox Series X",
+      "category": "gaming",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 799.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://www.microsoft.com/en-us/d/consola-xbox-series-x/8wj714n3rbtl",
+      "imageUrl": "https://assets.xboxservices.com/assets/18/30/1830806b-d41d-40ce-a846-792df7d14e1d.jpg?n=Xbox-Series-X_Sharing_200x200_02.jpg",
+      "specifications": {
+        "storage": "1TB SSD",
+        "graphics": "12 TFLOPS",
+        "resolution": "4K",
+        "frameRate": "Up to 120 fps"
+      },
+      "sourceRef": "turn558964search0",
+      "manufacturerStock": "out_of_stock",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 8542,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "nintendo-switch-2",
+      "brand": "Nintendo",
+      "name": "Nintendo Switch 2",
+      "category": "gaming",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 499.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://www.nintendo.com/us/store/products/nintendo-switch-2-system-123669/",
+      "imageUrl": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/My%20Nintendo%20Store/EN-US/Nintendo%20Switch%202/Hardware/123669-nintendo-switch-2-package-front-2000x2000",
+      "specifications": {
+        "modes": "TV, tabletop, handheld",
+        "controllers": "Joy-Con 2",
+        "tvOutput": "Up to 4K"
+      },
+      "releaseDate": "2025-06-05",
+      "sourceRef": "turn551990view0",
+      "priceEvidence": "Manufacturer Product JSON-LD and Apollo Prices both state USD 499.99, read from exact product URL.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "nintendo-switch-2-zelda-40",
+      "brand": "Nintendo",
+      "name": "Nintendo Switch 2 – The Legend of Zelda – 40th Anniversary Edition",
+      "category": "gaming",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "coming_soon",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 62980,
+        "currency": "JPY",
+        "market": "JP",
+        "kind": "manufacturer_launch_msrp_tax_included"
+      },
+      "sourceUrl": "https://www.nintendo.co.jp/corporate/release/en/2026/260908_2.html",
+      "imageUrl": "https://www.nintendo.co.jp/corporate/release/en/2026/img_260908_2/photo_1.jpg",
+      "specifications": {
+        "design": "Triforce motifs",
+        "includedGame": "None",
+        "region": "Japan model, Japanese language only"
+      },
+      "releaseDate": "2026-10-29",
+      "sourceRef": "turn304004view2",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "dell-xps-googlebook",
+      "brand": "Dell",
+      "name": "XPS Googlebook",
+      "category": "laptops",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 999,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_launch_from"
+      },
+      "sourceUrl": "https://delltechnologies.gcs-web.com/news-releases/news-release-details/dell-technologies-introduces-xps-googlebook-first-xps-laptop",
+      "imageUrl": "https://mms.businesswire.com/media/20260921653290/en/2906846/4/dell-dx13267-laptop-x-X-shape-yl.jpg",
+      "specifications": {
+        "screen": "13-inch 2.5K 30–120Hz touch",
+        "chip": "Snapdragon X Elite",
+        "memory": "Up to 32GB LPDDR5X",
+        "weight": "2.2lb",
+        "battery": "Up to 16 hours Netflix streaming"
+      },
+      "releaseDate": "2026-09-21",
+      "sourceRef": "turn304004view3",
+      "availabilityNote": "Best Buy and Google Store from Sept 21; Dell.com in October.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytesRead": 9709,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "hp-omnibook-ultra-14-kd0047nr",
+      "brand": "HP",
+      "name": "OmniBook Ultra 14-kd0047nr",
+      "category": "laptops",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": null,
+      "sourceUrl": "https://www.hp.com/us-en/shop/pdp/hp-omnibook-ultra-laptop-next-gen-ai-14-kd0047nr",
+      "imageUrl": "https://hp.widen.net/content/ubb3gjnucb/webp/ubb3gjnucb.png?color=ffffff00&dpi=72&h=430&w=573",
+      "specifications": {
+        "screen": "14-inch 3K OLED touch",
+        "chip": "Intel Core Ultra 7",
+        "memory": "16GB",
+        "storage": "1TB SSD",
+        "color": "Eclipse gray"
+      },
+      "sourceRef": "turn522507view2",
+      "priceNote": "Page renders $0.00 placeholder; deliberately omitted as invalid.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/webp",
+        "bytesRead": 15526,
+        "checked": "2026-09-23"
+      }
+    },
+    {
+      "id": "lenovo-yoga-slim-7x-gen-11",
+      "brand": "Lenovo",
+      "name": "Yoga Slim 7x Gen 11 (14-inch Snapdragon)",
+      "category": "laptops",
+      "dateChecked": "2026-09-23",
+      "manufacturerVerified": true,
+      "status": "released",
+      "ghanaStockVerified": false,
+      "priceOriginal": {
+        "amount": 1549.99,
+        "currency": "USD",
+        "market": "US",
+        "kind": "manufacturer_current"
+      },
+      "sourceUrl": "https://www.lenovo.com/us/en/p/laptops/yoga/yoga-slim-series/lenovo-yoga-slim-7x-gen-11-14-inch-snapdragon/83qr0000us",
+      "imageUrl": "https://p1-ofp.static.pub/ShareResource/optimized/pdp/yoga/yoga-slim-series/len101y0066/lenovo-yoga-slim-7x-gen-11-14-snapdragon-series-tn.png?height=584&width=584",
+      "specifications": {
+        "chip": "Snapdragon X2 Elite",
+        "screen": "14-inch",
+        "partNumber": "83QR0000US"
+      },
+      "sourceRef": "turn522507view3",
+      "priceEvidence": "Manufacturer Product JSON-LD Offer USD 1549.99 for exact SKU 83QR0000US.",
+      "imageValidation": {
+        "status": 200,
+        "contentType": "image/png",
+        "bytesRead": 65536,
+        "checked": "2026-09-23"
+      }
+    }
+  ],
+  "currentAppleLineup": [
+    "iPhone Duo",
+    "iPhone 18 Pro",
+    "iPhone 18 Pro Max",
+    "iPhone Air",
+    "iPhone 17",
+    "iPhone 17e"
+  ],
+  "currentAppleLineupSource": "https://www.apple.com/iphone/",
+  "notes": [
+    "iPhone Duo is explicitly confirmed by Apple; on September 23 it is announced only, with preorder October 16 and release October 23.",
+    "Do not label manufacturer stock as KORA stock.",
+    "No official general-purpose all-brand product API established by this research. Automatic updates should use manufacturer sources with timestamps, exact-model image matching and separate commerce stock/prices.",
+    "Null price means not reliably returned and must not become zero.",
+    "Raw HTML snapshots saved beside this file are intermediate research only."
+  ]
+}

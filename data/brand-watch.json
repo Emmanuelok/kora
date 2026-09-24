@@ -1,0 +1,1204 @@
+[
+  {
+    "brand": "ASUS",
+    "manufacturerSources": [],
+    "discoveryQuery": "ASUS official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Acer",
+    "manufacturerSources": [],
+    "discoveryQuery": "Acer official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Adidas",
+    "manufacturerSources": [],
+    "discoveryQuery": "Adidas official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Alesis",
+    "manufacturerSources": [],
+    "discoveryQuery": "Alesis official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Amana",
+    "manufacturerSources": [],
+    "discoveryQuery": "Amana official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Amazon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Amazon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Anker",
+    "manufacturerSources": [],
+    "discoveryQuery": "Anker official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Anker SOLIX",
+    "manufacturerSources": [],
+    "discoveryQuery": "Anker SOLIX official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "AnyCard",
+    "manufacturerSources": [],
+    "discoveryQuery": "AnyCard official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "ApexGear",
+    "manufacturerSources": [],
+    "discoveryQuery": "ApexGear official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Apple",
+    "manufacturerSources": [
+      "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
+    ],
+    "discoveryQuery": "Apple official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Arf Pets",
+    "manufacturerSources": [],
+    "discoveryQuery": "Arf Pets official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Arlo",
+    "manufacturerSources": [],
+    "discoveryQuery": "Arlo official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Audio-Technica",
+    "manufacturerSources": [],
+    "discoveryQuery": "Audio-Technica official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "BLACK+DECKER",
+    "manufacturerSources": [],
+    "discoveryQuery": "BLACK+DECKER official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Barbie",
+    "manufacturerSources": [],
+    "discoveryQuery": "Barbie official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Beats By Dr. Dre",
+    "manufacturerSources": [],
+    "discoveryQuery": "Beats By Dr. Dre official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Behringer",
+    "manufacturerSources": [],
+    "discoveryQuery": "Behringer official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Belkin",
+    "manufacturerSources": [],
+    "discoveryQuery": "Belkin official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Bella",
+    "manufacturerSources": [],
+    "discoveryQuery": "Bella official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "BenQ",
+    "manufacturerSources": [],
+    "discoveryQuery": "BenQ official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Best Buy",
+    "manufacturerSources": [],
+    "discoveryQuery": "Best Buy official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Beurer",
+    "manufacturerSources": [],
+    "discoveryQuery": "Beurer official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Black & Decker",
+    "manufacturerSources": [],
+    "discoveryQuery": "Black & Decker official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Blendtec",
+    "manufacturerSources": [],
+    "discoveryQuery": "Blendtec official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Blink",
+    "manufacturerSources": [],
+    "discoveryQuery": "Blink official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Blue",
+    "manufacturerSources": [],
+    "discoveryQuery": "Blue official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Bosch",
+    "manufacturerSources": [],
+    "discoveryQuery": "Bosch official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Bose",
+    "manufacturerSources": [],
+    "discoveryQuery": "Bose official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Braun",
+    "manufacturerSources": [],
+    "discoveryQuery": "Braun official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Breville",
+    "manufacturerSources": [],
+    "discoveryQuery": "Breville official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Brother",
+    "manufacturerSources": [],
+    "discoveryQuery": "Brother official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Bugatti",
+    "manufacturerSources": [],
+    "discoveryQuery": "Bugatti official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "CAP Barbell",
+    "manufacturerSources": [],
+    "discoveryQuery": "CAP Barbell official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Canon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Canon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Casio",
+    "manufacturerSources": [],
+    "discoveryQuery": "Casio official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Conair",
+    "manufacturerSources": [],
+    "discoveryQuery": "Conair official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Corsair",
+    "manufacturerSources": [],
+    "discoveryQuery": "Corsair official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Costway",
+    "manufacturerSources": [],
+    "discoveryQuery": "Costway official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Crucial",
+    "manufacturerSources": [],
+    "discoveryQuery": "Crucial official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Cuisinart",
+    "manufacturerSources": [],
+    "discoveryQuery": "Cuisinart official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "D-Link",
+    "manufacturerSources": [],
+    "discoveryQuery": "D-Link official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "DJI",
+    "manufacturerSources": [],
+    "discoveryQuery": "DJI official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Danby",
+    "manufacturerSources": [],
+    "discoveryQuery": "Danby official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "DeWalt",
+    "manufacturerSources": [],
+    "discoveryQuery": "DeWalt official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Dell",
+    "manufacturerSources": [
+      "https://delltechnologies.gcs-web.com/news-releases/news-release-details/dell-technologies-introduces-xps-googlebook-first-xps-laptop"
+    ],
+    "discoveryQuery": "Dell official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Delta Children",
+    "manufacturerSources": [],
+    "discoveryQuery": "Delta Children official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Denon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Denon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Donner",
+    "manufacturerSources": [],
+    "discoveryQuery": "Donner official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Dreame",
+    "manufacturerSources": [],
+    "discoveryQuery": "Dreame official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Dyson",
+    "manufacturerSources": [],
+    "discoveryQuery": "Dyson official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "ECOFLOW",
+    "manufacturerSources": [],
+    "discoveryQuery": "ECOFLOW official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Echelon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Echelon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Ecovacs",
+    "manufacturerSources": [],
+    "discoveryQuery": "Ecovacs official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Edifier",
+    "manufacturerSources": [],
+    "discoveryQuery": "Edifier official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Electrolux",
+    "manufacturerSources": [],
+    "discoveryQuery": "Electrolux official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Epiphone",
+    "manufacturerSources": [],
+    "discoveryQuery": "Epiphone official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Epson",
+    "manufacturerSources": [],
+    "discoveryQuery": "Epson official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Eufy",
+    "manufacturerSources": [],
+    "discoveryQuery": "Eufy official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Evenflo",
+    "manufacturerSources": [],
+    "discoveryQuery": "Evenflo official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "FUJIFILM",
+    "manufacturerSources": [],
+    "discoveryQuery": "FUJIFILM official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Frigidaire",
+    "manufacturerSources": [],
+    "discoveryQuery": "Frigidaire official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "GE",
+    "manufacturerSources": [],
+    "discoveryQuery": "GE official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Garmin",
+    "manufacturerSources": [],
+    "discoveryQuery": "Garmin official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Geeni",
+    "manufacturerSources": [],
+    "discoveryQuery": "Geeni official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Gigabyte",
+    "manufacturerSources": [],
+    "discoveryQuery": "Gigabyte official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Google",
+    "manufacturerSources": [
+      "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    ],
+    "discoveryQuery": "Google official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Goplus",
+    "manufacturerSources": [],
+    "discoveryQuery": "Goplus official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Graco",
+    "manufacturerSources": [],
+    "discoveryQuery": "Graco official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "GreenWorks",
+    "manufacturerSources": [],
+    "discoveryQuery": "GreenWorks official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Gyrocopters",
+    "manufacturerSources": [],
+    "discoveryQuery": "Gyrocopters official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "HOMCOM",
+    "manufacturerSources": [],
+    "discoveryQuery": "HOMCOM official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "HP",
+    "manufacturerSources": [
+      "https://www.hp.com/us-en/shop/pdp/hp-omnibook-ultra-laptop-next-gen-ai-14-kd0047nr"
+    ],
+    "discoveryQuery": "HP official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Hamilton Beach",
+    "manufacturerSources": [],
+    "discoveryQuery": "Hamilton Beach official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Hasbro",
+    "manufacturerSources": [],
+    "discoveryQuery": "Hasbro official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Henckels",
+    "manufacturerSources": [],
+    "discoveryQuery": "Henckels official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Herschel",
+    "manufacturerSources": [],
+    "discoveryQuery": "Herschel official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Herschel Supply",
+    "manufacturerSources": [],
+    "discoveryQuery": "Herschel Supply official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Hisense",
+    "manufacturerSources": [],
+    "discoveryQuery": "Hisense official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "HoMedics",
+    "manufacturerSources": [],
+    "discoveryQuery": "HoMedics official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Honeywell",
+    "manufacturerSources": [],
+    "discoveryQuery": "Honeywell official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "House of Marley",
+    "manufacturerSources": [],
+    "discoveryQuery": "House of Marley official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "IMFIT",
+    "manufacturerSources": [],
+    "discoveryQuery": "IMFIT official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Insignia",
+    "manufacturerSources": [],
+    "discoveryQuery": "Insignia official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Insta360",
+    "manufacturerSources": [],
+    "discoveryQuery": "Insta360 official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Intel",
+    "manufacturerSources": [],
+    "discoveryQuery": "Intel official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "JBL",
+    "manufacturerSources": [],
+    "discoveryQuery": "JBL official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Jackery",
+    "manufacturerSources": [],
+    "discoveryQuery": "Jackery official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Jackson",
+    "manufacturerSources": [],
+    "discoveryQuery": "Jackson official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "KEF",
+    "manufacturerSources": [],
+    "discoveryQuery": "KEF official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "KODAK",
+    "manufacturerSources": [],
+    "discoveryQuery": "KODAK official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Kala",
+    "manufacturerSources": [],
+    "discoveryQuery": "Kala official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Kasa",
+    "manufacturerSources": [],
+    "discoveryQuery": "Kasa official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Kingston",
+    "manufacturerSources": [],
+    "discoveryQuery": "Kingston official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "KitchenAid",
+    "manufacturerSources": [],
+    "discoveryQuery": "KitchenAid official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Klipsch",
+    "manufacturerSources": [],
+    "discoveryQuery": "Klipsch official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Korg",
+    "manufacturerSources": [],
+    "discoveryQuery": "Korg official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "LEGO",
+    "manufacturerSources": [],
+    "discoveryQuery": "LEGO official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "LG",
+    "manufacturerSources": [],
+    "discoveryQuery": "LG official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "LeapFrog",
+    "manufacturerSources": [],
+    "discoveryQuery": "LeapFrog official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Lenovo",
+    "manufacturerSources": [
+      "https://www.lenovo.com/us/en/p/laptops/yoga/yoga-slim-series/lenovo-yoga-slim-7x-gen-11-14-inch-snapdragon/83qr0000us"
+    ],
+    "discoveryQuery": "Lenovo official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Litter-Robot",
+    "manufacturerSources": [],
+    "discoveryQuery": "Litter-Robot official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Logitech",
+    "manufacturerSources": [],
+    "discoveryQuery": "Logitech official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Lyxpro",
+    "manufacturerSources": [],
+    "discoveryQuery": "Lyxpro official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "MERACH",
+    "manufacturerSources": [],
+    "discoveryQuery": "MERACH official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "MSI",
+    "manufacturerSources": [],
+    "discoveryQuery": "MSI official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Mancini",
+    "manufacturerSources": [],
+    "discoveryQuery": "Mancini official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Marshall",
+    "manufacturerSources": [],
+    "discoveryQuery": "Marshall official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Martin",
+    "manufacturerSources": [],
+    "discoveryQuery": "Martin official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Medela",
+    "manufacturerSources": [],
+    "discoveryQuery": "Medela official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Microsoft",
+    "manufacturerSources": [
+      "https://www.microsoft.com/en-us/d/consola-xbox-series-x/8wj714n3rbtl"
+    ],
+    "discoveryQuery": "Microsoft official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Midea",
+    "manufacturerSources": [],
+    "discoveryQuery": "Midea official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "NETGEAR",
+    "manufacturerSources": [],
+    "discoveryQuery": "NETGEAR official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nanit",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nanit official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nespresso",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nespresso official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nextbase",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nextbase official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nikon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nikon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Ninja",
+    "manufacturerSources": [],
+    "discoveryQuery": "Ninja official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nintendo",
+    "manufacturerSources": [
+      "https://www.nintendo.co.jp/corporate/release/en/2026/260908_2.html",
+      "https://www.nintendo.com/us/store/products/nintendo-switch-2-system-123669/"
+    ],
+    "discoveryQuery": "Nintendo official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "NordicTrack",
+    "manufacturerSources": [],
+    "discoveryQuery": "NordicTrack official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nothing",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nothing official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Nutribullet",
+    "manufacturerSources": [],
+    "discoveryQuery": "Nutribullet official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "ONEXPLAYER",
+    "manufacturerSources": [],
+    "discoveryQuery": "ONEXPLAYER official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "OXO",
+    "manufacturerSources": [],
+    "discoveryQuery": "OXO official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Oakley",
+    "manufacturerSources": [],
+    "discoveryQuery": "Oakley official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Omron",
+    "manufacturerSources": [],
+    "discoveryQuery": "Omron official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "On-Stage",
+    "manufacturerSources": [],
+    "discoveryQuery": "On-Stage official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Oneisall",
+    "manufacturerSources": [],
+    "discoveryQuery": "Oneisall official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Oral-B",
+    "manufacturerSources": [],
+    "discoveryQuery": "Oral-B official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Oster",
+    "manufacturerSources": [],
+    "discoveryQuery": "Oster official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Outsunny",
+    "manufacturerSources": [],
+    "discoveryQuery": "Outsunny official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "PETKIT",
+    "manufacturerSources": [],
+    "discoveryQuery": "PETKIT official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Panasonic",
+    "manufacturerSources": [],
+    "discoveryQuery": "Panasonic official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Pawhut",
+    "manufacturerSources": [],
+    "discoveryQuery": "Pawhut official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Petlibro",
+    "manufacturerSources": [],
+    "discoveryQuery": "Petlibro official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Philips",
+    "manufacturerSources": [],
+    "discoveryQuery": "Philips official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Philips Avent",
+    "manufacturerSources": [],
+    "discoveryQuery": "Philips Avent official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Philips Norelco",
+    "manufacturerSources": [],
+    "discoveryQuery": "Philips Norelco official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Pioneer",
+    "manufacturerSources": [],
+    "discoveryQuery": "Pioneer official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "PlayStation",
+    "manufacturerSources": [],
+    "discoveryQuery": "PlayStation official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Polaroid",
+    "manufacturerSources": [],
+    "discoveryQuery": "Polaroid official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "ProForm",
+    "manufacturerSources": [],
+    "discoveryQuery": "ProForm official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Qaba",
+    "manufacturerSources": [],
+    "discoveryQuery": "Qaba official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "RCA",
+    "manufacturerSources": [],
+    "discoveryQuery": "RCA official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "REDTIGER",
+    "manufacturerSources": [],
+    "discoveryQuery": "REDTIGER official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Ray-Ban",
+    "manufacturerSources": [],
+    "discoveryQuery": "Ray-Ban official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Razer",
+    "manufacturerSources": [],
+    "discoveryQuery": "Razer official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Redragon",
+    "manufacturerSources": [],
+    "discoveryQuery": "Redragon official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Reolink",
+    "manufacturerSources": [],
+    "discoveryQuery": "Reolink official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Rexing",
+    "manufacturerSources": [],
+    "discoveryQuery": "Rexing official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Ricoh",
+    "manufacturerSources": [],
+    "discoveryQuery": "Ricoh official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Roborock",
+    "manufacturerSources": [],
+    "discoveryQuery": "Roborock official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Rode",
+    "manufacturerSources": [],
+    "discoveryQuery": "Rode official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Roland",
+    "manufacturerSources": [],
+    "discoveryQuery": "Roland official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Salton",
+    "manufacturerSources": [],
+    "discoveryQuery": "Salton official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Samsonite",
+    "manufacturerSources": [],
+    "discoveryQuery": "Samsonite official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Samsung",
+    "manufacturerSources": [
+      "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/buy/",
+      "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/",
+      "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/"
+    ],
+    "discoveryQuery": "Samsung official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "SanDisk",
+    "manufacturerSources": [],
+    "discoveryQuery": "SanDisk official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Segway",
+    "manufacturerSources": [],
+    "discoveryQuery": "Segway official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Sennheiser",
+    "manufacturerSources": [],
+    "discoveryQuery": "Sennheiser official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Shark",
+    "manufacturerSources": [],
+    "discoveryQuery": "Shark official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Skullcandy",
+    "manufacturerSources": [],
+    "discoveryQuery": "Skullcandy official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Sonos",
+    "manufacturerSources": [],
+    "discoveryQuery": "Sonos official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Sony",
+    "manufacturerSources": [
+      "https://electronics.sony.com/audio/headphones/headband/p/wh1000xm6-b?sku=wh1000xm6-b",
+      "https://www.playstation.com/en-us/ps5/ps5-pro/"
+    ],
+    "discoveryQuery": "Sony official new product announcement",
+    "coverage": "Manufacturer sources and official search",
+    "lastChecked": "2026-09-23"
+  },
+  {
+    "brand": "Soozier",
+    "manufacturerSources": [],
+    "discoveryQuery": "Soozier official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Stokke",
+    "manufacturerSources": [],
+    "discoveryQuery": "Stokke official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Storkcraft",
+    "manufacturerSources": [],
+    "discoveryQuery": "Storkcraft official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Sunny Health & Fitness",
+    "manufacturerSources": [],
+    "discoveryQuery": "Sunny Health & Fitness official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "TCL",
+    "manufacturerSources": [],
+    "discoveryQuery": "TCL official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "TP-Link",
+    "manufacturerSources": [],
+    "discoveryQuery": "TP-Link official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Targus",
+    "manufacturerSources": [],
+    "discoveryQuery": "Targus official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Taylor",
+    "manufacturerSources": [],
+    "discoveryQuery": "Taylor official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "The North Face",
+    "manufacturerSources": [],
+    "discoveryQuery": "The North Face official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Thinkware",
+    "manufacturerSources": [],
+    "discoveryQuery": "Thinkware official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Tineco",
+    "manufacturerSources": [],
+    "discoveryQuery": "Tineco official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Tramontina",
+    "manufacturerSources": [],
+    "discoveryQuery": "Tramontina official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "UGREEN",
+    "manufacturerSources": [],
+    "discoveryQuery": "UGREEN official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "VTech",
+    "manufacturerSources": [],
+    "discoveryQuery": "VTech official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Vankyo",
+    "manufacturerSources": [],
+    "discoveryQuery": "Vankyo official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Vevor",
+    "manufacturerSources": [],
+    "discoveryQuery": "Vevor official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Vivitar",
+    "manufacturerSources": [],
+    "discoveryQuery": "Vivitar official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "WORX",
+    "manufacturerSources": [],
+    "discoveryQuery": "WORX official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Wahl",
+    "manufacturerSources": [],
+    "discoveryQuery": "Wahl official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Wenger",
+    "manufacturerSources": [],
+    "discoveryQuery": "Wenger official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Whirlpool",
+    "manufacturerSources": [],
+    "discoveryQuery": "Whirlpool official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Wyze",
+    "manufacturerSources": [],
+    "discoveryQuery": "Wyze official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "XGIMI",
+    "manufacturerSources": [],
+    "discoveryQuery": "XGIMI official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Xbox",
+    "manufacturerSources": [],
+    "discoveryQuery": "Xbox official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Yale",
+    "manufacturerSources": [],
+    "discoveryQuery": "Yale official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Yamaha",
+    "manufacturerSources": [],
+    "discoveryQuery": "Yamaha official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Zwilling",
+    "manufacturerSources": [],
+    "discoveryQuery": "Zwilling official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "best buy essentials",
+    "manufacturerSources": [],
+    "discoveryQuery": "best buy essentials official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "iRobot",
+    "manufacturerSources": [],
+    "discoveryQuery": "iRobot official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "NASCO",
+    "manufacturerSources": [],
+    "discoveryQuery": "NASCO official new product announcement",
+    "coverage": "Official-source discovery required"
+  },
+  {
+    "brand": "Sencor",
+    "manufacturerSources": [],
+    "discoveryQuery": "Sencor official new product announcement",
+    "coverage": "Official-source discovery required"
+  }
+]
