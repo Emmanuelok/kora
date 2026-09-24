@@ -19,6 +19,7 @@
     "verify:auth": "node scripts/verify-auth.mjs",
     "verify:store": "node scripts/verify-store.mjs",
     "verify:variants": "node scripts/verify-variants.mjs",
+    "verify:selling-prices": "node scripts/verify-selling-prices.mjs",
     "verify:galleries": "node scripts/verify-galleries.mjs"
   },
   "dependencies": {

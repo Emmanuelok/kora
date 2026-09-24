@@ -16,7 +16,7 @@ Four Galaxy S26 Ultra 1TB variants were not imported: the retailer option says 1
 
 ## Prices
 
-`ghPrice` requires a positive GHS amount, a named source and a valid check date less than 14 days old. Future and invalid dates are rejected. Foreign prices are never converted into Ghana offers. `ghanaPesewas` produces integer minor units for arithmetic, and `money` preserves two decimal places.
+`ghPrice` now returns only approved all-in selling prices from `data/selling-prices.json`. Retailer references are retained separately by `retailReferenceGhPrice`, which requires a positive GHS amount, source and a valid check date less than 14 days old. A retailer reference is never the customer-price fallback. `ghanaPesewas` produces integer minor units for arithmetic, and `money` preserves two decimal places. See [SELLING-PRICES.md](SELLING-PRICES.md) for the private exact-SKU cost, customs, FX and merchant tax inputs required before publishing a selling price with a 20% markup.
 
 `scripts/refresh-prices.mjs` rechecks the exact retailer variant ID, title and SKU. It fetches each product feed once even when many variants share it. Large changes and identity changes require source review. The updater never adds unverified variants automatically.
 

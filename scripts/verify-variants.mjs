@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createElement } from 'react';
 import { importRetailerVariants } from './import-retailer-variants.mjs';
+import { createPriceIdentity } from '../lib/price-identity.mjs';
 
 const products = JSON.parse(fs.readFileSync('data/products.json', 'utf8'));
 const families = JSON.parse(fs.readFileSync('data/product-families.json', 'utf8'));
@@ -18,9 +19,12 @@ const compile = async (source, jsx = false) => {
   return import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
 };
 
-globalThis.__koraVariantTest = { products, families };
+globalThis.__koraVariantTest = { products, families, createPriceIdentity };
 const catalogue = await compile(fs.readFileSync('lib/catalogue.ts', 'utf8')
-  .replace("import products from '../data/products.json';", 'const products = globalThis.__koraVariantTest.products;'));
+  .replace("import products from '../data/products.json';", 'const products = globalThis.__koraVariantTest.products;')
+  .replace("import sellingPrices from '../data/selling-prices.json';", 'const sellingPrices = { prices: [] };')
+  .replace("import productFamilyData from '../data/product-families.json';", 'const productFamilyData = globalThis.__koraVariantTest.families;')
+  .replace("import { createPriceIdentity } from './price-identity.mjs';", 'const { createPriceIdentity } = globalThis.__koraVariantTest;'));
 globalThis.__koraVariantTest.catalogue = catalogue;
 const variants = await compile(fs.readFileSync('lib/product-variants.ts', 'utf8')
   .replace("import familyData from '../data/product-families.json';", 'const familyData = globalThis.__koraVariantTest.families;')
@@ -80,19 +84,20 @@ assert.equal(renderToStaticMarkup(createElement(ProductOptions, { productId: 'no
 // Price arithmetic preserves pesewas; freshness cannot be bypassed by future or invalid dates.
 const now = Date.parse('2026-09-24T12:00:00Z');
 const fresh = { priceGHS: 123.45, priceSource: 'Verified retailer', priceCheckedAt: '2026-09-24T00:00:00Z' };
-assert.equal(catalogue.ghPrice(fresh, now), 123.45);
+assert.equal(catalogue.retailReferenceGhPrice(fresh, now), 123.45);
+assert.equal(catalogue.ghPrice(fresh, now), null, 'A retailer reference is not an approved all-in selling price');
 assert.equal(catalogue.ghanaPesewas(123.45), 12345);
 assert.equal(catalogue.ghanaPesewas(0.29), 29);
 assert.equal(catalogue.ghanaPesewas(100.005), null);
 assert.equal(catalogue.ghanaPesewas(Number.MAX_SAFE_INTEGER), null);
 assert.equal(catalogue.ghanaPesewas(-1), null);
 assert.equal(catalogue.ghanaPesewas(Infinity), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceCheckedAt: '2026-09-25' }, now), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceCheckedAt: new Date(now - catalogue.GHANA_PRICE_VALIDITY_MS).toISOString() }, now), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceCheckedAt: 'bad-date' }, now), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceCheckedAt: '2026-09-31' }, Date.parse('2026-10-02T12:00:00Z')), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceSource: ' ' }, now), null);
-assert.equal(catalogue.ghPrice({ ...fresh, priceGHS: 0 }, now), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceCheckedAt: '2026-09-25' }, now), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceCheckedAt: new Date(now - catalogue.GHANA_PRICE_VALIDITY_MS).toISOString() }, now), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceCheckedAt: 'bad-date' }, now), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceCheckedAt: '2026-09-31' }, Date.parse('2026-10-02T12:00:00Z')), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceSource: ' ' }, now), null);
+assert.equal(catalogue.retailReferenceGhPrice({ ...fresh, priceGHS: 0 }, now), null);
 assert.equal(catalogue.ghPrice({ priceCAD: 12.34 }, now), null, 'Foreign price must never become a GHS offer');
 assert(catalogue.money(123.45).endsWith('123.45'));
 assert(catalogue.money(123).endsWith('123.00'));

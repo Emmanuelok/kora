@@ -1,6 +1,6 @@
 /* KORA's deliberately small offline shell. Bump the version when these assets change. */
 const CACHE_PREFIX = "kora-public-";
-const CACHE_NAME = `${CACHE_PREFIX}2026-09-24-v2`;
+const CACHE_NAME = `${CACHE_PREFIX}2026-09-24-v3`;
 const PUBLIC_ASSETS = [
   // Cloudflare's clean URL avoids the redirect from the physical offline.html file.
   "/offline",

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link throws during navigation; native anchors preserve working browser navigation. */
 import Image from "next/image";
+import BrandMark from "../../components/brand-mark";
 import { ArrowRight, ArrowUpRight, Bookmark, Check, Compass, Download, Heart, Package, Share2, ShieldCheck, Smartphone, Wifi } from "lucide-react";
 import { InstallAction } from "../pwa";
 import { metadataForRoute } from "../../lib/site-metadata";
@@ -11,7 +12,7 @@ export default function InstallPage() {
     <div className="kora-install-page">
       <a className="skip-link" href="#install-main">Skip to content</a>
       <header className="kora-install-header">
-        <a href="/" className="kora-install-brand" aria-label="Kora Ghana home">kora<span aria-hidden="true">✳</span></a>
+        <a href="/" className="kora-install-brand" aria-label="Kora Ghana home">kora<span aria-hidden="true"><BrandMark/></span></a>
         <span className="kora-install-header-note">GOOD TECH. GREAT POSSIBILITIES.</span>
         <a href="/shop">Explore the catalogue<ArrowUpRight size={17} aria-hidden="true" /></a>
       </header>
@@ -28,12 +29,12 @@ export default function InstallPage() {
 
           <div className="kora-install-scene" aria-hidden="true">
             <div className="kora-install-orbit kora-install-orbit-one" /><div className="kora-install-orbit kora-install-orbit-two" />
-            <span className="kora-install-spark">✳</span>
+            <span className="kora-install-spark"><BrandMark/></span>
             <div className="kora-install-floating-label"><span /> MADE FOR YOUR EVERYDAY</div>
             <div className="kora-install-phone">
               <div className="kora-install-phone-island" />
-              <div className="kora-install-phone-top"><span>kora✳</span><span>GHANA</span></div>
-              <div className="kora-install-phone-art"><span className="kora-install-phone-orbit" /><Image src="/icons/kora-512.png" width={126} height={126} unoptimized alt="" /><span className="kora-install-phone-star">✳</span></div>
+              <div className="kora-install-phone-top"><span>kora<BrandMark/></span><span>GHANA</span></div>
+              <div className="kora-install-phone-art"><span className="kora-install-phone-orbit" /><Image src="/icons/kora-512.png" width={126} height={126} unoptimized alt="" /><span className="kora-install-phone-star"><BrandMark/></span></div>
               <div className="kora-install-phone-copy"><span>OPEN UP THE POSSIBILITIES</span><strong>Good tech.<br />Great days.</strong><p>A little upgrade.<br />A world of possibility.</p></div>
               <div className="kora-install-phone-cta">Find your next favourite<ArrowUpRight size={17} /></div>
               <div className="kora-install-phone-tabs"><span><Compass size={19} />Explore</span><span><Heart size={19} />Saved</span><span><Package size={19} />Requests</span></div>
@@ -44,7 +45,7 @@ export default function InstallPage() {
           </div>
         </section>
 
-        <div className="kora-install-ribbon" aria-hidden="true"><span>LESS SEARCHING.</span><span>✳</span><span>MORE DISCOVERING.</span><span>✳</span><span>ALL KORA.</span></div>
+        <div className="kora-install-ribbon" aria-hidden="true"><span>LESS SEARCHING.</span><span><BrandMark/></span><span>MORE DISCOVERING.</span><span><BrandMark/></span><span>ALL KORA.</span></div>
 
         <section className="kora-install-benefits" aria-labelledby="benefits-heading">
           <div className="kora-install-section-heading"><p className="kora-install-eyebrow">SMALL ICON. BIG ENERGY.</p><h2 id="benefits-heading">A little more Kora.<br />A little less effort.</h2><p>The same Kora you know, with a place of its own.</p></div>
@@ -56,7 +57,7 @@ export default function InstallPage() {
         </section>
 
         <section className="kora-install-guide" id="install-guide" aria-labelledby="guide-heading">
-          <div className="kora-install-guide-intro"><span className="kora-install-guide-symbol" aria-hidden="true">✳</span><p className="kora-install-eyebrow">MAKE YOURSELF AT HOME</p><h2 id="guide-heading">A few taps.<br />Then you’re in.</h2><p>Installation options vary by browser and device. Use the install button above when it appears, or follow your browser’s steps.</p></div>
+          <div className="kora-install-guide-intro"><span className="kora-install-guide-symbol" aria-hidden="true"><BrandMark/></span><p className="kora-install-eyebrow">MAKE YOURSELF AT HOME</p><h2 id="guide-heading">A few taps.<br />Then you’re in.</h2><p>Installation options vary by browser and device. Use the install button above when it appears, or follow your browser’s steps.</p></div>
           <div className="kora-install-guide-options">
             <details open><summary><span><Smartphone size={20} aria-hidden="true" />iPhone & iPad</span><span className="kora-install-guide-plus" aria-hidden="true">+</span></summary><ol><li><span>1</span><p>Open Kora in <strong>Safari</strong>.</p></li><li><span>2</span><p>Tap the <strong>Share</strong> button <Share2 size={15} aria-hidden="true" /> in the browser.</p></li><li><span>3</span><p>Choose <strong>Add to Home Screen</strong>. If offered, keep <strong>Open as Web App</strong> enabled, then tap <strong>Add</strong>.</p></li></ol></details>
             <details><summary><span><Download size={20} aria-hidden="true" />Android</span><span className="kora-install-guide-plus" aria-hidden="true">+</span></summary><ol><li><span>1</span><p>Open Kora in <strong>Chrome</strong> or a browser that supports app installation.</p></li><li><span>2</span><p>Tap <strong>Add Kora to your device</strong> above when available, or open your browser’s menu.</p></li><li><span>3</span><p>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>, then follow the confirmation.</p></li></ol></details>

@@ -11,7 +11,8 @@ This repository contains the source recovered from KORA's ChatGPT Site, includin
 - Product galleries with reviewed source imagery; current five-image coverage is recorded in `data/gallery-coverage.json`.
 - Persistent guest shopping and Cloudflare-hosted customer accounts, with email/password and Google sign-in awaiting production configuration.
 - Storage, colour, size and bundle selection across 12 product families and 55 exact configurations.
-- 46 dated Ghana retailer price references in GHS; 2,347 other products require quotations.
+- Approved selling-price pipeline for one all-in GHS amount, with verified costs, explicit tax treatment and a 20% markup.
+- No complete merchant cost records have been supplied yet, so all 2,393 products currently require quotations. The 46 Ghana retailer references are retained as source evidence and are not shown as final selling prices.
 - Service, business, trade-in, return and contact enquiry forms.
 
 Payments, merchant inventory, shipping, appointment confirmation and customer notification delivery are not connected. Checkout submits a quotation request and collects no money. Catalogue figures describe the imported snapshot dated 24 September 2026.
@@ -48,13 +49,14 @@ pnpm lint
 node scripts/verify-auth.mjs
 node scripts/verify-store.mjs
 node scripts/verify-variants.mjs
+pnpm verify:selling-prices
 node scripts/verify-galleries.mjs
 node scripts/verify-image-route.mjs
 node scripts/verify-links.mjs
 pnpm build
 ```
 
-The store check exercises API logic against temporary in-memory SQLite, including real signed-in sessions, atomic guest imports, account isolation and rejection of forged identity headers. Authentication checks exercise real Better Auth and Drizzle/D1 behavior against SQLite. Gallery checks validate recorded evidence and API behavior; they do not fetch every external image. See [deployment status and checks](docs/HOSTING.md) for the latest migration validation.
+The store check exercises API logic against temporary in-memory SQLite, including real signed-in sessions, atomic guest imports, account isolation and rejection of forged identity headers. Selling-price checks use synthetic fixtures to verify exact SKU identity, original-fee treatment, explicit FX/customs, the 20% markup, reviewed output taxes and expiry. Store pricing fixtures remain in memory and never populate production prices. Authentication checks exercise real Better Auth and Drizzle/D1 behavior against SQLite. Gallery checks validate recorded evidence and API behavior; they do not fetch every external image. See [deployment status and checks](docs/HOSTING.md) for the latest migration validation.
 
 ## Project layout
 
@@ -64,6 +66,7 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 | `app/api/` | Store, gallery and image endpoints |
 | `app/product-gallery.tsx`, `app/storefront-hero.tsx` | Gallery and hero interactions |
 | `data/` | Catalogue, sources, galleries and update evidence |
+| `data/selling-prices.json` | Approved final GHS amounts, public SKU identity, opaque revisions and validity |
 | `public/` | Local images, fonts and downloadable catalogues |
 | `db/`, `drizzle/` | Database schema and migration |
 | `scripts/` | Catalogue maintenance, verification and runtime helpers |
@@ -73,6 +76,8 @@ The store check exercises API logic against temporary in-memory SQLite, includin
 ## Data and deployment notes
 
 The product catalogue is in `data/products.json`. The four D1 tables—`basket`, `saved`, `profiles` and `requests`—were empty when retrieved. Most product photography still points to external source URLs; it is not fully mirrored in this repository. Product descriptions, images and reference prices retain their provenance and are not proof of Ghana stock or reuse rights.
+
+Customer prices come only from approved records in `data/selling-prices.json`; incomplete or expired records return to quotation. The private cost importer requires the exact SKU, actual supplier costs and original fees, sourcing route, applicable freight/insurance and customs assessment, verified FX where needed, and merchant output-tax policy. It adds a 20% markup to reviewed landed cost. Ghana local purchases are handled separately so import costs are not added again. Private invoices, cost components, FX, tax lines and markup amounts stay outside the public dataset under ignored `work/pricing/`. See [selling-price setup](docs/SELLING-PRICES.md) and [exact product configurations](docs/CATALOGUE-CONFIGURATIONS.md).
 
 The independent deployment uses browser-specific guest sessions and ignores caller-supplied OpenAI identity headers. Customer account code now runs on Workers and D1 using Better Auth. A signing secret enables email/password accounts; Google OAuth credentials enable Google sign-in. Magic links are removed, and email verification/password reset remain unavailable; see [Cloudflare authentication setup](docs/CLOUDFLARE-AUTH.md). Production is public for customer testing at https://kora.eo-kingsford.workers.dev. Cloudflare Access protects previews only; preview builds and URLs are disabled. See [hosting guidance](docs/HOSTING.md).
 

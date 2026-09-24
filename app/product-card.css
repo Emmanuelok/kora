@@ -1,0 +1,53 @@
+/* Product cards: controls have their own space; the photograph stays clear. */
+.products .product-card{display:flex;flex-direction:column;min-width:0;border:1px solid #e7e3eb;border-radius:20px;background:#fff;overflow:hidden;box-shadow:0 3px 12px #2e1b3603}
+.product-card .product-media{background:linear-gradient(145deg,#faf9fb,#f3f1f6);border-bottom:1px solid #eeeaf1}
+.product-card .product-card-tools{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:54px;padding:8px 12px 0}
+.product-card .product-tag{position:static;max-width:calc(100% - 42px);border:0;background:#fff9;border-radius:7px;padding:5px 8px;font-size:11px;line-height:1.25;color:#6d5679;letter-spacing:.01em;font-weight:650}
+.product-card .save-icon{position:static;width:36px;height:36px;flex:0 0 36px;border:1px solid #e4dfea;background:#fff;color:#7b6986;border-radius:50%;display:grid;place-items:center}
+.product-card .save-icon.selected{color:#6c397f;background:#efe6f6;border-color:#c6add5}
+.product-card .product-picture{aspect-ratio:1.25;padding:12px 22px 6px;background:transparent;overflow:hidden;width:100%;border-radius:0}
+.product-card .product-picture>a{display:block;position:relative;height:100%;width:100%;outline-offset:-3px}
+.product-card .product-picture img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.product-card .product-picture .product-cover{position:relative;opacity:1;transform:none}
+.product-card .product-picture .product-alternate{position:absolute;inset:0;opacity:0;transform:none}
+.product-card .product-preview-row{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:52px;padding:4px 12px 9px}
+.product-card .photo-count{color:#81758b;font-size:11px;line-height:1.3;white-space:nowrap}
+.product-card .quick{position:static;inset:auto;width:auto;min-height:38px;padding:8px 11px;margin:0;border:1px solid #dcd3e4;background:#fff;color:#4b345b;display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:50px;font-size:11px;font-weight:650;line-height:1.2;opacity:1;transform:none;white-space:nowrap}
+.product-card .quick:hover{background:#ede6f2;border-color:#bea5cd}
+.product-card .product-info{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:19px 18px 15px;flex:1}
+.product-card .brand{min-height:0;font-size:10px;letter-spacing:.12em;line-height:1.4;margin:0 0 6px;color:#887494}
+.product-card .product-name{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:15px;font-weight:650;line-height:1.45;margin:0;height:auto;min-height:0;overflow:hidden;overflow-wrap:anywhere;letter-spacing:-.015em;color:#291f31}
+.product-card .price{display:block;min-height:0;height:auto;margin:11px 0 0;font-size:23px;line-height:1.25;font-weight:750;letter-spacing:-.045em;color:#30213b;overflow-wrap:anywhere}
+.product-card .price-pending{font-size:16px;font-weight:600;letter-spacing:-.02em;color:#65516f}
+.product-card .product-options-link{display:flex;align-items:center;gap:3px;width:fit-content;margin:7px 0 0;font-size:11px;line-height:1.4;text-decoration:none;color:#7c668a}
+.product-card .card-bottom{display:flex;align-items:center;justify-content:space-between;gap:4px;margin-top:13px;padding-top:9px;border-top:1px solid #eee9f2}
+.product-card .card-bottom>label{display:flex;align-items:center;gap:6px;min-height:36px;font-size:11px;line-height:1.3;color:#807187;cursor:pointer}
+.product-card .card-bottom [data-slot=checkbox]{width:15px;height:15px}
+.product-card .add-icon{display:grid;place-items:center;width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:#eee7f3;color:#57336a}
+@media(hover:hover) and (pointer:fine){.products .product-card:hover{border-color:#cbb9d5;box-shadow:0 14px 30px #3823420c;transform:translateY(-3px)}.product-card:hover .product-picture:has(.product-alternate) .product-cover{opacity:0}.product-card:hover .product-picture .product-alternate{opacity:1;transform:scale(1.025)}}
+@media(hover:none){.products .product-card:hover{transform:none;box-shadow:none}.product-card:hover .product-picture:has(.product-alternate) .product-cover{opacity:1;transform:none}.product-card:hover .product-picture .product-alternate{opacity:0}}
+@media(max-width:600px){
+ .site .products,.site .shop-layout .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+ .products .product-card{border-radius:17px}
+ .product-card .product-card-tools{min-height:48px;padding:4px 7px 0;gap:2px}
+ .product-card .product-tag{max-width:calc(100% - 44px);font-size:9px;padding:4px 6px;line-height:1.3;letter-spacing:0;background:transparent}
+ .product-card .save-icon{width:44px;height:44px;flex-basis:44px;background:#fffc;border-color:#eee8f2}
+ .product-card .save-icon svg{width:18px;height:18px}
+ .product-card .product-picture{aspect-ratio:1.15;padding:5px 11px 3px}
+ .product-card .product-preview-row{min-height:44px;padding:1px 7px 5px;gap:3px}
+ .product-card .photo-count{font-size:9px;letter-spacing:0}
+ .product-card .quick{min-height:44px;padding:6px 8px;gap:3px;font-size:10px;border-color:#e1d9e6}
+ .product-card .quick svg{width:12px;height:12px}
+ .product-card .product-info{padding:13px 12px 10px}
+ .product-card .brand{font-size:9px;margin-bottom:5px;letter-spacing:.1em}
+ .product-card .product-name{font-size:13px;line-height:1.45;letter-spacing:-.02em;height:auto;min-height:0;margin:0;-webkit-line-clamp:3}
+ .product-card .price{font-size:18px;line-height:1.3;min-height:0;margin-top:9px}
+ .product-card .price-pending{font-size:14px;line-height:1.4;color:#70577d}
+ .product-card .product-options-link{font-size:10px;margin-top:5px}
+ .product-card .card-bottom{margin-top:10px;padding-top:5px}
+ .product-card .card-bottom>label{font-size:10px;gap:5px;min-height:44px}
+ .product-card .add-icon{width:44px;height:44px;flex-basis:44px}
+ .product-card .add-icon svg{width:18px;height:18px}
+ .product-card .card-bottom [data-slot=checkbox]{width:14px;height:14px}
+}
+@media(max-width:350px){.site .products,.site .shop-layout .products{gap:9px}.product-card .product-info{padding-inline:9px}.product-card .photo-count{display:none}.product-card .product-preview-row{justify-content:center}.product-card .quick{width:100%}}

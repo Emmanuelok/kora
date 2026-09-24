@@ -44,6 +44,13 @@ const DB={
 Object.assign(globalThis.__koraStoreTestBindings,{DB});
 const priceModule=await import('../lib/catalogue.ts');
 const {catalogue,ghPrice,ghanaPesewas}=priceModule;
+// Approved selling-price fixtures are test-only; production retail references stay unpriced.
+const priceFixtureNow=Date.now();
+for(const product of catalogue.filter(product=>product.priceGHS))product.sellingPrice={
+ productId:product.id,currency:'GHS',amountMinor:Math.round(product.priceGHS*120),policy:'kora-selling-price-v1',
+ identity:priceModule.sellingPriceIdentity(product),
+ revision:'a'.repeat(24),verifiedAt:new Date(priceFixtureNow-1000).toISOString(),validUntil:new Date(priceFixtureNow+3600000).toISOString()
+};
 const {getProductOptionSnapshot,productFamilies}=await import('../lib/product-variants.ts');
 const {handleCustomerAuth}=await import('../lib/auth-core.ts');
 const {claimGuest}=await import('../lib/store-identity.ts');
@@ -266,6 +273,7 @@ for(const item of pricedVariants){
 assert.equal(variantQuote.indicativeTotal,pricedVariants.reduce((sum,item)=>sum+item.quantity*ghanaPesewas(ghPrice(item.product)),0)/100);
 assert.equal(variantQuote.unpricedQuantity,0);
 assert.equal(variantQuote.currency,'GHS');
+assert.equal(variantQuote.priceType,'Approved KORA GHS selling prices; unpriced items require quotation');
 for(const Origin of ['', 'null']){r=await route.POST(asCustomer(alice,{action:'claimGuest'},{Origin}));assert.equal(r.status,403);}
 // Render the real history component: older quotes may contain an unrelated service value.
 const storeSource=ts.createSourceFile('app/store.tsx',fs.readFileSync('app/store.tsx','utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);

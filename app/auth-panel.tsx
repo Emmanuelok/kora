@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, ArrowUpRight, Eye, EyeOff, Heart, LockKeyhole, ShieldCheck, ShoppingBag } from 'lucide-react';
+import BrandMark from '../components/brand-mark';
 import './auth-panel.css';
 
 type Capabilities = { configured: boolean; password: boolean; google: boolean };
@@ -67,7 +68,7 @@ export default function AuthPanel({ signup = false }: { signup?: boolean }) {
   }
 
   return <section className="kora-auth" aria-labelledby="auth-heading">
-    <div className="kora-auth-story"><p className="eyebrow">GOOD FINDS. ALL YOURS.</p><h1 id="auth-heading">Your next<br/>favourite.<br/><em>Kept close.</em></h1><p>A little space for everything you love. Save your discoveries, keep your bag and pick up where you left off.</p><div className="kora-auth-benefits"><span><Heart size={20}/> A wishlist that travels with you</span><span><ShoppingBag size={20}/> Your bag, across your devices</span><span><ShieldCheck size={20}/> Your requests, in one place</span></div><span className="kora-auth-star" aria-hidden="true">✳</span></div>
+    <div className="kora-auth-story"><p className="eyebrow">GOOD FINDS. ALL YOURS.</p><h1 id="auth-heading"><span>Your next</span>{' '}<span>favourite.</span>{' '}<em>Kept close.</em></h1><p>A little space for everything you love. Save your discoveries, keep your bag and pick up where you left off.</p><div className="kora-auth-benefits"><span><Heart size={20}/> A wishlist that travels with you</span><span><ShoppingBag size={20}/> Your bag, across your devices</span><span><ShieldCheck size={20}/> Your requests, in one place</span></div><BrandMark className="kora-auth-star"/></div>
     <div className="kora-auth-card">
       <a className="kora-auth-back" href="/shop">Explore the catalogue <ArrowUpRight size={16}/></a>
       <span className="kora-auth-kicker">MY KORA</span><h2>{signup ? 'Make yourself at home.' : 'Good to see you.'}</h2>
