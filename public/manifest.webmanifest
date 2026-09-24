@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "KORA Ghana — Technology for every day",
+  "short_name": "KORA",
+  "description": "Discover technology, home and everyday possibilities for Ghana. Compare products, save favourites and request a quote.",
+  "lang": "en-GH",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#23192b",
+  "theme_color": "#23192b",
+  "categories": ["shopping", "lifestyle"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "/icons/kora-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/kora-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/kora-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Explore the catalogue", "short_name": "Explore", "description": "Find your next everyday upgrade.", "url": "/shop", "icons": [{ "src": "/icons/kora-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Your saved collection", "short_name": "Saved", "description": "Return to the products saved in this browser session.", "url": "/saved", "icons": [{ "src": "/icons/kora-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Track your requests", "short_name": "Requests", "description": "View requests from this browser session.", "url": "/track", "icons": [{ "src": "/icons/kora-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ]
+}

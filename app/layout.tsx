@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
+import type { Viewport } from "next";
+import { rootMetadata, THEME_COLOR } from "../lib/site-metadata";
+import PwaExperience from "./pwa";
 import "./globals.css";
 import "./fonts.css";
 import "./flagship.css";
+import "./pwa.css";
 
-export const metadata: Metadata = {
-  title: "KORA Ghana | Technology for every day",
-  description: "Explore electronics, appliances, home, gaming and more with KORA Ghana. Compare products, save favourites and request a quote.",
-  other: {
-    "codex-preview": "development",
-  },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+export const metadata = rootMetadata;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: THEME_COLOR,
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -21,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en-GH">
+      <body className="antialiased">{children}<PwaExperience /></body>
     </html>
   );
 }

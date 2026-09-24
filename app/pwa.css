@@ -1,0 +1,119 @@
+.kora-install-page{--ki-plum:#23192b;--ki-lime:#d9f96d;--ki-lavender:#d9c9e9;color:var(--ki-plum);background:#fcfaf7;font-family:Manrope,Arial,sans-serif;overflow:hidden}
+.kora-install-page a{color:inherit}
+.kora-install-page button{font:inherit}
+.kora-install-header{max-width:1512px;margin:auto;min-height:106px;padding:24px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.kora-install-brand{font-weight:800;font-size:49px;letter-spacing:-4px;line-height:1;display:flex;align-items:flex-start}
+.kora-install-brand>span{font-size:33px;letter-spacing:0;color:#76558d;margin:2px 0 0 3px}
+.kora-install-header-note{font-size:10px;font-weight:800;letter-spacing:.15em}
+.kora-install-header>a:last-child{display:flex;gap:10px;align-items:center;font-size:12px;font-weight:700;padding-bottom:4px;border-bottom:1px solid #bcaec3}
+.kora-install-hero{display:grid;grid-template-columns:1.05fr 1fr;position:relative;isolation:isolate;min-height:742px;background:var(--ki-plum);color:#fff;margin:0 24px;border-radius:24px 24px 0 0;padding:85px max(5%,calc((100vw - 1330px)/2));gap:28px;overflow:hidden}
+.kora-install-hero:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 86% 28%,#72537d55,transparent 60%)}
+.kora-install-copy{z-index:2;align-self:center;max-width:620px}
+.kora-install-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;display:flex;align-items:center;gap:10px;color:#d5c6e0}
+.kora-install-kicker>span{width:6px;height:6px;background:var(--ki-lime);border-radius:50%;box-shadow:0 0 0 5px #d9f96d12}
+.kora-install-copy h1{font-size:clamp(55px,5.5vw,85px);line-height:1.04;letter-spacing:-.06em;margin:29px 0 25px;font-weight:800}
+.kora-install-copy h1 em{font-style:normal;color:var(--ki-lime)}
+.kora-install-lead{max-width:450px;color:#ded3e6;font-size:16px;line-height:1.85}
+.kora-install-actions{margin-top:31px;max-width:460px}
+.kora-install-page .kora-install-primary{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:57px;padding:17px 23px;background:var(--ki-lime);color:var(--ki-plum);border:0;border-radius:100px;font-size:13px;font-weight:800;text-align:center;box-shadow:0 4px 25px #00000012}
+.kora-install-primary:hover{background:#e5ff95!important;transform:translateY(-2px)}
+.kora-install-primary:focus-visible{outline:3px solid white;outline-offset:5px}
+.kora-install-action-note{font-size:11px;line-height:1.8;margin-top:14px;max-width:370px;color:#c5b6cd;min-height:20px}
+.kora-install-platforms{display:flex;gap:9px;align-items:center;font-size:11px;color:#b7a9c0;margin-top:35px}
+.kora-install-scene{position:relative;min-height:570px;display:flex;align-items:center;justify-content:center;isolation:isolate;pointer-events:none}
+.kora-install-orbit{position:absolute;border:1px solid #d9c9e91c;border-radius:50%;z-index:-1;left:50%;top:47%;transform:translate(-50%,-50%)}
+.kora-install-orbit-one{width:560px;height:560px;box-shadow:0 0 100px #b58ccc0d inset}
+.kora-install-orbit-two{width:710px;height:710px;border-style:dashed}
+.kora-install-spark{position:absolute;right:2%;top:6%;font-size:155px;line-height:1;color:var(--ki-lime);transform:rotate(10deg);text-shadow:0 15px 60px #b8e36712}
+.kora-install-floating-label{position:absolute;left:0;top:38px;z-index:4;transform:rotate(-6deg);background:#ebe3f1;color:var(--ki-plum);border:1px solid #fff6;padding:12px 16px;border-radius:100px;font-size:8px;font-weight:800;letter-spacing:.12em;box-shadow:0 10px 24px #140b2133;display:flex;align-items:center;gap:8px}
+.kora-install-floating-label>span{width:5px;height:5px;border-radius:50%;background:#73578a}
+.kora-install-phone{width:266px;background:#fcfaf7;position:relative;border:7px solid #473c50;border-radius:45px;box-shadow:0 30px 90px #09010f88,0 0 0 1px #ffffff36,2px 2px 0 2px #ffffff16 inset;transform:rotate(8deg);padding:44px 18px 20px;color:var(--ki-plum);z-index:2;flex-shrink:0}
+.kora-install-phone-island{position:absolute;width:82px;height:20px;top:10px;left:50%;transform:translateX(-50%);background:#201925;border-radius:40px}
+.kora-install-phone-top{display:flex;justify-content:space-between;align-items:center;padding:2px 3px 17px}
+.kora-install-phone-top>span:first-child{font-size:22px;font-weight:800;letter-spacing:-1.5px}
+.kora-install-phone-top>span:last-child{font-size:7px;letter-spacing:.16em;font-weight:800}
+.kora-install-phone-art{position:relative;height:164px;border-radius:12px;background:var(--ki-lavender);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.kora-install-phone-art>img{position:relative;width:93px;height:93px;border-radius:23%;transform:rotate(-14deg);box-shadow:8px 16px 25px #29153e4d;z-index:1}
+.kora-install-phone-orbit{position:absolute;width:200px;height:200px;border:1px solid #76628050;border-radius:50%;box-shadow:0 0 0 28px #d9c9e9,0 0 0 29px #76628030;transform:translate(-42px,30px)}
+.kora-install-phone-star{position:absolute;right:10px;top:1px;color:#735788;font-size:64px;transform:rotate(-8deg)}
+.kora-install-phone-copy{padding:18px 2px 15px}
+.kora-install-phone-copy>span{font-size:6px;font-weight:800;letter-spacing:.12em;color:#766380}
+.kora-install-phone-copy>strong{display:block;font-weight:800;font-size:33px;line-height:1.04;letter-spacing:-1.9px;margin-top:10px}
+.kora-install-phone-copy>p{font-size:9px;line-height:1.7;color:#7a6b83;margin-top:9px}
+.kora-install-phone-cta{background:var(--ki-lime);border-radius:100px;display:flex;align-items:center;justify-content:space-between;padding:11px 13px;font-size:8px;font-weight:800}
+.kora-install-phone-tabs{display:flex;justify-content:space-around;border-top:1px solid #e5dee8;margin-top:20px;padding-top:12px}
+.kora-install-phone-tabs>span{display:flex;flex-direction:column;align-items:center;font-size:6px;gap:4px;color:#78677f}
+.kora-install-phone-tabs>span:first-child{color:#26172e}
+.kora-install-phone-home{height:3px;width:70px;background:#514658;border-radius:20px;margin:18px auto -9px}
+.kora-install-icon-card{position:absolute;left:-17px;bottom:62px;display:flex;align-items:center;gap:13px;padding:15px 17px;background:#ffffffed;backdrop-filter:blur(15px);border:1px solid #fff;border-radius:19px;box-shadow:0 14px 50px #0e061b55;color:var(--ki-plum);z-index:3;transform:rotate(-5deg)}
+.kora-install-icon-card>img{border-radius:24%;width:53px;height:53px}
+.kora-install-icon-card>div{display:flex;flex-direction:column;gap:4px;padding-right:13px}
+.kora-install-icon-card strong{font-weight:800;font-size:13px;letter-spacing:.05em}
+.kora-install-icon-card span{font-size:9px;color:#78677f}
+.kora-install-icon-card>svg{background:var(--ki-lime);border-radius:50%;width:25px;height:25px;padding:5px}
+.kora-install-scene-caption{font-size:8px;letter-spacing:.2em;color:#c0aacd;position:absolute;bottom:0;right:0}
+.kora-install-ribbon{background:var(--ki-lime);display:flex;gap:40px;align-items:center;justify-content:center;padding:23px 15px;margin:0 24px;border-radius:0 0 24px 24px;font-size:11px;letter-spacing:.13em;font-weight:800}
+.kora-install-ribbon>span:nth-child(even){font-size:21px;line-height:1}
+.kora-install-benefits,.kora-install-guide,.kora-install-good-to-know,.kora-install-bottom{max-width:1290px;margin:auto;padding:96px 5%}
+.kora-install-section-heading{max-width:610px}
+.kora-install-eyebrow{font-size:10px;font-weight:800;letter-spacing:.15em;color:#88649c;margin-bottom:17px}
+.kora-install-section-heading h2,.kora-install-guide h2{font-size:clamp(36px,4vw,52px);font-weight:800;line-height:1.09;letter-spacing:-.045em}
+.kora-install-section-heading>p:last-child{color:#7a6d80;font-size:14px;margin-top:20px;line-height:1.8}
+.kora-install-benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.kora-install-benefit-grid>article{position:relative;background:#f1ecf5;border:1px solid #e9e1ef;padding:30px 27px;border-radius:18px}
+.kora-install-benefit-grid>article:nth-child(2){background:#eeeef0;border-color:#e6e6e9}
+.kora-install-benefit-grid>article:nth-child(3){background:#edf0e5;border-color:#e3e7d7}
+.kora-install-feature-icon{width:53px;height:53px;border-radius:15px;background:#fff9;display:grid;place-items:center}
+.kora-install-feature-number{position:absolute;top:34px;right:27px;font-size:11px;letter-spacing:.1em;color:#8f7e97}
+.kora-install-benefit-grid h3{font-size:18px;letter-spacing:-.025em;margin-top:30px}
+.kora-install-benefit-grid p{font-size:12px;color:#716778;line-height:1.9;margin-top:13px}
+.kora-install-guide{border-top:1px solid #e5dfe8;display:grid;grid-template-columns:.92fr 1.08fr;gap:90px;padding-top:78px;padding-bottom:78px;scroll-margin-top:28px}
+.kora-install-guide-symbol{display:block;font-size:68px;line-height:1;color:#846498;margin-bottom:28px}
+.kora-install-guide-intro>p:last-child{margin-top:22px;font-size:13px;color:#7a6d80;line-height:1.9;max-width:370px}
+.kora-install-guide-options{align-self:center}
+.kora-install-guide details{border-top:1px solid #dcd4e1;padding:21px 0}
+.kora-install-guide details:last-child{border-bottom:1px solid #dcd4e1}
+.kora-install-guide summary{display:flex;align-items:center;justify-content:space-between;list-style:none;cursor:pointer;font-size:15px;font-weight:800;gap:14px}
+.kora-install-guide summary::-webkit-details-marker{display:none}
+.kora-install-guide summary>span:first-child{display:flex;align-items:center;gap:13px}
+.kora-install-guide summary:focus-visible{outline:3px solid #9473ac;outline-offset:7px;border-radius:3px}
+.kora-install-guide-plus{font-size:23px;font-weight:400;transition:transform .2s}
+.kora-install-guide details[open] .kora-install-guide-plus{transform:rotate(45deg)}
+.kora-install-guide ol{list-style:none;display:grid;gap:19px;margin:25px 0 3px;padding:0}
+.kora-install-guide li{display:flex;gap:14px;align-items:baseline;font-size:12px;line-height:1.85;color:#76647d}
+.kora-install-guide li>span{border:1px solid #dcd1e3;color:#775b8a;font-size:9px;border-radius:50%;width:23px;height:23px;display:grid;place-items:center;flex-shrink:0}
+.kora-install-guide li strong{color:#4d395a;font-weight:700}
+.kora-install-guide li svg{display:inline;vertical-align:middle;margin:0 3px}
+.kora-install-good-to-know{padding-top:31px;padding-bottom:31px;display:grid;grid-template-columns:.7fr 1fr 1fr;gap:35px;border-top:1px solid #e5dfe8;border-bottom:1px solid #e5dfe8}
+.kora-install-good-to-know>div>svg{color:#856991;margin-bottom:16px}
+.kora-install-good-to-know h2{font-size:21px;font-weight:800;letter-spacing:-.03em}
+.kora-install-good-to-know>p{font-size:11px;color:#78697e;line-height:1.95}
+.kora-install-good-to-know strong{color:#44314f}
+.kora-install-good-to-know a{display:inline-flex;align-items:center;gap:5px;text-decoration:underline;text-underline-offset:3px;margin-top:6px;color:#68467d}
+.kora-install-bottom{display:flex;align-items:center;gap:26px;padding-top:67px;padding-bottom:67px}
+.kora-install-bottom>img{border-radius:23%;width:70px;height:70px;box-shadow:0 8px 20px #3524411c}
+.kora-install-bottom>div>p{font-size:8px;font-weight:800;letter-spacing:.15em;color:#8b7198;margin-bottom:11px}
+.kora-install-bottom h2{font-size:27px;font-weight:800;letter-spacing:-.035em}
+.kora-install-bottom>a{margin-left:auto;background:var(--ki-plum);color:white;display:flex;align-items:center;gap:18px;padding:17px 23px;border-radius:100px;font-size:12px;font-weight:800;white-space:nowrap}
+.kora-install-bottom>a:hover{background:#493155;transform:translateY(-2px)}
+.kora-install-footer{padding:27px 5%;background:#f1ecf4;display:flex;gap:22px;align-items:center;font-size:10px;color:#7e6c89}
+.kora-install-footer>span:last-child{margin-left:auto}
+.kora-install-footer>a{text-decoration:underline;text-underline-offset:3px}
+.kora-pwa-notice{position:fixed;bottom:20px;right:20px;max-width:405px;z-index:150;background:#23192b;color:#fff;box-shadow:0 10px 40px #23192b40;border:1px solid #745d8066;border-radius:15px;padding:19px;display:flex;align-items:start;gap:13px;font:12px/1.6 Manrope,Arial,sans-serif}
+.kora-pwa-notice>svg{color:#d9f96d;flex-shrink:0;margin-top:1px}
+.kora-pwa-notice strong{display:block;font-size:13px;font-weight:800}
+.kora-pwa-notice p{color:#d2c6d9;margin:3px 0 0;font-size:11px}
+.kora-pwa-close{border:0;background:transparent;color:#d1c3da;padding:3px;margin:-4px -6px 0 0;flex-shrink:0;border-radius:50%}
+.kora-pwa-notice-actions{display:flex;gap:10px;align-items:center;margin-top:12px}
+.kora-pwa-notice-actions>button{border:0;border-radius:50px;padding:8px 13px;font-size:11px;font-weight:800;background:#d9f96d;color:#23192b}
+.kora-pwa-notice-actions>button+button{background:transparent;color:#d5c7dc;text-decoration:underline;text-underline-offset:3px}
+.kora-pwa-notice button:focus-visible{outline:3px solid #d9c9e9;outline-offset:3px}
+@media(min-width:1600px){.kora-install-hero{max-width:1600px;margin-inline:auto}.kora-install-ribbon{max-width:1600px;margin-inline:auto}}
+@media(max-width:1100px){.kora-install-hero{padding:65px 5%;gap:10px;min-height:690px}.kora-install-copy h1{font-size:65px}.kora-install-scene{transform:scale(.9);transform-origin:center}.kora-install-floating-label{left:-20px}.kora-install-icon-card{left:-28px}.kora-install-spark{right:-11%}.kora-install-lead{font-size:14px}.kora-install-kicker{font-size:8px}.kora-install-guide{gap:50px}.kora-install-header-note{display:none}.kora-install-good-to-know{grid-template-columns:.65fr 1fr 1fr;gap:24px}}
+@media(max-width:800px){.kora-install-header{min-height:88px;padding:20px 6%}.kora-install-brand{font-size:43px}.kora-install-hero{margin-inline:14px;grid-template-columns:1fr;padding:53px 8% 26px;border-radius:19px 19px 0 0;gap:0}.kora-install-copy{max-width:600px}.kora-install-copy h1{font-size:clamp(53px,9vw,77px);margin:25px 0 21px}.kora-install-kicker{font-size:8px}.kora-install-lead{max-width:480px;font-size:14px}.kora-install-actions{margin-top:25px}.kora-install-platforms{margin-top:22px}.kora-install-scene{min-height:562px;max-width:460px;width:100%;margin:4px auto 0;transform:scale(.88)}.kora-install-spark{right:0;top:7%}.kora-install-floating-label{left:0}.kora-install-icon-card{left:-5px;bottom:51px}.kora-install-scene-caption{bottom:-18px;right:0}.kora-install-ribbon{margin-inline:14px;gap:20px;font-size:8px;padding:20px 12px;border-radius:0 0 19px 19px}.kora-install-ribbon>span:nth-child(even){font-size:17px}.kora-install-benefits,.kora-install-guide{padding:62px 6%}.kora-install-benefit-grid{gap:14px}.kora-install-benefit-grid>article{padding:23px 19px}.kora-install-benefit-grid h3{font-size:16px;line-height:1.25}.kora-install-feature-number{right:18px;top:26px;font-size:9px}.kora-install-feature-icon{width:43px;height:43px;border-radius:12px}.kora-install-feature-icon svg{width:22px;height:22px}.kora-install-benefit-grid p{font-size:11px}.kora-install-guide{gap:35px}.kora-install-good-to-know{margin-inline:6%;padding:29px 0;grid-template-columns:1fr 1fr;gap:19px}.kora-install-good-to-know>div{grid-column:1/-1;display:flex;gap:12px;align-items:center}.kora-install-good-to-know>div>svg{margin:0}.kora-install-bottom{padding:50px 6%;gap:18px}.kora-install-bottom h2{font-size:21px}.kora-install-bottom>a{font-size:10px;padding:15px 18px;gap:10px}.kora-install-bottom>img{width:59px;height:59px}.kora-install-footer{padding:23px 6%;font-size:9px}}
+@media(max-width:560px){.kora-install-header>a:last-child{font-size:10px;gap:7px}.kora-install-header>a:last-child svg{width:14px}.kora-install-hero{padding-inline:7%;padding-top:40px}.kora-install-copy h1{font-size:clamp(45px,10.4vw,58px)}.kora-install-kicker{font-size:7px;letter-spacing:.13em}.kora-install-lead{font-size:12px;line-height:1.9}.kora-install-page .kora-install-primary{font-size:11px;min-height:53px;padding:15px 17px;gap:10px}.kora-install-primary svg{width:17px}.kora-install-action-note{font-size:9px;line-height:1.9;max-width:280px}.kora-install-platforms{font-size:9px}.kora-install-scene{height:510px;min-height:510px;transform:scale(.8);margin-block:-17px -34px}.kora-install-spark{right:-24px;top:-1%;font-size:131px}.kora-install-floating-label{top:9px;left:-23px;font-size:7px}.kora-install-icon-card{left:-30px;bottom:11px}.kora-install-scene-caption{bottom:-30px;font-size:7px}.kora-install-ribbon{gap:14px;font-size:6px;letter-spacing:.08em}.kora-install-ribbon>span:nth-child(even){font-size:15px}.kora-install-benefits{padding-top:55px;padding-bottom:49px}.kora-install-section-heading h2,.kora-install-guide h2{font-size:36px}.kora-install-section-heading>p:last-child{font-size:12px;margin-top:16px}.kora-install-eyebrow{font-size:8px;margin-bottom:14px}.kora-install-benefit-grid{grid-template-columns:1fr;margin-top:28px}.kora-install-benefit-grid>article{padding:23px 24px}.kora-install-benefit-grid h3{font-size:18px;margin-top:20px}.kora-install-benefit-grid p{font-size:12px;margin-top:10px}.kora-install-feature-number{right:25px;top:25px}.kora-install-guide{grid-template-columns:1fr;padding-top:47px;padding-bottom:46px;gap:27px}.kora-install-guide-symbol{font-size:48px;margin-bottom:23px}.kora-install-guide-intro>p:last-child{font-size:12px;margin-top:19px}.kora-install-guide summary{font-size:14px}.kora-install-guide li{font-size:12px}.kora-install-good-to-know{grid-template-columns:1fr;gap:17px;padding-block:28px}.kora-install-good-to-know>p{font-size:11px}.kora-install-bottom{flex-wrap:wrap;padding-top:43px;padding-bottom:43px;gap:16px}.kora-install-bottom>img{width:52px;height:52px}.kora-install-bottom>div{max-width:calc(100% - 68px)}.kora-install-bottom>div>p{font-size:6px;margin-bottom:8px}.kora-install-bottom h2{font-size:20px;line-height:1.18}.kora-install-bottom>a{margin-left:68px;margin-top:1px;padding:14px 20px}.kora-install-footer{flex-wrap:wrap;gap:10px 18px}.kora-install-footer>span:last-child{width:100%;margin-left:0;font-size:8px}.kora-pwa-notice{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:none;padding:16px;gap:11px}.kora-pwa-notice p{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.kora-install-page *, .kora-pwa-notice *{transition:none!important;scroll-behavior:auto!important}}
+/* Keep useful instructions comfortably readable at every device size. */
+.kora-install-benefit-grid p,.kora-install-guide li,.kora-install-guide-intro>p:last-child{font-size:14px}
+.kora-install-good-to-know>p{font-size:13px}
+@media(max-width:560px){.kora-install-lead{font-size:14px}.kora-install-page .kora-install-primary{font-size:12px}.kora-install-action-note{font-size:11px}.kora-install-platforms{font-size:11px}}

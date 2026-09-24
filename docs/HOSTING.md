@@ -68,6 +68,16 @@ The live customer journey passed search, product details, gallery navigation, wi
 
 Payments, stock, shipping, appointment confirmation and customer notifications remain unconnected. Catalogue research automation was external to the original Site and has not been connected to this repository; the updates page now states that updates are manual. Product photographs still largely use external source URLs.
 
+## Sharing previews and installable app
+
+Public routes have server-rendered Open Graph and Twitter metadata. The homepage uses `public/social/kora-og.png` (1200×630); `/install` uses `kora-install.png`. Product pages use their catalogue image with a branded fallback for unavailable images. Personal routes and filtered searches are excluded from indexing. `KORA_SITE_URL`, when provided at build time, must be an HTTPS origin; otherwise canonical URLs use the production Workers address. Update it when adopting a custom domain.
+
+The `/install` page offers the native installation prompt when the browser provides one and instructions for other browsers. The manifest includes standard and maskable icons, a standalone launch experience, and catalogue, saved-item and request shortcuts. Installing may create a separate browser session on some platforms; guest data does not sync across devices.
+
+The service worker caches only eight fixed public assets for the branded offline page. Live pages, APIs, account data, quotation forms, RSC responses and application bundles remain network-only. An offline navigation returns an explicit 503 page; requests are never queued or replayed. Updates wait for visitors to close existing tabs or choose **Update & reload**. Bump `CACHE_NAME` in `public/sw.js` whenever its cached assets change. Keep `/sw.js` at the origin root; no additional Cloudflare services or database migration are required.
+
+Recreate all branded social cards, favicons and app icons from local fonts and photos with `pnpm assets:brand`. Verify metadata and cache boundaries with `pnpm verify:metadata` and `pnpm verify:pwa`. The artwork generator is a development script; its image-rendering code is not bundled into the Worker.
+
 ## Platform references
 
 - [Vinext on Cloudflare](https://vinext.dev/docs/deploying/cloudflare)

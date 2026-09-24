@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-GH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#23192b">
+  <meta name="robots" content="noindex">
+  <title>A little pause. More possibilities ahead. | KORA Ghana</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face{font-family:Manrope;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/manrope-0.ttf) format('truetype')}@font-face{font-family:Manrope;font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/manrope-4.ttf) format('truetype')}
+    *{box-sizing:border-box}body{margin:0;background:#23192b;color:#fff;font:14px/1.8 Manrope,Arial,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}a{color:inherit;text-decoration:none}header{padding:32px 6%;display:flex;align-items:center;justify-content:space-between}.brand{font-size:42px;letter-spacing:-3px;font-weight:800;line-height:1}.brand span{color:#d9f96d;font-size:31px;vertical-align:top;margin-left:3px;letter-spacing:0}header>span{font-size:9px;color:#cbbbd5;letter-spacing:.15em}main{width:100%;max-width:1200px;display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;padding:35px 6% 65px;margin:auto}.eyebrow{font-size:9px;font-weight:800;letter-spacing:.17em;color:#ccb8db;display:flex;align-items:center;gap:9px}.eyebrow:before{content:'';width:6px;height:6px;border-radius:50%;background:#d9f96d}h1{font-size:clamp(47px,6vw,77px);font-weight:800;line-height:1.04;letter-spacing:-.055em;margin:27px 0 23px}h1 span{color:#d9f96d}p{max-width:400px;color:#cbbdd3;font-size:13px;line-height:1.9;margin:0}.actions{display:flex;align-items:center;gap:23px;margin:28px 0 17px}button{font:800 12px Manrope,Arial,sans-serif;background:#d9f96d;color:#23192b;border:0;border-radius:50px;padding:17px 24px;cursor:pointer}.actions a{font-size:11px;border-bottom:1px solid #a589b7;padding:3px 0}button:focus-visible,a:focus-visible{outline:3px solid #d9c9e9;outline-offset:5px}.status{min-height:20px;font-size:10px;color:#b79fc5}.scene{position:relative;min-height:370px;display:grid;place-items:center;isolation:isolate}.ring{position:absolute;width:340px;height:340px;border-radius:50%;border:1px solid #d6bee52b;box-shadow:0 0 0 38px #23192b,0 0 0 39px #d6bee519}.icon{width:180px;height:180px;border-radius:24%;box-shadow:0 30px 70px #0d051b99;transform:rotate(-12deg);z-index:1}.spark{position:absolute;font-size:114px;right:1%;top:0;color:#d9f96d;line-height:1;transform:rotate(8deg)}.pause{position:absolute;bottom:35px;left:8%;z-index:2;background:#dfd0ec;color:#23192b;font-size:11px;font-weight:800;letter-spacing:.08em;border-radius:100px;padding:13px 20px;transform:rotate(6deg)}footer{border-top:1px solid #ac8db626;padding:24px 6%;display:flex;gap:20px;justify-content:space-between;font-size:9px;color:#b29dc0}footer p{font-size:9px;max-width:550px;color:#b29dc0}footer>span{white-space:nowrap}@media(max-width:700px){header{padding:25px 7%}header>span{font-size:7px}main{grid-template-columns:1fr;padding:20px 7% 30px;gap:9px}h1{font-size:57px}.scene{min-height:290px;order:-1;max-width:350px;width:100%;margin:auto}.ring{width:220px;height:220px}.icon{width:133px;height:133px}.spark{font-size:84px;right:8%;top:6%}.pause{font-size:8px;bottom:25px;left:10%;padding:10px 15px}.eyebrow{font-size:8px}p{font-size:12px}footer{padding:21px 7%;flex-direction:column;gap:10px}}@media(max-width:370px){h1{font-size:47px}.scene{min-height:230px}.ring{width:180px;height:180px}.icon{width:112px;height:112px}header>span{max-width:120px;text-align:right}}
+  </style>
+</head>
+<body>
+  <header><a href="/" class="brand" aria-label="Kora Ghana home">kora<span aria-hidden="true">✳</span></a><span>GOOD TECH. GREAT POSSIBILITIES.</span></header>
+  <main>
+    <div><div class="eyebrow">YOU’RE CURRENTLY OFFLINE</div><h1>A little pause.<br><span>More ahead.</span></h1><p>Your next discovery can wait a moment. Reconnect to the internet to browse Kora, return to your saved items or send a request.</p><div class="actions"><button id="retry" type="button">Try again ↗</button><a href="/">Return to Kora</a></div><p class="status" id="connection-status" role="status">Check your Wi-Fi or mobile connection, then try again.</p></div>
+    <div class="scene" aria-hidden="true"><span class="ring"></span><img class="icon" src="/icons/kora-512.png" width="180" height="180" alt=""><span class="spark">✳</span><span class="pause">WE’LL BE RIGHT HERE.</span></div>
+  </main>
+  <footer><p>This offline screen contains no saved shopping details. Requests are never queued or sent in the background.</p><span>THOUGHTFULLY BROUGHT TOGETHER FOR GHANA.</span></footer>
+  <script>
+    document.getElementById('retry').addEventListener('click', function () { window.location.reload(); });
+    window.addEventListener('online', function () { document.getElementById('connection-status').textContent = 'Your device reports a connection. Try again to reach Kora.'; });
+    window.addEventListener('offline', function () { document.getElementById('connection-status').textContent = 'Check your Wi-Fi or mobile connection, then try again.'; });
+  </script>
+</body>
+</html>
