@@ -59,7 +59,8 @@
 @media(hover:hover){.explore-departments>button:hover,.explore-result-departments button:hover{background:#ede6f3}.explore-category-grid>a:hover{border-color:#cdb7dc;background:#faf8fc}.explore-category-grid>a:hover img{transform:scale(1.06)}.explore-close:hover{background:#eee6f3}}
 @media(prefers-reduced-motion:no-preference){.explore-category-grid img,.explore-category-grid>a,.explore-departments>button{transition:transform .18s,border-color .18s,background .18s}}
 @media(max-width:760px){
- .explore-menu[data-slot=dialog-content]{top:auto;bottom:0;left:0;transform:none;translate:none;width:100%;max-width:100%;height:calc(100dvh - max(12px,env(safe-area-inset-top)));max-height:calc(100dvh - max(12px,env(safe-area-inset-top)));border-radius:25px 25px 0 0;border-bottom:0;animation:none}
+ /* The dialog's compiled utility layers otherwise retain the desktop -50% translation. */
+ .explore-menu[data-slot=dialog-content]{top:auto;bottom:0;left:0;transform:none;translate:none!important;width:100%;max-width:100%;height:calc(100dvh - max(12px,env(safe-area-inset-top)));max-height:calc(100dvh - max(12px,env(safe-area-inset-top)));border-radius:25px 25px 0 0;border-bottom:0;animation:none}
  .explore-header{padding:23px 20px 17px;gap:12px}
  .explore-header [data-slot=dialog-title]{font-size:29px}
  .explore-header [data-slot=dialog-description]{font-size:12px}
