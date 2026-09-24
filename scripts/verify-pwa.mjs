@@ -256,7 +256,6 @@ async function clientHarness() {
     require(name) {
       if (name === 'react') return react;
       if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx };
-      if (name === 'next/link') return { default: 'Link' };
       if (name === 'lucide-react') return new Proxy({}, { get: (_target, name) => String(name) });
       throw new Error(`Unexpected client dependency: ${name}`);
     },

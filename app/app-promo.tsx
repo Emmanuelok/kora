@@ -1,4 +1,4 @@
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link throws during navigation; native anchors preserve working browser navigation. */
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import './app-promo.css';
@@ -10,7 +10,7 @@ export default function AppPromo() {
         <p className="kora-app-promo-eyebrow">KORA, A LITTLE CLOSER</p>
         <h2 id="kora-app-promo-title">Your next favourite.<br /><em>One tap away.</em></h2>
         <p>Add a little Kora to your home screen. A beautiful, simpler way back to everything you love.</p>
-        <div className="kora-app-promo-action"><Link href="/install">Get the Kora app<ArrowUpRight size={20} aria-hidden="true" /></Link><span>Free to add. Made for your everyday.</span></div>
+        <div className="kora-app-promo-action"><a href="/install">Get the Kora app<ArrowUpRight size={20} aria-hidden="true" /></a><span>Free to add. Made for your everyday.</span></div>
       </div>
       <div className="kora-app-promo-art" aria-hidden="true">
         <div className="kora-app-promo-orbit" />

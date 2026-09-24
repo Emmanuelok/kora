@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link throws during navigation; native anchors preserve working browser navigation. */
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Bookmark, Check, Compass, Download, Heart, Package, Share2, ShieldCheck, Smartphone, Wifi } from "lucide-react";
 import { InstallAction } from "../pwa";
 import { metadataForRoute } from "../../lib/site-metadata";
@@ -11,9 +11,9 @@ export default function InstallPage() {
     <div className="kora-install-page">
       <a className="skip-link" href="#install-main">Skip to content</a>
       <header className="kora-install-header">
-        <Link href="/" className="kora-install-brand" aria-label="Kora Ghana home">kora<span aria-hidden="true">✳</span></Link>
+        <a href="/" className="kora-install-brand" aria-label="Kora Ghana home">kora<span aria-hidden="true">✳</span></a>
         <span className="kora-install-header-note">GOOD TECH. GREAT POSSIBILITIES.</span>
-        <Link href="/shop">Explore the catalogue<ArrowUpRight size={17} aria-hidden="true" /></Link>
+        <a href="/shop">Explore the catalogue<ArrowUpRight size={17} aria-hidden="true" /></a>
       </header>
 
       <main id="install-main">
@@ -64,11 +64,11 @@ export default function InstallPage() {
           </div>
         </section>
 
-        <section className="kora-install-good-to-know" aria-labelledby="know-heading"><div><Wifi size={25} aria-hidden="true" /><h2 id="know-heading">A quick heads-up.</h2></div><p><strong>Keep a connection handy.</strong> Browsing, product photos, saved items and sending or tracking requests need internet. If you lose signal, Kora shows a helpful offline screen; it does not send requests in the background.</p><p><strong>Your browser session matters.</strong> Installing may open a separate session on some devices. Saved items and requests don’t sync across browsers or devices. Keep using the same session to return to them. <Link href="/help/privacy">How your information works<ArrowUpRight size={14} aria-hidden="true" /></Link></p></section>
+        <section className="kora-install-good-to-know" aria-labelledby="know-heading"><div><Wifi size={25} aria-hidden="true" /><h2 id="know-heading">A quick heads-up.</h2></div><p><strong>Keep a connection handy.</strong> Browsing, product photos, saved items and sending or tracking requests need internet. If you lose signal, Kora shows a helpful offline screen; it does not send requests in the background.</p><p><strong>Your browser session matters.</strong> Installing may open a separate session on some devices. Saved items and requests don’t sync across browsers or devices. Keep using the same session to return to them. <a href="/help/privacy">How your information works<ArrowUpRight size={14} aria-hidden="true" /></a></p></section>
 
-        <section className="kora-install-bottom"><Image src="/icons/kora-192.png" width={72} height={72} unoptimized alt="Kora app icon" /><div><p>GOOD TECH. GREAT POSSIBILITIES.</p><h2>Your next favourite is waiting.</h2></div><Link href="/shop">Explore Kora<ArrowRight size={20} aria-hidden="true" /></Link></section>
+        <section className="kora-install-bottom"><Image src="/icons/kora-192.png" width={72} height={72} unoptimized alt="Kora app icon" /><div><p>GOOD TECH. GREAT POSSIBILITIES.</p><h2>Your next favourite is waiting.</h2></div><a href="/shop">Explore Kora<ArrowRight size={20} aria-hidden="true" /></a></section>
       </main>
-      <footer className="kora-install-footer"><span>© {new Date().getFullYear()} KORA Ghana</span><Link href="/help/privacy">Privacy & terms</Link><span>Thoughtfully brought together for Ghana.</span></footer>
+      <footer className="kora-install-footer"><span>© {new Date().getFullYear()} KORA Ghana</span><a href="/help/privacy">Privacy & terms</a><span>Thoughtfully brought together for Ghana.</span></footer>
     </div>
   );
 }

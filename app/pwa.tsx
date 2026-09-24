@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link throws during navigation; native anchors preserve working browser navigation. */
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import Link from "next/link";
 import { ArrowDownToLine, ArrowUpRight, Check, RefreshCw, WifiOff, X } from "lucide-react";
 
 type InstallPromptEvent = Event & {
@@ -158,7 +158,7 @@ export function InstallAction() {
   }
   return (
     <div className="kora-install-actions">
-      {installed ? <Link className="kora-install-primary" href="/shop"><Check size={20} aria-hidden="true" />You’re ready. Explore Kora<ArrowUpRight size={20} aria-hidden="true" /></Link> : prompt ? <button className="kora-install-primary" onClick={install} disabled={busy}><ArrowDownToLine size={20} aria-hidden="true" />{busy ? "Opening your browser…" : "Add Kora to your device"}<ArrowUpRight size={20} aria-hidden="true" /></button> : <a className="kora-install-primary" href="#install-guide"><ArrowDownToLine size={20} aria-hidden="true" />See how to install<ArrowUpRight size={20} aria-hidden="true" /></a>}
+      {installed ? <a className="kora-install-primary" href="/shop"><Check size={20} aria-hidden="true" />You’re ready. Explore Kora<ArrowUpRight size={20} aria-hidden="true" /></a> : prompt ? <button className="kora-install-primary" onClick={install} disabled={busy}><ArrowDownToLine size={20} aria-hidden="true" />{busy ? "Opening your browser…" : "Add Kora to your device"}<ArrowUpRight size={20} aria-hidden="true" /></button> : <a className="kora-install-primary" href="#install-guide"><ArrowDownToLine size={20} aria-hidden="true" />See how to install<ArrowUpRight size={20} aria-hidden="true" /></a>}
       <p className="kora-install-action-note" role="status">{message || (installed ? "You’re using Kora as an app on this device." : "Free to add. No app-store download. No sign-in needed.")}</p>
     </div>
   );
