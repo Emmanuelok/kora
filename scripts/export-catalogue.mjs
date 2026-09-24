@@ -1,6 +1,12 @@
 import fs from 'node:fs';
 const products=JSON.parse(fs.readFileSync('data/products.json','utf8'));
-const cols=['id','department','category','brand','name','model','condition','priceGHS','priceSource','priceCheckedAt','releaseStatus','releaseDate','sourceUrl','imageSource'];
-const csv=cols.join(',')+'\n'+products.map(p=>cols.map(k=>'"'+String(p[k]??'').replaceAll('"','""')+'"').join(',')).join('\n')+'\n';
-fs.writeFileSync('public/catalogue-inventory.csv','\ufeff'+csv);
-console.log('Exported '+products.length+' product records.');
+const galleries=JSON.parse(fs.readFileSync('data/product-galleries.json','utf8'));
+const evidence=JSON.parse(fs.readFileSync('data/gallery-evidence.json','utf8')).products;
+const quote=v=>'"'+String(v??'').replaceAll('"','""')+'"';
+const cols=['id','department','category','brand','name','model','condition','priceGHS','priceSource','priceCheckedAt','releaseStatus','releaseDate','sourceUrl','imageSource','galleryImageCount','galleryImages','galleryCheckedAt'];
+const rows=products.map(p=>({...p,galleryImageCount:galleries[p.id]?.length||1,galleryImages:(galleries[p.id]||[{url:p.image}]).map(x=>x.url).join(' | '),galleryCheckedAt:galleries[p.id]?evidence[p.id]?.checkedAt:undefined}));
+fs.writeFileSync('public/catalogue-inventory.csv','\ufeff'+cols.join(',')+'\n'+rows.map(p=>cols.map(k=>quote(p[k])).join(',')).join('\n')+'\n');
+const gapCols=['id','name','department','galleryImageCount','status','reason'];
+const gaps=rows.filter(p=>p.galleryImageCount<2).map(p=>({...p,status:evidence[p.id]?.status||'pending',reason:evidence[p.id]?.configurationNotes||evidence[p.id]?.recoveryNotes||evidence[p.id]?.failure||'Only one suitable source photo has been verified.'}));
+fs.writeFileSync('public/catalogue-gallery-gaps.csv','\ufeff'+gapCols.join(',')+'\n'+gaps.map(p=>gapCols.map(k=>quote(p[k])).join(',')).join('\n')+'\n');
+console.log('Exported '+products.length+' product records and '+gaps.length+' photo-coverage gaps.');

@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-24",
+  "totalProducts": 2362,
+  "productsWithMultipleImages": 194,
+  "productsWithThreeOrMoreImages": 182,
+  "reviewedProducts": 225,
+  "galleryPhotos": 1066,
+  "pendingSourceAccess": 2137,
+  "singleImageProducts": 2168,
+  "complete": false,
+  "note": "Best Buy denied further public product API access. Unchecked products retain their existing cover. Some checked exact configurations expose only one suitable image. No repeated crops, different colours, accessories, or generated product views were added.",
+  "duplicatePhotosExcluded": 7,
+  "fullImageValidation": "passed"
+}
